@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Sequence" format=3 uid="uid://bmavquywgqsjv"]
+
+[ext_resource type="Script" uid="uid://c7071ljd233cn" path="res://Sequence.gd" id="1_bq28p"]
+
+[resource]
+script = ExtResource("1_bq28p")
+array_matrices = Array[Dictionary]([{
+0: 644
+}])
+metadata/_custom_type_script = "uid://c7071ljd233cn"

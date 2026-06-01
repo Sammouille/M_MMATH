@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ba70pnmmj4gdc"]
+
+[ext_resource type="Animation" uid="uid://f6p08jar87k" path="res://Tunnel/anims/robot_pikmin/RESET.res" id="1_5v675"]
+[ext_resource type="Script" uid="uid://lrhqgcttijcw" path="res://Tunnel/scenes/animation_player_oupi_goupi.gd" id="1_l7532"]
+[ext_resource type="Animation" uid="uid://bceepxicjdhra" path="res://Tunnel/anims/robot_pikmin/carre_to_trapeze.res" id="2_h8yej"]
+[ext_resource type="Animation" uid="uid://q8iihqkre7nw" path="res://Tunnel/anims/robot_pikmin/cercle_to_carre.res" id="3_ksgn8"]
+[ext_resource type="Animation" uid="uid://b0vfo1is3w6ae" path="res://Tunnel/anims/robot_pikmin/intro oupi_goupi.res" id="4_wiix1"]
+[ext_resource type="AnimationLibrary" uid="uid://dicrhldyu67m3" path="res://Tunnel/anims/robot_pikmin/topologies.res" id="5_h8yej"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p2io"]
+_data = {
+&"RESET": ExtResource("1_5v675"),
+&"carre_to_trapeze": ExtResource("2_h8yej"),
+&"cercle_to_carre": ExtResource("3_ksgn8"),
+&"intro oupi_goupi": ExtResource("4_wiix1")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" unique_id=333131394]
+libraries/ = SubResource("AnimationLibrary_7p2io")
+libraries/topologies = ExtResource("5_h8yej")
+script = ExtResource("1_l7532")

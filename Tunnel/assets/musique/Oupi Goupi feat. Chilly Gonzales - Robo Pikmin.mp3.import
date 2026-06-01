@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3v8uolibhkp"
+path="res://.godot/imported/Oupi Goupi feat. Chilly Gonzales - Robo Pikmin.mp3-9045a29145f2ae93352a1cd3b9c5bc96.mp3str"
+
+[deps]
+
+source_file="res://Tunnel/assets/musique/Oupi Goupi feat. Chilly Gonzales - Robo Pikmin.mp3"
+dest_files=["res://.godot/imported/Oupi Goupi feat. Chilly Gonzales - Robo Pikmin.mp3-9045a29145f2ae93352a1cd3b9c5bc96.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=163.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dgsye4gg36mws"]
+
+[resource]
+resource_name = "cailloux_texture"
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.5568628, 0.27450982, 0, 1)

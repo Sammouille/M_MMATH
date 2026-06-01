@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://0eqwcovtfk0x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afg3d"]
+
+[resource]
+resource_name = "Material.003"
+next_pass = SubResource("ShaderMaterial_afg3d")
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.981449, 0.767278, 0, 1)

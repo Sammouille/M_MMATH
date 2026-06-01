@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cpjggrjxtkgsx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gcorn"]
+
+[resource]
+resource_name = "airship"
+next_pass = SubResource("ShaderMaterial_gcorn")
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.73333335, 0.28627452, 0.32156864, 1)
