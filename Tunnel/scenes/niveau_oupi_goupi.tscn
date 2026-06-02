@@ -38,6 +38,7 @@
 [ext_resource type="Script" uid="uid://3qbn3th850yr" path="res://Tunnel/code/end_menu.gd" id="28_54hf6"]
 [ext_resource type="PackedScene" uid="uid://dhc26w7wg12v8" path="res://Tunnel/scenes/ile_plate_petite.tscn" id="28_j2mm2"]
 [ext_resource type="PackedScene" uid="uid://8wat5l281imw" path="res://Tunnel/scenes/ile_plate.tscn" id="28_orb6k"]
+[ext_resource type="PackedScene" uid="uid://cigpaeky366pq" path="res://Tunnel/scenes/ile_petite.tscn" id="28_ugnw2"]
 
 [sub_resource type="Gradient" id="Gradient_uilal"]
 offsets = PackedFloat32Array(0, 0.16949153, 0.3457627, 0.62711865, 0.8, 1)
@@ -551,11 +552,11 @@ size = Vector2(0.01, 12)
 
 [sub_resource type="Gradient" id="Gradient_7p2io"]
 offsets = PackedFloat32Array(0, 0.49830508, 1)
-colors = PackedColorArray(0.8250386, 0.83835655, 0.9206952, 1, 0.3767779, 0.54029685, 1, 1, 0.8235294, 0.8392157, 0.92156863, 1)
+colors = PackedColorArray(0.70980394, 0.8666667, 1, 1, 0.3767779, 0.54029685, 1, 1, 0.7079843, 0.8651242, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_pcpd0"]
 offsets = PackedFloat32Array(0, 0.49830508, 1)
-colors = PackedColorArray(0.9428144, 0.89728534, 0.88402927, 1, 0.84642446, 0.5068293, 0.77277166, 1, 0.9411765, 0.8980392, 0.88235295, 1)
+colors = PackedColorArray(1, 0.8980392, 0.68235296, 1, 0.9999998, 0.46344483, 0.04093966, 1, 0.9999996, 0.8966772, 0.6821591, 1)
 
 [sub_resource type="Gradient" id="Gradient_j2mm2"]
 offsets = PackedFloat32Array(0, 0.22330096, 0.48058254, 0.78640777, 1)
@@ -571,7 +572,7 @@ script = ExtResource("1_towaq")
 [node name="Musique" type="AudioStreamPlayer" parent="Son" unique_id=349189595]
 unique_name_in_owner = true
 stream = ExtResource("2_scwf0")
-volume_db = -12.0
+volume_db = -8.0
 script = ExtResource("2_mmhs3")
 bpm = 163.0
 
@@ -888,13 +889,13 @@ trail_precision = 0.02
 [node name="Player" type="Area3D" parent="." unique_id=860940746 node_paths=PackedStringArray("air_trails", "first_boost", "second_boost", "after_image")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("13_qsgfv")
 vitesse_lat_base = 12.0
 max_vitesse_lat = 48.4
-gravite = 1.8
-ascension = 3.0
+gravite = 2.2
+ascension = 4.4
 air_trails = [NodePath("../boite_trails/trail_l"), NodePath("../boite_trails/trail_r")]
 first_boost = [NodePath("../boite_trails/trail_boost")]
 second_boost = [NodePath("../boite_trails/trail_boost_l"), NodePath("../boite_trails/trail_boost_r")]
@@ -1035,6 +1036,10 @@ skeleton = NodePath("../../../../../../../..")
 transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, -2.3841858e-07, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
+[node name="Ligne2" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6/Colonne6" unique_id=1545222006]
+transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, -0.5, -5.986)
+mesh = SubResource("QuadMesh_prc5v")
+
 [node name="Matrice12" type="Marker3D" parent="GestionnaireColonnes/Matrice" unique_id=747093888]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50124085, 0.00029969215, 0)
 
@@ -1128,15 +1133,15 @@ mesh = SubResource("QuadMesh_prc5v")
 [node name="SequenceurIlesIntro" type="Node" parent="." unique_id=728103349]
 script = ExtResource("20_0mmpq")
 scene_seq = ExtResource("28_orb6k")
-scene_haut = ExtResource("28_j2mm2")
+scene_haut = ExtResource("28_ugnw2")
 array_sequences = Array[Dictionary]([{
 2: 20,
 4: 24,
 6: 31,
 8: 27,
 10: 22,
-12: 51,
-14: 44,
+12: 49,
+14: 43,
 16: 444,
 21: -50,
 23: PackedInt64Array(4, 5, 6, 10, 11, 0),
@@ -1151,15 +1156,45 @@ array_sequences = Array[Dictionary]([{
 }])
 starting_beats = Array[int]([1])
 
+[node name="SequenceurIlesOG" type="Node" parent="." unique_id=2028814732]
+script = ExtResource("20_0mmpq")
+scene_seq = ExtResource("28_orb6k")
+scene_haut = ExtResource("28_ugnw2")
+array_sequences = Array[Dictionary]([{
+2: 20,
+4: 24,
+6: 31,
+8: 27,
+10: 22,
+12: 49,
+14: 43,
+28: PackedInt64Array(1, 3, 5, 7, 9, 11),
+30: PackedInt64Array(0, 2, 4, 6, 8, 10),
+34: 444
+}])
+starting_beats = Array[int]([92, 114, 136])
+
 [node name="SequenceurIles3B" type="Node" parent="." unique_id=615403465]
 script = ExtResource("20_0mmpq")
 scene_seq = ExtResource("21_81cow")
 scene_haut = ExtResource("28_j2mm2")
 array_sequences = Array[Dictionary]([{
-0: PackedInt64Array(22, 28),
-4: PackedInt64Array(31, 25)
+0: PackedInt64Array(2, 8),
+1: PackedInt64Array(22, 28),
+5: PackedInt64Array(11, 5),
+6: PackedInt64Array(31, 25)
 }])
-starting_beats = Array[int]([34, 42, 50, 58, 174, 190])
+starting_beats = Array[int]([33, 43, 53])
+
+[node name="SequenceurIles3BQ" type="Node" parent="." unique_id=102710174]
+script = ExtResource("20_0mmpq")
+scene_seq = ExtResource("21_81cow")
+scene_haut = ExtResource("28_j2mm2")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1022, 1028),
+3: PackedInt64Array(1031, 1025)
+}])
+starting_beats = Array[int]([173, 179, 185, 191, 197])
 
 [node name="SequenceurIles3BA" type="Node" parent="." unique_id=1363598890]
 script = ExtResource("20_0mmpq")
@@ -1169,28 +1204,29 @@ array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(202, 208, 1, 3, 7, 9),
 4: PackedInt64Array(211, 205, 10, 0, 4, 6)
 }])
-starting_beats = Array[int]([182, 198])
+starting_beats = Array[int]([])
 
-[node name="SequenceurEnnemiCuvette" type="Node" parent="." unique_id=910537524 node_paths=PackedStringArray("after_image")]
+[node name="SequenceurIlesDemiCercles" type="Node" parent="." unique_id=1731025050]
 script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("25_pcpd0")
+scene_seq = ExtResource("21_81cow")
+scene_haut = ExtResource("28_j2mm2")
 array_sequences = Array[Dictionary]([{
-0: 6,
-1: 7,
-2: 8,
-3: 9,
-4: 10,
-5: 11
-}, {
-0: 5,
-1: 4,
-2: 3,
-3: 2,
-4: 1,
-5: 0
+0: 1026,
+3: 1030,
+6: 1044,
+9: 1040,
+12: 1048,
+15: 1051,
+18: 1066,
+21: 1060,
+23: 1065,
+25: 1071,
+27: 1063,
+29: 1069,
+32: 1060,
+35: 1066
 }])
-after_image = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([106, 130])
+starting_beats = Array[int]([206])
 
 [node name="SequenceurEnnemiMur" type="Node" parent="." unique_id=895210650 node_paths=PackedStringArray("after_image")]
 script = ExtResource("20_0mmpq")
@@ -1199,7 +1235,7 @@ array_sequences = Array[Dictionary]([{
 0: 444
 }])
 after_image = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([50, 60, 70, 80, 84, 90, 111, 119, 145, 149, 168])
+starting_beats = Array[int]([50, 60, 70, 80, 84, 111, 119, 145, 149])
 
 [node name="SequenceurEnnemiMurHaut" type="Node" parent="." unique_id=253167954 node_paths=PackedStringArray("after_image")]
 script = ExtResource("20_0mmpq")
@@ -1222,9 +1258,7 @@ array_sequences = Array[Dictionary]([{
 8: PackedInt64Array(1022, 1004, 1028, 1010),
 9: PackedInt64Array(1024, 1006, 1030, 1000),
 10: PackedInt64Array(1026, 1008, 1020, 1002),
-18: PackedInt64Array(-5),
-19: PackedInt64Array(-5),
-20: PackedInt64Array(-5)
+18: PackedInt64Array(-5)
 }, {
 0: PackedInt64Array(204, 210),
 2: PackedInt64Array(204, 210),
@@ -1239,9 +1273,120 @@ array_sequences = Array[Dictionary]([{
 after_image = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([153])
 
+[node name="SequenceurEnnemiCuvette" type="Node" parent="." unique_id=1637164076 node_paths=PackedStringArray("after_image")]
+script = ExtResource("20_0mmpq")
+scene_seq = ExtResource("25_pcpd0")
+array_sequences = Array[Dictionary]([{
+0: 6,
+1: 7,
+2: 8,
+3: 9,
+4: 10,
+5: 11
+}, {
+0: 5,
+1: 4,
+2: 3,
+3: 2,
+4: 1,
+5: 0
+}])
+after_image = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([106, 130])
+
+[node name="SequenceurEnnemiRefrain2" type="Node" parent="." unique_id=1834778549 node_paths=PackedStringArray("after_image")]
+script = ExtResource("20_0mmpq")
+scene_seq = ExtResource("25_pcpd0")
+scene_haut = ExtResource("25_id8nj")
+array_sequences = Array[Dictionary]([{
+0: 1002,
+1: 1008,
+2: 1005,
+3: 10011,
+4: PackedInt64Array(1007, 1009),
+5: PackedInt64Array(1010, 1000),
+6: PackedInt64Array(1001, 1003),
+7: PackedInt64Array(1004, 1006),
+8: 1031,
+9: 1028,
+10: 1022,
+11: 1025
+}])
+after_image = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([174])
+
+[node name="SequenceurEnnemiRefrain2H" type="Node" parent="." unique_id=32150789 node_paths=PackedStringArray("after_image")]
+script = ExtResource("20_0mmpq")
+scene_seq = ExtResource("25_pcpd0")
+scene_haut = ExtResource("25_id8nj")
+array_sequences = Array[Dictionary]([{
+0: 1202,
+1: 1208,
+2: 1205,
+3: 1211,
+4: PackedInt64Array(1207, 1209),
+5: PackedInt64Array(1210, 1220),
+6: PackedInt64Array(1201, 1203),
+7: PackedInt64Array(1204, 1206),
+8: 1231,
+9: 1228,
+10: 1222,
+11: 1225,
+14: PackedInt64Array(1246, 1209, 1040, 1003),
+16: PackedInt64Array(1046, 1009, 1240, 1203)
+}])
+after_image = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([186])
+
+[node name="SequenceurEnnemiChilly" type="Node" parent="." unique_id=108875276 node_paths=PackedStringArray("after_image")]
+script = ExtResource("20_0mmpq")
+scene_seq = ExtResource("25_pcpd0")
+scene_haut = ExtResource("25_id8nj")
+array_sequences = Array[Dictionary]([{
+0: 1220,
+3: 1224,
+6: 1231,
+9: 1227,
+11: 1222,
+13: 1229,
+15: 1226,
+17: 1221,
+18: 1226,
+19: 1231,
+20: 1237,
+21: 1240,
+22: 1224,
+23: 1229,
+24: 1221,
+25: 1226,
+29: 1230,
+30: 1206,
+31: 1205,
+32: 1204,
+33: PackedInt64Array(1203, 1209),
+34: PackedInt64Array(1202, 1208),
+35: PackedInt64Array(1201, 1207),
+36: PackedInt64Array(1200, 1203, 1206, 1209),
+38: PackedInt64Array(1211, 1208, 1205, 1202),
+40: PackedInt64Array(1210, 1207, 1204, 1201),
+42: PackedInt64Array(1209, 1206, 1203, 1200)
+}, {
+33: PackedInt64Array(1005),
+34: PackedInt64Array(1006),
+35: PackedInt64Array(1007),
+36: PackedInt64Array(1008),
+37: PackedInt64Array(1009, 1001, 1005),
+38: PackedInt64Array(1010, 1002, 1006),
+39: PackedInt64Array(1011, 1003, 1007),
+40: PackedInt64Array(1000, 1004, 1008),
+41: PackedInt64Array(1001, 1005, 1009),
+42: PackedInt64Array(1002, 1006, 1010)
+}])
+after_image = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([212])
+
 [node name="AfterImageEnnemis" type="Node3D" parent="." unique_id=416968996]
 script = ExtResource("11_j2mm2")
-frames_between_ghosts = 10
 ghost_lifetime = 0.2
 gradient = SubResource("Gradient_7p2io")
 prog_couleur = 0.8
@@ -1250,7 +1395,6 @@ prog_couleur = 0.8
 
 [node name="AfterImageEnnemisHaut" type="Node3D" parent="." unique_id=655615077]
 script = ExtResource("11_j2mm2")
-frames_between_ghosts = 10
 ghost_lifetime = 0.2
 gradient = SubResource("Gradient_pcpd0")
 prog_couleur = 0.8
@@ -1260,14 +1404,14 @@ prog_couleur = 0.8
 [node name="SequenceurAnneau" type="Node3D" parent="." unique_id=64068312 node_paths=PackedStringArray("after_image")]
 script = ExtResource("22_nfqlf")
 scene_seq = ExtResource("23_c270b")
-beat_anneaux = Array[int]([52])
+beat_anneaux = Array[int]([54, 165, 241])
 after_image = NodePath("../AfterImageAnneaux")
 
 [node name="AfterImageAnneaux" type="Node3D" parent="." unique_id=2061930232]
 script = ExtResource("11_j2mm2")
-ghost_lifetime = 3.0
+frames_between_ghosts = 15
+ghost_lifetime = 6.0
 gradient = SubResource("Gradient_j2mm2")
-prog_couleur = 0.8
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageAnneaux" unique_id=1190748186]
 

@@ -148,9 +148,11 @@ func _on_area_entered(area: Area3D) -> void:
 			for trail in first_boost:
 				trail.genere_trail = true
 		if index_anneau == 2:
-			%GestionnaireColonnes.avancement_vitesse = 6.6
+			%GestionnaireColonnes.avancement_vitesse = 5.7
 			for trail in second_boost:
 				trail.genere_trail = true
+		if index_anneau == 3:
+			%GestionnaireColonnes.avancement_vitesse = 6.6
 			
 	elif agent_met is AnneauBonus:
 		%Bonus.play()

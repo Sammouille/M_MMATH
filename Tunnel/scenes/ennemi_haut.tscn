@@ -5,7 +5,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f0hs"]
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0.5367632, 0.21529767, 0.47731382, 1)
+albedo_color = Color(0.77133703, 0.32087144, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3g5bo"]
 _surfaces = [{
@@ -40,7 +40,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3g5bo")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sv8gh"]
-radius = 0.13566521
+radius = 0.11452493
 
 [sub_resource type="Animation" id="Animation_sv8gh"]
 length = 0.001
@@ -89,7 +89,7 @@ meshes = [NodePath("Meshes/Icosphère")]
 vitesse = 2.0
 
 [node name="Meshes" type="Node3D" parent="." unique_id=501670950]
-transform = Transform3D(-2.6226832e-08, 0, 0.59999996, 0, 0.6, 0, -0.59999996, 0, -2.6226832e-08, 0, -0.044954672, 0)
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.044954672, 0)
 
 [node name="Icosphère" type="MeshInstance3D" parent="Meshes" unique_id=1625016235]
 transform = Transform3D(0.35000002, 0, 0, 0, 0.35000002, 0, 0, 0, 0.35000002, 0, -0.20646624, 0)
@@ -99,7 +99,7 @@ skeleton = NodePath("")
 [node name="Area3D" type="Area3D" parent="." unique_id=1626464253]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1567705816]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, -0.17232278, 0)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, -0.12796132, 0)
 shape = SubResource("SphereShape3D_sv8gh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2044428196]
