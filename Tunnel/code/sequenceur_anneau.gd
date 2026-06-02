@@ -4,6 +4,8 @@ extends Node
 
 @export var beat_anneaux: Array[int]
 
+@export var after_image: AfterImage
+
 func _ready() -> void:
 	%Musique.on_beat.connect(_on_musique_on_beat)
 
@@ -13,6 +15,9 @@ func instanciation():
 	nv_inst.position.z = -20.0
 	nv_inst.position.y = 0.0
 	nv_inst.position.x = 0
+	if after_image:
+		for mesh in nv_inst.meshes:
+			after_image.meshes.append(mesh)
 
 func _on_musique_on_beat(beat: int) -> void:
 	if scene_seq:

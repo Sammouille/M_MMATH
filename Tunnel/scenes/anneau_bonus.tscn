@@ -39,6 +39,8 @@ meshes = [NodePath("Anneau/MeshInstance3D"), NodePath("Anneau/MeshInstance3D5"),
 
 [node name="Anneau" type="Area3D" parent="." unique_id=1936295034]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Anneau" unique_id=1646326488]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.8852937e-08, 0.43130493)
