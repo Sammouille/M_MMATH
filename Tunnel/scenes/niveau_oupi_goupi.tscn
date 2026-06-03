@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cnofg16uqoy2h" path="res://Tunnel/code/prompter.gd" id="10_orb6k"]
 [ext_resource type="Script" uid="uid://dle684xookt2r" path="res://Tunnel/code/Afterimage.gd" id="11_j2mm2"]
 [ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="11_scwf0"]
+[ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="12_qsgfv"]
 [ext_resource type="Script" uid="uid://bvi567a755504" path="res://Tunnel/code/TunnelTrail.gd" id="12_ugnw2"]
 [ext_resource type="Script" uid="uid://cdu5uu5sciyn7" path="res://Tunnel/code/player.gd" id="13_qsgfv"]
 [ext_resource type="PackedScene" uid="uid://vjtqrhyn2bil" path="res://Tunnel/scenes/plane_mesh.tscn" id="16_7s03i"]
@@ -90,8 +91,12 @@ shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.51427925, 0.36746824, 0.75897545, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8e3kl"]
-size = Vector3(0.4444208, 0.15338135, 0.18481445)
+[sub_resource type="SphereShape3D" id="SphereShape3D_7nmlv"]
+radius = 0.19565694
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qsgfv"]
+radius = 0.32128906
+height = 1.0795898
 
 [sub_resource type="Animation" id="Animation_j2mm2"]
 resource_name = "carre_to_cercle"
@@ -727,39 +732,53 @@ Or press Space"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("label")]
+[node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label")]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 174.0
+offset_right = 247.0
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("9_ko843")
+scene_figure = ExtResource("12_qsgfv")
+timer_grease = NodePath("TimerGrease")
 label = NodePath("RichTextLabel")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Score" unique_id=1217088424]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 23.0
-offset_top = 42.0
-offset_bottom = 168.0
+offset_top = 77.0
+offset_bottom = 170.0
 grow_horizontal = 2
-theme_override_constants/line_separation = 8
+theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10]Score
+text = "[center][outline_color=black][outline_size=10][font_size=30]Score
 00000
 "
 scroll_active = false
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Score" unique_id=1856764370]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 225.0
+offset_bottom = 620.0
+grow_horizontal = 2
+
+[node name="TimerGrease" type="Timer" parent="Score" unique_id=1120272441]
+wait_time = 4.4
 
 [node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label")]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 174.0
+offset_left = 974.0
+offset_right = 1148.0
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("11_scwf0")
@@ -907,7 +926,7 @@ transform = Transform3D(0.086, 0, 0, 0, 0.11, 0, 0, 0, 0.2, 0, -0.014875233, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=8308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.006, 0.002)
-shape = SubResource("BoxShape3D_8e3kl")
+shape = SubResource("SphereShape3D_7nmlv")
 
 [node name="marker_trail_l" type="Marker3D" parent="Player" unique_id=1380709197]
 transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, -0.35562396, 0.26034164, 0.041253567)
@@ -923,6 +942,13 @@ transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, -0.25738877, -
 
 [node name="marker_boost_r" type="Marker3D" parent="Player" unique_id=888190380]
 transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 0.2605868, -0.03116262, 0.24722758)
+
+[node name="Grease" type="Area3D" parent="Player" unique_id=657926372]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Grease" unique_id=822965883]
+transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, -0.12639463)
+shape = SubResource("CapsuleShape3D_qsgfv")
 
 [node name="FollowCam" type="Node3D" parent="." unique_id=2058510983 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
@@ -1507,5 +1533,6 @@ text = "PLAY AGAIN"
 [connection signal="gui_input" from="InputTel/DepG" to="InputTel" method="_on_dep_g_gui_input"]
 [connection signal="gui_input" from="InputTel/DepD" to="InputTel" method="_on_dep_d_gui_input"]
 [connection signal="gui_input" from="InputTel/Saut" to="InputTel" method="_on_saut_gui_input"]
+[connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/Button" to="EndMenu" method="_restart"]

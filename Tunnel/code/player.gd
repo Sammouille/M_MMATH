@@ -28,8 +28,11 @@ var index_anneau := 0
 
 var position_repere:= Vector3.ZERO
 
+var i_glide:= 0
 
 var alive:= true
+
+signal touche_sol
 
 func _ready() -> void:
 	aimed_repere = %GestionnaireColonnes.p_get_current_track()
@@ -62,15 +65,15 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and !is_jumping and !in_air:
 			%Saut.play()
 			is_jumping = true
+			i_glide = 1
 		elif Input.is_action_pressed("jump"):
+			i_glide += 1
 			is_planing = true
-			if !air_trails.is_empty() and hauteur > 0.0:
+			if !air_trails.is_empty() and hauteur >= 0.0:
 				for trail in air_trails:
 					trail.genere_trail = true
 					trail.update_trail(delta, !is_planing)
-			elif !air_trails.is_empty():
-				for trail in air_trails:
-					trail.genere_trail = false
+			
 				
 		else:
 			is_planing = false
@@ -118,6 +121,11 @@ func _physics_process(delta: float) -> void:
 			else:
 				hauteur -= delta * gravite
 	elif in_air:
+		i_glide = 0
+		touche_sol.emit()
+		if !air_trails.is_empty():
+				for trail in air_trails:
+					trail.genere_trail = false
 		in_air = false
 		is_planing = false
 	

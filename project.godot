@@ -34,6 +34,10 @@ enabled=PackedStringArray("res://addons/flowerwall_postprocess/plugin.cfg", "res
 
 GestionnaireCol=""
 
+[gui]
+
+theme/custom_font="uid://dwrrnrrlioue0"
+
 [input]
 
 ui_accept={

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cqbbeinw2h6sf"]
+
+[ext_resource type="Script" uid="uid://78y3rsp0onbq" path="res://Tunnel/code/figure.gd" id="1_35lnb"]
+
+[node name="Figure" type="HBoxContainer" unique_id=1812244283]
+script = ExtResource("1_35lnb")
+
+[node name="Nom" type="RichTextLabel" parent="." unique_id=1260103099]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][outline_color=black][outline_size=10][font_size=15]Glide"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Score" type="RichTextLabel" parent="." unique_id=1387767362]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][outline_color=black][outline_size=10][font_size=15]500"
+vertical_alignment = 1
