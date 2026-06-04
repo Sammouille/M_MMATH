@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://cdu5uu5sciyn7" path="res://Tunnel/code/player.gd" id="13_qsgfv"]
 [ext_resource type="PackedScene" uid="uid://vjtqrhyn2bil" path="res://Tunnel/scenes/plane_mesh.tscn" id="16_7s03i"]
 [ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="18_byb81"]
+[ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="19_7nmlv"]
 [ext_resource type="AnimationLibrary" uid="uid://dicrhldyu67m3" path="res://Tunnel/anims/robot_pikmin/topologies.res" id="19_orb6k"]
 [ext_resource type="Script" uid="uid://bonnrjd6xoc78" path="res://Tunnel/code/gestionnaire_colonnes.gd" id="19_va7wv"]
 [ext_resource type="Script" uid="uid://banxlhhyaaumw" path="res://Tunnel/code/sequenceur.gd" id="20_0mmpq"]
@@ -97,6 +98,18 @@ radius = 0.19565694
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qsgfv"]
 radius = 0.32128906
 height = 1.0795898
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpvs8"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kymkk"]
+material = SubResource("StandardMaterial3D_kpvs8")
+radius = 0.321
+height = 1.08
+radial_segments = 12
+rings = 4
 
 [sub_resource type="Animation" id="Animation_j2mm2"]
 resource_name = "carre_to_cercle"
@@ -950,6 +963,11 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, -0.12639463)
 shape = SubResource("CapsuleShape3D_qsgfv")
 
+[node name="MeshGrease" type="MeshInstance3D" parent="Player" unique_id=903078955]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.126)
+mesh = SubResource("CapsuleMesh_kymkk")
+script = ExtResource("19_7nmlv")
+
 [node name="FollowCam" type="Node3D" parent="." unique_id=2058510983 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
 script = ExtResource("18_byb81")
@@ -1199,6 +1217,7 @@ array_sequences = Array[Dictionary]([{
 34: 444
 }])
 starting_beats = Array[int]([92, 114, 136])
+ending_beats = Array[int]([151])
 
 [node name="SequenceurIles3B" type="Node" parent="." unique_id=615403465]
 script = ExtResource("20_0mmpq")
@@ -1298,6 +1317,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([153])
+ending_beats = Array[int]([0])
 
 [node name="SequenceurEnnemiCuvette" type="Node" parent="." unique_id=1637164076 node_paths=PackedStringArray("after_image")]
 script = ExtResource("20_0mmpq")
@@ -1535,4 +1555,5 @@ text = "PLAY AGAIN"
 [connection signal="gui_input" from="InputTel/Saut" to="InputTel" method="_on_saut_gui_input"]
 [connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="area_entered" from="Player/Grease" to="Player/MeshGrease" method="_on_grease_area_entered"]
 [connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/Button" to="EndMenu" method="_restart"]
