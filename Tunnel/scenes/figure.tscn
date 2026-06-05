@@ -20,8 +20,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/line_separation = 10
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10][font_size=25]Glide"
+text = "[center][outline_color=black][outline_size=10][font_size=25]grease combo"
 fit_content = true
 vertical_alignment = 1
 

@@ -5,7 +5,7 @@ extends AnimationPlayer
 func _on_musique_on_beat(beat: int) -> void:
 	if beat == 1:
 		play("intro oupi_goupi")
-	elif beat == 48:
+	elif beat == 49:
 		play("cercle_to_carre")
 	elif beat == 81:
 		play("carre_to_trapeze")

@@ -8,6 +8,8 @@ extends Node3D
 
 var avancement_vitesse:= 2.0
 
+signal deplacement_colonne(i_colonne: int)
+
 func p_get_current_track():
 	return colonnes[index_player]
 
@@ -17,6 +19,7 @@ func p_get_next_track():
 			index_player = 0
 	else:
 		index_player += 1
+	deplacement_colonne.emit(index_player)
 	return colonnes[index_player]
 
 func p_get_last_track():
@@ -25,6 +28,7 @@ func p_get_last_track():
 			index_player = colonnes.size()-1
 	else:
 		index_player -= 1
+	deplacement_colonne.emit(index_player)
 	return colonnes[index_player]
 
 func get_range_from_center(center: int, _range: int):

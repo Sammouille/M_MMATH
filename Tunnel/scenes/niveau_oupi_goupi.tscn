@@ -758,6 +758,7 @@ mouse_filter = 2
 script = ExtResource("9_ko843")
 scene_figure = ExtResource("12_qsgfv")
 timer_grease = NodePath("TimerGrease")
+freq_glide = 0.55
 label = NodePath("Score")
 
 [node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
@@ -801,18 +802,20 @@ grow_horizontal = 2
 [node name="TimerGrease" type="Timer" parent="Score" unique_id=1120272441]
 wait_time = 2.4
 
-[node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label")]
+[node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label", "label_line")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
-anchors_preset = 9
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 974.0
-offset_right = 1148.0
+offset_left = -213.0
+grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("11_scwf0")
 label = NodePath("RichTextLabel")
+label_line = NodePath("RichTextLabel2")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BeatCount" unique_id=1251777707]
 layout_mode = 1
@@ -828,6 +831,24 @@ theme_override_constants/line_separation = 8
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
 text = "[center][outline_color=black][outline_size=10]Beat
+0
+"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BeatCount" unique_id=930909872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 263.0
+offset_bottom = -316.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("10_ko843")
+bbcode_enabled = true
+text = "[center][outline_color=black][outline_size=10]Line
 0
 "
 scroll_active = false
@@ -870,6 +891,7 @@ vertical_alignment = 1
 
 [node name="AfterImage" type="Node3D" parent="." unique_id=1683556760 node_paths=PackedStringArray("meshes")]
 script = ExtResource("11_j2mm2")
+frames_between_ghosts = 10
 ghost_lifetime = 0.0
 gradient = SubResource("Gradient_uilal")
 prog_couleur = 0.8
@@ -1532,17 +1554,23 @@ gradient = SubResource("Gradient_j2mm2")
 script = ExtResource("20_0mmpq")
 scene_seq = ExtResource("24_srlbf")
 array_sequences = Array[Dictionary]([{
-29: 205,
-42: 11,
-48: 205,
-54: 2
+29: 1205,
+42: 1011,
+48: 1205,
+54: 1002,
+74: PackedInt64Array(1000, 1011),
+98: 1004,
+100: 1009,
+106: 1203,
+132: PackedInt64Array(1200, 1211)
 }])
 after_image = NodePath("../AfterImageAB")
 starting_beats = Array[int]([1])
 
 [node name="AfterImageAB" type="Node3D" parent="." unique_id=2104395526]
 script = ExtResource("11_j2mm2")
-ghost_lifetime = 0.5
+frames_between_ghosts = 15
+ghost_lifetime = 0.4
 gradient = SubResource("Gradient_uilal")
 prog_couleur = 0.8
 
@@ -1622,4 +1650,5 @@ text = "PLAY AGAIN"
 [connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="area_entered" from="Player/Grease" to="Player/MeshGrease" method="_on_grease_area_entered"]
+[connection signal="deplacement_colonne" from="GestionnaireColonnes" to="BeatCount" method="_on_gestionnaire_colonnes_deplacement_colonne"]
 [connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/Button" to="EndMenu" method="_restart"]

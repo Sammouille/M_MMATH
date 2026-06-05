@@ -8,7 +8,7 @@ var last_score:= 0
 
 @export var timer_grease: Timer
 
-@export var freq_glide:= 0.44
+@export var freq_glide:= 0.66
 var i_glide:=0.0
 
 @export var mod_decay:= 0.1
@@ -34,19 +34,44 @@ func _ready() -> void:
 	%Player.touche_sol.connect(end_glide)
 	%Grease.area_entered.connect(_on_grease_area_entered)
 
+func _on_huge_ring_passed():
+	var score_ring:= 444 * modificateur
+	
+	var fig_ring = scene_figure.instantiate()
+	fig_ring.hide()
+	$VBoxContainer.add_child(fig_ring)
+	fig_ring.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_ring
+	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]huge_ring ring"
+	fig_ring.show()
+	fig_ring.fin()
+	score += score_ring
+	update_score()
+
 func bonus_modificateur():
 	%Bonus.play()
 	%Player.after_image.ghost_lifetime += 0.3
 	modificateur = float(int(roundf(modificateur + 1.4)))
 	%Bonus.pitch_scale = 1.0 + index_bonus * 0.1
 	index_bonus += 1
+	
+	var score_ring:= 100 * modificateur
+	
+	var fig_ring = scene_figure.instantiate()
+	fig_ring.hide()
+	$VBoxContainer.add_child(fig_ring)
+	fig_ring.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_ring
+	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]bonus ring"
+	fig_ring.show()
+	fig_ring.fin()
+	score += score_ring
+	update_score()
 
 func end_glide():
 	@warning_ignore("narrowing_conversion")
 	score_glide *=modificateur
 	if fig_glide:
-		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=30]%d" %score_glide
-		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=30]glide"
+		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_glide
+		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]glide"
 		fig_glide.fin()
 		fig_glide = null
 	if score_glide:
@@ -55,7 +80,7 @@ func end_glide():
 	update_score()
 
 func _process(delta: float) -> void:
-	if %Player.i_glide > 88 and !fig_glide:
+	if %Player.i_glide > 44 and !fig_glide:
 		i_glide = delta
 		score_glide = 1
 		fig_glide = scene_figure.instantiate()
@@ -64,7 +89,7 @@ func _process(delta: float) -> void:
 		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=25][shake rate=20.0 level=5 connected=1]glide"
 		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_glide
 		fig_glide.show()
-	elif %Player.i_glide > 88 and %Player.is_planing:
+	elif %Player.i_glide > 44 and %Player.is_planing:
 		i_glide += delta
 		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_glide
 	
@@ -77,7 +102,7 @@ func _process(delta: float) -> void:
 		%Mod.show()
 		modificateur -= mod_decay * delta * modificateur
 		%Player.after_image.ghost_lifetime = minf(1.0, (modificateur -1.0)*0.3)
-		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=30][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.4f" % [minf(modificateur * 0.2, 1.0), modificateur]
+		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=%d][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.1f" % [30+ modificateur * 4, minf(modificateur * 0.2, 1.0), modificateur]
 	elif %Player.after_image.ghost_lifetime != 0.0:
 		%Player.after_image.ghost_lifetime = 0.0
 	else:
@@ -110,8 +135,8 @@ func grease():
 	fig_grease = scene_figure.instantiate()
 	fig_grease.hide()
 	$VBoxContainer.add_child(fig_grease)
-	fig_grease.nom.text = "[center][outline_color=black][outline_size=10][font_size=30]grease"
-	fig_grease.score.text = "[center][outline_color=black][outline_size=10][font_size=30]%d" % int(2.0 * modificateur)
+	fig_grease.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]grease"
+	fig_grease.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" % int(2.0 * modificateur)
 	fig_grease.show()
 	score += 2.0 * modificateur
 	fig_grease.fin()
@@ -139,8 +164,8 @@ func _on_timer_grease_timeout() -> void:
 	index_grease = 0
 	score_grease *= modificateur
 	if fig_grease_combo:
-		fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=30]%d" %score_grease
-		fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=30]grease combo"
+		fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_grease
+		fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]grease combo"
 		fig_grease_combo.fin()
 		fig_grease_combo = null
 	if score_grease:

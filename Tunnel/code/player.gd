@@ -151,6 +151,7 @@ func _on_area_entered(area: Area3D) -> void:
 		index_anneau += 1
 		%Prompter.afficher_texte()
 		%Boost.play()
+		%Score._on_huge_ring_passed()
 		if index_anneau == 1:
 			%GestionnaireColonnes.avancement_vitesse = 4.4
 			for trail in first_boost:
