@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends MarginContainer
 
 @onready var nom:= %Nom
 @onready var score:= %Score

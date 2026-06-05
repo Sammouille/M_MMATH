@@ -15,5 +15,5 @@ func _on_musique_on_beat(beat: int) -> void:
 		play("hex_to_square")
 	elif beat == 209:
 		play("carre_to_cercle")
-	elif beat == 270:
+	elif beat == 274:
 		play("cercle_to_carre")

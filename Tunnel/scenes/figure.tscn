@@ -2,24 +2,34 @@
 
 [ext_resource type="Script" uid="uid://78y3rsp0onbq" path="res://Tunnel/code/figure.gd" id="1_35lnb"]
 
-[node name="Figure" type="HBoxContainer" unique_id=1812244283]
+[node name="Figure" type="MarginContainer" unique_id=969442956]
+offset_left = 10.0
+offset_right = 361.0
+offset_bottom = 76.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 script = ExtResource("1_35lnb")
 
-[node name="Nom" type="RichTextLabel" parent="." unique_id=1260103099]
+[node name="Figure" type="HBoxContainer" parent="." unique_id=1812244283]
+layout_mode = 2
+
+[node name="Nom" type="RichTextLabel" parent="Figure" unique_id=1260103099]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10][font_size=15]Glide"
+text = "[center][outline_color=black][outline_size=10][font_size=25]Glide"
 fit_content = true
 vertical_alignment = 1
 
-[node name="Score" type="RichTextLabel" parent="." unique_id=1387767362]
+[node name="Score" type="RichTextLabel" parent="Figure" unique_id=1387767362]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10][font_size=15]500"
+text = "[center][outline_color=black][outline_size=10][font_size=25]500"
 vertical_alignment = 1

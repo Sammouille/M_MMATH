@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/flowerwall_postprocess/plugin.cfg", "res
 [global_group]
 
 GestionnaireCol=""
+Score=""
 
 [gui]
 

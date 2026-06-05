@@ -30,4 +30,6 @@ func _physics_process(delta: float) -> void:
 	position.z += (gestionnaire_colonnes.avancement_vitesse + vitesse) * delta
 			
 	if position.z > latence:
+		var score = get_tree().get_first_node_in_group("Score")
+		score.score += 0.1 * score.modificateur
 		queue_free()

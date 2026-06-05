@@ -163,11 +163,4 @@ func _on_area_entered(area: Area3D) -> void:
 			%GestionnaireColonnes.avancement_vitesse = 6.6
 			
 	elif agent_met is AnneauBonus:
-		%Bonus.play()
-		after_image.ghost_lifetime = 0.3
-		%Score.modificateur = 2.0
-		get_tree().create_tween().tween_property(%Score, "modificateur", 1.0, 10.0)
-		get_tree().create_tween().tween_property(after_image, "ghost_lifetime", 0, 10.0)
-		var tween_fov = get_tree().create_tween()
-		tween_fov.tween_property(%Camera3D, "fov", 100.0, 0.3)
-		tween_fov.tween_property(%Camera3D, "fov", 90.0, 10.0)
+		%Score.bonus_modificateur()
