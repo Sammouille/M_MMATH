@@ -128,7 +128,10 @@ func update_score():
 		
 
 func grease():
+	%SonGrease.pitch_scale = 1.0 + 0.1*float(index_grease)
+	%SonGrease.play()
 	index_grease += 1
+	
 	
 	update_score()
 	var fig_grease = scene_figure.instantiate()

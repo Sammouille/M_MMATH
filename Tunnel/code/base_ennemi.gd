@@ -12,6 +12,8 @@ class_name Obstacle
 
 @export var alpha := 0.2
 
+var trail: TunnelTrailEnnemi
+
 var i_colonne:= 0
 
 func _ready() -> void:
@@ -32,4 +34,11 @@ func _physics_process(delta: float) -> void:
 	if position.z > latence:
 		var score = get_tree().get_first_node_in_group("Score")
 		score.score += 0.1 * score.modificateur
+		#if trail:
+			#trail.queue_free()
+		#get_tree().create_timer(1.0).timeout.connect(Callable(trail, "queue_free"))
 		queue_free()
+	
+	
+	if trail:
+		trail.update_trail(delta)

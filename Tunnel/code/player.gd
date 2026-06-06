@@ -43,22 +43,40 @@ func _physics_process(delta: float) -> void:
 			aimed_repere = %GestionnaireColonnes.p_get_last_track()
 			is_moving = true
 			%Deplacement.play()
+			if !in_air:
+				%AnimationPlayer.play("dash_sol_g")
+			else:
+				%AnimationPlayer.play("dash_air_g")
+			
 		elif Input.is_action_pressed("gauche"):
 			if vitesse_lat < max_vitesse_lat:
 				vitesse_lat += delta * acceleration_lat
 			if !is_moving:
 				aimed_repere = %GestionnaireColonnes.p_get_last_track()
 				is_moving = true
+				if !in_air:
+					%AnimationPlayer.play("dash_sol_g")
+				else:
+					%AnimationPlayer.play("dash_air_g")
 		elif Input.is_action_just_pressed("droite"):
 			%Deplacement.play()
 			aimed_repere = %GestionnaireColonnes.p_get_next_track()
 			is_moving = true
+			if !in_air:
+				%AnimationPlayer.play("dash_sol_d")
+			else:
+				%AnimationPlayer.play("dash_air_d")
+			
 		elif Input.is_action_pressed("droite"):
 			if vitesse_lat < max_vitesse_lat:
 				vitesse_lat += delta * acceleration_lat
 			if !is_moving:
 				aimed_repere = %GestionnaireColonnes.p_get_next_track()
 				is_moving = true
+				if !in_air:
+					%AnimationPlayer.play("dash_sol_d")
+				else:
+					%AnimationPlayer.play("dash_air_d")
 		else:
 			vitesse_lat = vitesse_lat_base
 		
@@ -123,6 +141,7 @@ func _physics_process(delta: float) -> void:
 	elif in_air:
 		i_glide = 0
 		touche_sol.emit()
+		%Sol.play()
 		if !air_trails.is_empty():
 				for trail in air_trails:
 					trail.genere_trail = false
@@ -148,20 +167,27 @@ func _on_area_entered(area: Area3D) -> void:
 	if agent_met is Obstacle:
 		mort()
 	elif agent_met is Anneau:
-		index_anneau += 1
-		%Prompter.afficher_texte()
+		%GestionnaireColonnes._on_huge_ring_passed()
+		index_anneau +=1
 		%Boost.play()
-		%Score._on_huge_ring_passed()
 		if index_anneau == 1:
-			%GestionnaireColonnes.avancement_vitesse = 4.4
 			for trail in first_boost:
 				trail.genere_trail = true
-		if index_anneau == 2:
-			%GestionnaireColonnes.avancement_vitesse = 5.7
+				trail.trail_width_start = 0.23
+				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.05, 1.5)
+		elif index_anneau == 2:
 			for trail in second_boost:
+				trail.trail_width_start = 0.8
+				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.01, 1.5)
 				trail.genere_trail = true
-		if index_anneau == 3:
-			%GestionnaireColonnes.avancement_vitesse = 6.6
+		else:
+			for trail in second_boost:
+				trail.trail_width_start = 0.8
+				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.01, 1.5)
+			for trail in first_boost:
+				trail.trail_width_start = 0.23
+				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.05, 1.5)
+				
 			
 	elif agent_met is AnneauBonus:
 		%Score.bonus_modificateur()

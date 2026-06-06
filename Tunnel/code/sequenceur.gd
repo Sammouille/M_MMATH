@@ -7,7 +7,8 @@ extends Node
 
 #@export var sequence: Sequence
 
-@export var after_image: AfterImage
+@export var after_image_haut: AfterImage
+@export var after_image_bas: AfterImage
 
 @export var starting_beats:Array[int]=[0]
 @export var ending_beats:Array[int]=[]
@@ -139,9 +140,12 @@ func instanciation(colonne: Node3D, mod_hauteur:= 0.0):
 	nv_inst.position.z = -13.0
 	nv_inst.position.y += mod_hauteur + 0.1
 	
-	if after_image:
+	if after_image_haut and mod_hauteur != 0.0:
 		for mesh in nv_inst.meshes:
-			after_image.meshes.append(mesh)
+			after_image_haut.meshes.append(mesh)
+	elif after_image_bas:
+		for mesh in nv_inst.meshes:
+			after_image_bas.meshes.append(mesh)
 
 func _on_musique_on_beat(beat: int) -> void:
 	for i in starting_beats:

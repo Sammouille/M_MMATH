@@ -22,10 +22,6 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 flowerwall_crt="*uid://cc1fomjf362h5"
 
-[display]
-
-window/size/mode=3
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/flowerwall_postprocess/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg")

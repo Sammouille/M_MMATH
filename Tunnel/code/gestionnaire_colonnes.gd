@@ -6,7 +6,11 @@ extends Node3D
 
 @export var index_player:= 6
 
-var avancement_vitesse:= 2.0
+@export var liste_vitesses: Array[float]
+
+var index_anneau:= 0
+
+@onready var avancement_vitesse:= liste_vitesses[0]
 
 signal deplacement_colonne(i_colonne: int)
 
@@ -43,3 +47,11 @@ func get_range_from_center(center: int, _range: int):
 			tracks_selected.append(colonnes[center+i+1])
 		tracks_selected.append(colonnes[center-1-i])
 	return tracks_selected
+
+func _on_huge_ring_passed():
+	index_anneau += 1
+	%Prompter.afficher_texte()
+	%Score._on_huge_ring_passed()
+	get_tree().create_tween().tween_property(self, "avancement_vitesse", liste_vitesses[index_anneau], 2.5)
+	get_tree().create_tween().tween_property(%Camera3D, "fov", %Camera3D.fov + 5.0, 0.5)
+	get_tree().create_tween().tween_property(%Camera3D, "position.z", %Camera3D.position.z - 0.2, 0.5)
