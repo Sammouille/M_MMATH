@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
 		fig_glide = scene_figure.instantiate()
 		fig_glide.hide()
 		$VBoxContainer.add_child(fig_glide)
-		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=25][shake rate=20.0 level=5 connected=1]glide"
+		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=25][shake rate=80.0 level=16 connected=1]glide"
 		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_glide
 		fig_glide.show()
 	elif %Player.i_glide > 44 and %Player.is_planing:
@@ -101,7 +101,7 @@ func _process(delta: float) -> void:
 	if modificateur > 1.0:
 		%Mod.show()
 		modificateur -= mod_decay * delta * modificateur
-		%Player.after_image.ghost_lifetime = minf(1.0, (modificateur -1.0)*0.3)
+		%Player.after_image.ghost_lifetime = minf(1.0, (modificateur -1.0)*0.1)
 		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=%d][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.1f" % [30+ modificateur * 4, minf(modificateur * 0.2, 1.0), modificateur]
 	elif %Player.after_image.ghost_lifetime != 0.0:
 		%Player.after_image.ghost_lifetime = 0.0
@@ -154,7 +154,7 @@ func grease():
 			fig_grease_combo = scene_figure.instantiate()
 			fig_grease_combo.hide()
 			$VBoxContainer.add_child(fig_grease_combo)
-			fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=25][shake rate=20.0 level=5 connected=1]grease combo"
+			fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=25][shake rate=80.0 level=16 connected=1]grease combo"
 			fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_grease
 			fig_grease_combo.show()
 		else:
@@ -182,3 +182,18 @@ func _on_grease_area_entered(_area: Area3D) -> void:
 		first_grease = false
 	else:
 		grease()
+
+func _fin(reussite:= false):
+	if reussite:
+		%ScoreFinal.text = "[center]Flight succeed !
+Score : %0*d" % [5,int(%Score.score)]
+	else:
+		%ScoreFinal.text = "[center]Game over !
+Score : %0*d" % [5,int(%Score.score)]
+	%EndMenu.show()
+	%EndMenu.restart_button.grab_focus()
+
+
+func _on_musique_on_beat(beat: int) -> void:
+	if beat == 312:
+		_fin(true)

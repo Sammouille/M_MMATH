@@ -156,11 +156,8 @@ func mort():
 	if %plane_mesh:
 		get_tree().create_tween().tween_property(self, "hauteur", -1.5, 0.4)
 		#%plane_mesh.queue_free()
-	get_tree().create_tween().tween_property(%GestionnaireColonnes, "avancement_vitesse", 0.0, 0.5)
-	
-	%ScoreFinal.text = "[center]Score : %0*d" % [5,int(%Score.score)]
-	%EndMenu.show()
-	%EndMenu.restart_button.grab_focus()
+	%Score._fin()
+	%GestionnaireColonnes._fin()
 
 func _on_area_entered(area: Area3D) -> void:
 	var agent_met = area.get_parent()
@@ -177,12 +174,12 @@ func _on_area_entered(area: Area3D) -> void:
 				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.05, 1.5)
 		elif index_anneau == 2:
 			for trail in second_boost:
-				trail.trail_width_start = 0.8
+				trail.trail_width_start = 0.08
 				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.01, 1.5)
 				trail.genere_trail = true
 		else:
 			for trail in second_boost:
-				trail.trail_width_start = 0.8
+				trail.trail_width_start = 0.08
 				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.01, 1.5)
 			for trail in first_boost:
 				trail.trail_width_start = 0.23

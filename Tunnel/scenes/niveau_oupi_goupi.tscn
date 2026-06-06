@@ -876,52 +876,61 @@ script = ExtResource("1_towaq")
 
 [node name="Son" type="Node" parent="." unique_id=476690527]
 
-[node name="Musique" type="AudioStreamPlayer" parent="Son" unique_id=349189595]
+[node name="Musique" type="AudioStreamPlayer" parent="Son" unique_id=349189595 groups=["musique"]]
 unique_name_in_owner = true
 stream = ExtResource("2_scwf0")
 volume_db = -8.0
+bus = &"musique"
 script = ExtResource("2_mmhs3")
 bpm = 163.0
 
 [node name="MusiqueEDITOR" type="AudioStreamPlayer" parent="Son" unique_id=1146033820]
 volume_db = -8.0
 autoplay = true
+bus = &"musique"
 
 [node name="Deplacement" type="AudioStreamPlayer" parent="Son" unique_id=1453653028]
 unique_name_in_owner = true
 stream = ExtResource("3_scwf0")
 volume_db = -10.0
 max_polyphony = 3
+bus = &"sfx"
 
 [node name="Saut" type="AudioStreamPlayer" parent="Son" unique_id=883554571]
 unique_name_in_owner = true
 stream = ExtResource("4_7p2io")
 volume_db = -8.0
+bus = &"sfx"
 
 [node name="Bonus" type="AudioStreamPlayer" parent="Son" unique_id=1498625953]
 unique_name_in_owner = true
 stream = ExtResource("5_pcpd0")
 volume_db = -8.0
+bus = &"sfx"
 
 [node name="Boost" type="AudioStreamPlayer" parent="Son" unique_id=900646860]
 unique_name_in_owner = true
 stream = ExtResource("6_r1ioa")
 volume_db = -8.0
+bus = &"sfx"
 
 [node name="Mort" type="AudioStreamPlayer" parent="Son" unique_id=1049314275]
 unique_name_in_owner = true
 stream = ExtResource("7_id8nj")
 volume_db = -6.0
+bus = &"sfx"
 
 [node name="SonGrease" type="AudioStreamPlayer" parent="Son" unique_id=1522820747]
 unique_name_in_owner = true
 stream = ExtResource("9_byb81")
 volume_db = -7.0
+bus = &"sfx"
 
 [node name="Sol" type="AudioStreamPlayer" parent="Son" unique_id=961934407]
 unique_name_in_owner = true
 stream = ExtResource("10_byb81")
 volume_db = -14.0
+bus = &"sfx"
 
 [node name="InputTel" type="Control" parent="." unique_id=768163489]
 z_index = 5
@@ -1056,6 +1065,7 @@ script = ExtResource("9_ko843")
 scene_figure = ExtResource("12_qsgfv")
 timer_grease = NodePath("TimerGrease")
 freq_glide = 0.55
+mod_decay = 0.07
 label = NodePath("Score")
 
 [node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
@@ -1120,7 +1130,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = 189.0
+offset_top = 118.0
 offset_bottom = -390.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1138,8 +1148,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = 263.0
-offset_bottom = -316.0
+offset_top = 386.0
+offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 8
@@ -1273,6 +1283,18 @@ after_image = NodePath("../AfterImage")
 unique_name_in_owner = true
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.014875174, 0)
 
+[node name="plane_mesh2" parent="Player" unique_id=1229543547 instance=ExtResource("16_7s03i")]
+transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.017863512, 0)
+
+[node name="plane_mesh3" parent="Player" unique_id=1483581810 instance=ExtResource("16_7s03i")]
+transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.01187253, 0)
+
+[node name="plane_mesh4" parent="Player" unique_id=474001434 instance=ExtResource("16_7s03i")]
+transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0.0033038259, -0.014875174, 0)
+
+[node name="plane_mesh5" parent="Player" unique_id=108730496 instance=ExtResource("16_7s03i")]
+transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, -0.0033069253, -0.014875174, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=8308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.006, 0.002)
 shape = SubResource("SphereShape3D_7nmlv")
@@ -1300,7 +1322,7 @@ transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0
 shape = SubResource("CapsuleShape3D_qsgfv")
 
 [node name="MeshGrease" type="MeshInstance3D" parent="Player" unique_id=903078955]
-transform = Transform3D(0.158, 0, 0, 0, 0.2, 0, 0, 0, 0.364, 0, 0, -0.00348261)
+transform = Transform3D(0.134, 0, 0, 0, 0.17, 0, 0, 0, 0.309, 0, 0, -0.00348261)
 mesh = SubResource("ArrayMesh_81cow")
 script = ExtResource("19_7nmlv")
 
@@ -1653,7 +1675,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([91, 99, 100, 101, 112, 116, 126, 127, 129, 132, 133, 147, 151, 152, 167])
+starting_beats = Array[int]([91, 99, 100, 101, 113, 116, 126, 127, 129, 132, 133, 147, 151, 152, 167])
 
 [node name="SequenceurEnnemiRefrain" type="Node" parent="." unique_id=1136119777 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("20_0mmpq")
@@ -1834,8 +1856,8 @@ starting_beats = Array[int]([278, 280, 282, 284])
 
 [node name="AfterImageEnnemis" type="Node3D" parent="." unique_id=416968996]
 script = ExtResource("11_j2mm2")
-frames_between_ghosts = 7
-ghost_lifetime = 0.4
+frames_between_ghosts = 10
+ghost_lifetime = 0.2
 gradient = SubResource("Gradient_7p2io")
 prog_couleur = 0.8
 
@@ -1843,8 +1865,8 @@ prog_couleur = 0.8
 
 [node name="AfterImageEnnemisHaut" type="Node3D" parent="." unique_id=655615077]
 script = ExtResource("11_j2mm2")
-frames_between_ghosts = 7
-ghost_lifetime = 0.4
+frames_between_ghosts = 10
+ghost_lifetime = 0.2
 gradient = SubResource("Gradient_pcpd0")
 prog_couleur = 0.8
 
@@ -1864,26 +1886,54 @@ gradient = SubResource("Gradient_j2mm2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageAnneaux" unique_id=1190748186]
 
-[node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467]
+[node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("20_0mmpq")
 scene_seq = ExtResource("24_srlbf")
 array_sequences = Array[Dictionary]([{
 29: 1205,
 41: 1011,
 47: 1205,
-54: 1002,
+54: PackedInt64Array(1002, 1008),
 75: PackedInt64Array(1000, 1011),
 98: 1004,
 100: 1009,
 106: 1203,
-132: PackedInt64Array(1200, 1211)
+110: 1011,
+117: 1202,
+121: 1010,
+132: PackedInt64Array(1200, 1211),
+146: PackedInt64Array(1000, 1006),
+150: PackedInt64Array(1009, 1003),
+159: PackedInt64Array(1008, 1002),
+167: PackedInt64Array(1005, 1200),
+177: 1011,
+182: PackedInt64Array(1003, 1007),
+189: 1205,
+195: PackedInt64Array(1009, 1003),
+198: 1208,
+210: 1003,
+220: 1007,
+224: 1010,
+233: 1002,
+238: 1007,
+243: 1009,
+253: 1203,
+260: 1207,
+271: 1202,
+280: 1202,
+283: PackedInt64Array(1203, 1209),
+289: PackedInt64Array(1201, 1207),
+295: PackedInt32Array(1207, 1209, 1201, 1203),
+298: PackedInt32Array(1204, 1206, 1200, 1210)
 }])
+after_image_haut = NodePath("../AfterImageAB")
+after_image_bas = NodePath("../AfterImageAB")
 starting_beats = Array[int]([1])
 
 [node name="AfterImageAB" type="Node3D" parent="." unique_id=2104395526]
 script = ExtResource("11_j2mm2")
 frames_between_ghosts = 15
-ghost_lifetime = 0.4
+ghost_lifetime = 0.3
 gradient = SubResource("Gradient_uilal")
 prog_couleur = 0.8
 
@@ -1894,6 +1944,9 @@ script = ExtResource("25_yjte1")
 scene_seq = ExtResource("26_t1mb2")
 bruit_generation = SubResource("FastNoiseLite_rartr")
 pas_gen = 131.2
+array_sequences = Array[Dictionary]([{
+301: 44
+}])
 
 [node name="EndMenu" type="Control" parent="." unique_id=1615717669 node_paths=PackedStringArray("restart_button")]
 unique_name_in_owner = true
@@ -1905,10 +1958,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -259.0
-offset_top = -118.0
-offset_right = 262.0
-offset_bottom = 101.0
+offset_left = -300.0
+offset_top = -166.0
+offset_right = 333.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("27_vc01e")
@@ -1933,7 +1986,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EndMenu/Panel/MarginContainer" unique_id=1612873220]
 layout_mode = 2
@@ -1955,6 +2008,7 @@ theme_override_fonts/font = ExtResource("10_ko843")
 text = "PLAY AGAIN"
 
 [connection signal="on_beat" from="Son/Musique" to="InputTel" method="_on_musique_on_beat"]
+[connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="AnimationPlayerTerrain" method="_on_musique_on_beat"]
 [connection signal="gui_input" from="InputTel/DepG" to="InputTel" method="_on_dep_g_gui_input"]

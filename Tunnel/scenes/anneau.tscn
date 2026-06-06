@@ -63,5 +63,6 @@ shape = SubResource("CylinderShape3D_oo0xd")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1902646943]
 stream = SubResource("AudioStreamRandomizer_iceca")
+bus = &"sfx"
 
 [connection signal="area_entered" from="Anneau" to="." method="_on_anneau_area_entered"]

@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://d2r12gdu2b5as"]
+
+[ext_resource type="Theme" uid="uid://dsyvp45p2rnsf" path="res://Tunnel/assets/tres/theme_inal.tres" id="1_7ofyp"]
+[ext_resource type="Script" uid="uid://b2qtn4y3b30we" path="res://Tunnel/code/Menu/MenuPause.gd" id="1_14yrs"]
+[ext_resource type="Shader" uid="uid://bynnsqctjmp6b" path="res://Tunnel/assets/shader/blur_menu.gdshader" id="1_ljj8i"]
+[ext_resource type="PackedScene" uid="uid://copy8pcc2op1r" path="res://Tunnel/scenes/autoloads/menu_options.tscn" id="2_w35fh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ansv"]
+shader = ExtResource("1_ljj8i")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_7hchu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCentral:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_twvvt"]
+resource_name = "blur_off"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.8, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCentral:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_52lgv"]
+resource_name = "blur_on"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCentral:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkp2s"]
+_data = {
+&"RESET": SubResource("Animation_7hchu"),
+&"blur_off": SubResource("Animation_twvvt"),
+&"blur_on": SubResource("Animation_52lgv")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1907352343]
+layer = 150
+
+[node name="MenuPause" type="Control" parent="." unique_id=1268243773]
+process_mode = 3
+top_level = true
+z_index = 444
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme = ExtResource("1_7ofyp")
+script = ExtResource("1_14yrs")
+scene_options = ExtResource("2_w35fh")
+
+[node name="ColorRect" type="ColorRect" parent="MenuPause" unique_id=1697859686]
+material = SubResource("ShaderMaterial_7ansv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuCentral" type="PanelContainer" parent="MenuPause" unique_id=1843056001]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 416.5
+offset_top = 102.0
+offset_right = -396.5
+offset_bottom = -338.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPause/MenuCentral" unique_id=765662256]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPause/MenuCentral/MarginContainer" unique_id=702367839]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Continuer" type="Button" parent="MenuPause/MenuCentral/MarginContainer/VBoxContainer" unique_id=463592636]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("1_7ofyp")
+text = "Continuer"
+
+[node name="Recommencer" type="Button" parent="MenuPause/MenuCentral/MarginContainer/VBoxContainer" unique_id=1598489175]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("1_7ofyp")
+text = "Recommencer"
+
+[node name="Options" type="Button" parent="MenuPause/MenuCentral/MarginContainer/VBoxContainer" unique_id=1916489383]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("1_7ofyp")
+text = "Options"
+
+[node name="Quitter" type="Button" parent="MenuPause/MenuCentral/MarginContainer/VBoxContainer" unique_id=1449898058]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("1_7ofyp")
+text = "Quitter"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuPause" unique_id=431820653]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_pkp2s")
+
+[connection signal="button_up" from="MenuPause/MenuCentral/MarginContainer/VBoxContainer/Continuer" to="MenuPause" method="_on_continuer_button_up"]
+[connection signal="button_up" from="MenuPause/MenuCentral/MarginContainer/VBoxContainer/Recommencer" to="MenuPause" method="_on_recommencer_button_up"]
+[connection signal="button_up" from="MenuPause/MenuCentral/MarginContainer/VBoxContainer/Options" to="MenuPause" method="_on_options_button_up"]
+[connection signal="button_up" from="MenuPause/MenuCentral/MarginContainer/VBoxContainer/Quitter" to="MenuPause" method="_on_quitter_button_up"]
