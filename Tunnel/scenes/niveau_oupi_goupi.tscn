@@ -943,6 +943,7 @@ grow_vertical = 2
 script = ExtResource("8_7s03i")
 
 [node name="DepG" type="Control" parent="InputTel" unique_id=1073943059]
+top_level = true
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -965,12 +966,13 @@ mouse_filter = 2
 theme_override_constants/line_separation = 15
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Tap here to move left
-Or press Q/A"
+text = "[center][font_size=25][outline_color=black][outline_size=15]Press D or left stick or left trigger to move left
+"
 scroll_active = false
 vertical_alignment = 1
 
 [node name="DepD" type="Control" parent="InputTel" unique_id=691586127]
+top_level = true
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -996,12 +998,13 @@ mouse_filter = 2
 theme_override_constants/line_separation = 15
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Tap here to move right
-Or press D"
+text = "[center][font_size=25][outline_color=black][outline_size=15]Press D or left stick or right trigger to move right
+"
 scroll_active = false
 vertical_alignment = 1
 
 [node name="Saut" type="Control" parent="InputTel" unique_id=657876836]
+top_level = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -1028,7 +1031,7 @@ mouse_filter = 2
 theme_override_constants/line_separation = 15
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]tap & Hold to glide"
+text = "[center][font_size=25][outline_color=black][outline_size=15]Hold to glide"
 scroll_active = false
 vertical_alignment = 1
 
@@ -1048,8 +1051,8 @@ mouse_filter = 2
 theme_override_constants/line_separation = 15
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Tap here to jump
-Or press Space"
+text = "[center][font_size=25][outline_color=black][outline_size=15]press space or A to jump
+"
 scroll_active = false
 vertical_alignment = 1
 

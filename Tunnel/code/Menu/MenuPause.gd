@@ -19,6 +19,7 @@ var inst_options
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 
 func ouvrir():
+	get_parent().layer = 150
 	actif = true
 	show()
 	if fait_pause :
@@ -52,6 +53,7 @@ func continuer():
 	
 	get_tree().get_first_node_in_group("musique").stream_paused = false
 	
+	get_parent().layer = 1
 	await anim_player.animation_finished
 	get_tree().paused = false
 	hide()
