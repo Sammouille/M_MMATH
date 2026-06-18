@@ -1352,7 +1352,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3500293, 0)
 script = ExtResource("19_va7wv")
 colonnes = [NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7/Repere7"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Repere8"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Repere9"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Repere10"), NodePath("Matrice/Matrice12/Matrice11/Repere11"), NodePath("Matrice/Matrice12/Repere12"), NodePath("Matrice/Repere1"), NodePath("Matrice/Matrice2/Repere2"), NodePath("Matrice/Matrice2/Matrice3/Repere3"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Repere4"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Repere5"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6/Repere6")]
 tubique = false
-liste_vitesses = Array[float]([2.2, 4.4, 5.7, 6.6, 7.7])
+liste_vitesses = Array[float]([4.4, 5.7, 6.6, 7.7, 8.6])
 
 [node name="Matrice" type="Marker3D" parent="GestionnaireColonnes" unique_id=110031620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
