@@ -13,6 +13,7 @@ extends Node
 @export var starting_beats:Array[int]=[0]
 @export var ending_beats:Array[int]=[]
 
+@onready var gest_col= get_tree().get_first_node_in_group("GestionnaireCol")
 
 var playing:= false
 
@@ -163,8 +164,8 @@ func _on_musique_on_beat(beat: int) -> void:
 					
 					if matrice.get(beat) is int:
 						valeurToCreation(matrice.get(beat))
-						if get_tree().get_first_node_in_group("GestionnaireCol").avancement_vitesse >= 4.0:
-							for i in range(int(get_tree().get_first_node_in_group("GestionnaireCol").avancement_vitesse / 2) - 1):
+						if gest_col.avancement_vitesse >= gest_col.liste_vitesses[0] * 2.0:
+							for i in range(int(gest_col.avancement_vitesse * gest_col.inv_vitesse) - 1):
 								if matrice.get(beat) >= 0 and matrice.get(beat) < 200:
 									if matrice.get(beat+i+1) is int:
 										matrice.set(beat+i+1, [matrice.get(beat+i+1), matrice.get(beat)+ 1000])
@@ -176,8 +177,8 @@ func _on_musique_on_beat(beat: int) -> void:
 					elif matrice.get(beat) is Array  or matrice.get(beat) is PackedInt64Array:
 						for called in matrice.get(beat):
 							valeurToCreation(called)
-							if get_tree().get_first_node_in_group("GestionnaireCol").avancement_vitesse >= 4.0:
-								for i in range(int(get_tree().get_first_node_in_group("GestionnaireCol").avancement_vitesse / 2) - 1):
+							if gest_col.avancement_vitesse >= gest_col.liste_vitesses[0] * 2.0:
+								for i in range(int(gest_col.avancement_vitesse * gest_col.inv_vitesse) - 1):
 									if called >= 0 and called < 200:
 										if matrice.get(beat+i+1) is int:
 											matrice.set(beat+i+1, [matrice.get(beat+i+1), called+ 1000])

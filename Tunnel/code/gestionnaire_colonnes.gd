@@ -10,6 +10,7 @@ extends Node3D
 
 var index_anneau:= 0
 
+@onready var inv_vitesse:= 1.0/liste_vitesses[0]
 @onready var avancement_vitesse:= liste_vitesses[0]
 
 signal deplacement_colonne(i_colonne: int)
