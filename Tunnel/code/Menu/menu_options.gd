@@ -79,6 +79,7 @@ func _on_mode_affichage_option_item_selected(index: int) -> void:
 
 func _on_max_fps_slider_value_changed(value: float) -> void:
 	Engine.max_fps = int(value)
+	%MaxFPSTitre.text = "[center]Max FPS (%d)" % int(value)
 
 
 func _on_retour_button_button_up() -> void:

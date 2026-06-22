@@ -4,4 +4,4 @@
 resource_name = "cailloux_texture"
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0.5568628, 0.27450982, 0, 1)
+albedo_color = Color(0.22852892, 0.2292988, 0.46734685, 1)

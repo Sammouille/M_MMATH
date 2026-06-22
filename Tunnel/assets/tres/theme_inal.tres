@@ -18,7 +18,7 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.8704753, 0.78963584, 1, 1)
+border_color = Color(1, 1, 1, 1)
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
@@ -84,7 +84,7 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.86352473, 0.7926941, 1, 1)
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_176qc"]
 bg_color = Color(0.1345858, 0.00020092182, 0.23869807, 1)
@@ -106,6 +106,14 @@ border_color = Color(0.8957755, 0.7781063, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_25di6"]
 
+[sub_resource type="ImageTexture" id="ImageTexture_q05mr"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_yrcda"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_5tyks"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_gv5y4"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soqcw"]
 bg_color = Color(0.43678874, 0.0020715476, 0.71989614, 1)
 border_width_left = 5
@@ -120,7 +128,7 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0.86536574, 0.79205704, 0.9991415, 1)
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srm7n"]
 content_margin_top = 24.0
@@ -185,7 +193,7 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.871803, 0.7890464, 1, 1)
+border_color = Color(1, 1, 1, 1)
 expand_margin_left = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vxxi"]
@@ -241,10 +249,10 @@ HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_156g8")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_176qc")
 HScrollBar/styles/scroll = SubResource("StyleBoxFlat_s1b5u")
 HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_25di6")
-HSlider/icons/grabber = null
-HSlider/icons/grabber_disabled = null
-HSlider/icons/grabber_highlight = null
-HSlider/icons/tick = null
+HSlider/icons/grabber = SubResource("ImageTexture_q05mr")
+HSlider/icons/grabber_disabled = SubResource("ImageTexture_yrcda")
+HSlider/icons/grabber_highlight = SubResource("ImageTexture_5tyks")
+HSlider/icons/tick = SubResource("ImageTexture_gv5y4")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_soqcw")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_0u8hp")
 HSlider/styles/slider = SubResource("StyleBoxFlat_srm7n")

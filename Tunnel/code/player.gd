@@ -5,6 +5,8 @@ var in_air:= false
 var is_jumping:= false
 var is_planing:= false
 
+var invincible:= false
+
 var aimed_repere: Node3D
 
 @export var vitesse_lat_base:= 24.0
@@ -13,7 +15,7 @@ var aimed_repere: Node3D
 
 @onready var vitesse_lat:= vitesse_lat_base
 
-var hauteur:= 0.0
+@export var hauteur:= 0.0
 @export var gravite:= 0.2
 @export var ascension:= 0.3
 
@@ -91,6 +93,9 @@ func _physics_process(delta: float) -> void:
 				for trail in air_trails:
 					trail.genere_trail = true
 					trail.update_trail(delta, !is_planing)
+		elif Input.is_action_just_released("jump") and is_jumping:
+			is_jumping = false
+			in_air = true
 			
 				
 		else:
@@ -152,17 +157,34 @@ func _physics_process(delta: float) -> void:
 
 
 func mort():
+	%AnimationPlayerInvul.play("hit_death")
 	%Mort.play()
-	if %plane_mesh:
-		get_tree().create_tween().tween_property(self, "hauteur", -1.5, 0.4)
-		#%plane_mesh.queue_free()
 	%Score._fin()
 	%GestionnaireColonnes._fin()
 
 func _on_area_entered(area: Area3D) -> void:
 	var agent_met = area.get_parent()
-	if agent_met is Obstacle:
-		mort()
+	if agent_met is Obstacle and !invincible:
+		%Score.actif = false
+		%Score.update_score()
+		if %Score.modificateur >= 2:
+			invincible = true
+			%Score.modificateur = 1.0
+			%Score.index_bonus = 0
+			%BoostLoss.play()
+			%AnimationPlayerInvul.play("hit_survived")
+			%Musique.pitch_scale = 0.5
+			%GestionnaireColonnes.avancement_vitesse *= 0.5
+			%Camera3D.fov -= 5.0 
+			get_tree().create_tween().tween_property(%Musique, "pitch_scale", 1.0, 0.5)
+			get_tree().create_tween().tween_property(%GestionnaireColonnes, "avancement_vitesse", %GestionnaireColonnes.liste_vitesses[%GestionnaireColonnes.index_anneau], 0.5)
+			get_tree().create_tween().tween_property(%Camera3D, "fov", %Camera3D.fov + 5.0, 0.5)
+			await %AnimationPlayerInvul.animation_finished
+			%Score.actif = true
+			invincible = false
+			
+		elif !invincible:
+			mort()
 	elif agent_met is Anneau:
 		%GestionnaireColonnes._on_huge_ring_passed()
 		index_anneau +=1
@@ -186,5 +208,5 @@ func _on_area_entered(area: Area3D) -> void:
 				get_tree().create_tween().tween_property(trail, "trail_width_start", 0.05, 1.5)
 				
 			
-	elif agent_met is AnneauBonus:
+	elif agent_met is AnneauBonus and !invincible:
 		%Score.bonus_modificateur()

@@ -100,6 +100,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1907352343]
+layer = -5
 
 [node name="MenuPause" type="Control" parent="." unique_id=1268243773]
 process_mode = 3
@@ -129,13 +130,14 @@ grow_vertical = 2
 [node name="MenuCentral" type="PanelContainer" parent="MenuPause" unique_id=1843056001]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 416.5
-offset_top = 102.0
-offset_right = -396.5
-offset_bottom = -338.0
+offset_left = -169.5
+offset_top = 117.0
+offset_right = 169.5
+offset_bottom = -190.0
 grow_horizontal = 2
 grow_vertical = 2
 

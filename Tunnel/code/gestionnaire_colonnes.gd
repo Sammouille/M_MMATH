@@ -50,6 +50,8 @@ func get_range_from_center(center: int, _range: int):
 	return tracks_selected
 
 func _on_huge_ring_passed():
+	%Sam.stream = %Sam.pistes[index_anneau]
+	%Sam.play()
 	index_anneau += 1
 	%Prompter.afficher_texte()
 	%Score._on_huge_ring_passed()

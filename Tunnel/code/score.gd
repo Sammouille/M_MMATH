@@ -2,6 +2,8 @@ extends Control
 
 var score:= 0.0
 
+var actif:= true
+
 var last_score:= 0
 
 @export var scene_figure: PackedScene
@@ -34,8 +36,12 @@ func _ready() -> void:
 	%Player.touche_sol.connect(end_glide)
 	%Grease.area_entered.connect(_on_grease_area_entered)
 
+func add_score(_score: int):
+	if actif:
+		score += _score
+
 func _on_huge_ring_passed():
-	var score_ring:= 444 * modificateur
+	var score_ring:= 200 * modificateur
 	
 	var fig_ring = scene_figure.instantiate()
 	fig_ring.hide()
@@ -44,7 +50,7 @@ func _on_huge_ring_passed():
 	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]huge_ring ring"
 	fig_ring.show()
 	fig_ring.fin()
-	score += score_ring
+	add_score(score_ring)
 	update_score()
 
 func bonus_modificateur():
@@ -63,7 +69,7 @@ func bonus_modificateur():
 	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]bonus ring"
 	fig_ring.show()
 	fig_ring.fin()
-	score += score_ring
+	add_score(score_ring)
 	update_score()
 
 func end_glide():
@@ -75,7 +81,7 @@ func end_glide():
 		fig_glide.fin()
 		fig_glide = null
 	if score_glide:
-		score += score_glide
+		add_score(score_glide)
 		score_glide = 0
 	update_score()
 
@@ -115,16 +121,18 @@ func _process(delta: float) -> void:
 	last_score = int(score)
 
 func update_score():
-	label.text = "[center][outline_color=black][outline_size=10][font_size=40]Score"
-	#if %Player.in_air:
-		#label.text +=" x %.1f
-#%0*d" % [0,5,int(score)]
-	#if modificateur != 1.0:
-		#label.text +="[rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3] x %.1f
-#%0*d" % [modificateur,5,int(score)]
-	#else:
-	label.text +="
-%0*d" % [5,int(score)]
+	if modificateur > 2.0:
+		%MeshShield.shield_actif = true
+	else:
+		%MeshShield.shield_actif = false
+	if actif:
+		label.text = "[center][outline_color=black][outline_size=10][font_size=40]Score"
+		label.text +="
+	%0*d" % [5,int(score)]
+	else:
+		label.text = "[center][outline_color=black][outline_size=10][font_size=40][color=grey]Score"
+		label.text +="
+	%0*d" % [5,int(score)]
 		
 
 func grease():
@@ -141,7 +149,7 @@ func grease():
 	fig_grease.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]grease"
 	fig_grease.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" % int(2.0 * modificateur)
 	fig_grease.show()
-	score += 2.0 * modificateur
+	add_score(2.0 * modificateur)
 	fig_grease.fin()
 	update_score()
 	
@@ -172,7 +180,7 @@ func _on_timer_grease_timeout() -> void:
 		fig_grease_combo.fin()
 		fig_grease_combo = null
 	if score_grease:
-		score += score_grease
+		add_score(score_grease)
 		score_grease = 0
 	update_score()
 

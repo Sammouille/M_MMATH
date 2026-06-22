@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://br4ti1ih3pyd5" path="res://Tunnel/assets/sons/boost.ogg" id="6_r1ioa"]
 [ext_resource type="AudioStream" uid="uid://c5puiirpxvywp" path="res://Tunnel/assets/sons/mort.ogg" id="7_id8nj"]
 [ext_resource type="Script" uid="uid://cpm6w3tanpljx" path="res://Tunnel/code/input_tel.gd" id="8_7s03i"]
+[ext_resource type="AudioStream" uid="uid://r10qg7qawb3t" path="res://Tunnel/assets/sons/boost_loss2.ogg" id="8_srlbf"]
 [ext_resource type="AudioStream" uid="uid://dmxrbx3bhcmjt" path="res://Tunnel/assets/sons/grease.ogg" id="9_byb81"]
 [ext_resource type="Script" uid="uid://u8iyeoprv647" path="res://Tunnel/code/score.gd" id="9_ko843"]
 [ext_resource type="AudioStream" uid="uid://cvtrg2hnu88g1" path="res://Tunnel/assets/sons/sol2.ogg" id="10_byb81"]
@@ -16,10 +17,15 @@
 [ext_resource type="Script" uid="uid://cnofg16uqoy2h" path="res://Tunnel/code/prompter.gd" id="10_orb6k"]
 [ext_resource type="Script" uid="uid://dle684xookt2r" path="res://Tunnel/code/Afterimage.gd" id="11_j2mm2"]
 [ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="11_scwf0"]
+[ext_resource type="AudioStream" uid="uid://kpsomxegouj0" path="res://Tunnel/assets/sons/sam/OG1.wav" id="12_c270b"]
 [ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="12_qsgfv"]
 [ext_resource type="Script" uid="uid://bvi567a755504" path="res://Tunnel/code/TunnelTrail.gd" id="12_ugnw2"]
 [ext_resource type="Script" uid="uid://cdu5uu5sciyn7" path="res://Tunnel/code/player.gd" id="13_qsgfv"]
+[ext_resource type="AudioStream" uid="uid://bnhuu81fphfn2" path="res://Tunnel/assets/sons/sam/OG2.wav" id="13_srlbf"]
+[ext_resource type="AudioStream" uid="uid://hujkgxebn1a0" path="res://Tunnel/assets/sons/sam/CG2.wav" id="14_yjte1"]
+[ext_resource type="AudioStream" uid="uid://b8ebwathorh0w" path="res://Tunnel/assets/sons/sam/CG1.wav" id="15_t1mb2"]
 [ext_resource type="PackedScene" uid="uid://vjtqrhyn2bil" path="res://Tunnel/scenes/plane_mesh.tscn" id="16_7s03i"]
+[ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="17_va7wv"]
 [ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="18_byb81"]
 [ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="19_7nmlv"]
 [ext_resource type="AnimationLibrary" uid="uid://dicrhldyu67m3" path="res://Tunnel/anims/robot_pikmin/topologies.res" id="19_orb6k"]
@@ -39,6 +45,7 @@
 [ext_resource type="Script" uid="uid://biuucr54np1o4" path="res://Tunnel/code/generateur_décor.gd" id="25_yjte1"]
 [ext_resource type="PackedScene" uid="uid://cvtobefov1fcv" path="res://Tunnel/scenes/ile_decor.tscn" id="26_t1mb2"]
 [ext_resource type="Theme" uid="uid://dsyvp45p2rnsf" path="res://Tunnel/assets/tres/theme_inal.tres" id="27_vc01e"]
+[ext_resource type="Script" uid="uid://d3kulgi61vx7c" path="res://Tunnel/code/mesh_shield.gd" id="27_yjte1"]
 [ext_resource type="Script" uid="uid://3qbn3th850yr" path="res://Tunnel/code/end_menu.gd" id="28_54hf6"]
 [ext_resource type="PackedScene" uid="uid://dhc26w7wg12v8" path="res://Tunnel/scenes/ile_plate_petite.tscn" id="28_j2mm2"]
 [ext_resource type="PackedScene" uid="uid://8wat5l281imw" path="res://Tunnel/scenes/ile_plate.tscn" id="28_orb6k"]
@@ -95,6 +102,20 @@ cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.51427925, 0.36746824, 0.75897545, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjte1"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(0.6784314, 0.4117647, 1, 0.8862745)
+
+[sub_resource type="SphereMesh" id="SphereMesh_t1mb2"]
+material = SubResource("StandardMaterial3D_yjte1")
+radius = 0.44
+height = 1.3
+radial_segments = 16
+rings = 8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7nmlv"]
 radius = 0.19565694
@@ -398,6 +419,336 @@ _data = {
 &"dash_air_g": SubResource("Animation_81cow"),
 &"dash_sol_d": SubResource("Animation_nfqlf"),
 &"dash_sol_g": SubResource("Animation_va7wv")
+}
+
+[sub_resource type="Animation" id="Animation_yjte1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%plane_mesh:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plane_mesh2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../plane_mesh3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../plane_mesh4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../plane_mesh5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%Grease/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("..:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("..:hauteur")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_srlbf"]
+resource_name = "hit_death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Grease/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -7.749262)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%plane_mesh:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../plane_mesh2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../plane_mesh3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../plane_mesh4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../plane_mesh5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("..:hauteur")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.0]
+}
+
+[sub_resource type="Animation" id="Animation_t1mb2"]
+resource_name = "hit_survived"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%plane_mesh:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plane_mesh2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../plane_mesh3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../plane_mesh4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../plane_mesh5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vc01e"]
+_data = {
+&"RESET": SubResource("Animation_yjte1"),
+&"hit_death": SubResource("Animation_srlbf"),
+&"hit_survived": SubResource("Animation_t1mb2")
 }
 
 [sub_resource type="Animation" id="Animation_j2mm2"]
@@ -866,8 +1217,8 @@ offsets = PackedFloat32Array(0, 0.49830508, 1)
 colors = PackedColorArray(1, 0.8980392, 0.68235296, 1, 0.9999998, 0.46344483, 0.04093966, 1, 0.9999996, 0.8966772, 0.6821591, 1)
 
 [sub_resource type="Gradient" id="Gradient_j2mm2"]
-offsets = PackedFloat32Array(0, 0.22330096, 0.48058254, 0.78640777, 1)
-colors = PackedColorArray(0.73333335, 0.28627452, 0.32156864, 1, 0.94509804, 0.4509804, 0, 1, 0.28406465, 0.6257453, 0.30224562, 1, 0.6063057, 0.32114163, 1, 1, 0.73333335, 0.28627452, 0.32156864, 1)
+offsets = PackedFloat32Array(0, 0.51525426, 1)
+colors = PackedColorArray(0.73333335, 0.28627452, 0.32156864, 0.39215687, 0.477399, 0.67643356, 0.40462938, 0.39215687, 0.73333335, 0.28627452, 0.32156864, 0.39215687)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rartr"]
 
@@ -914,6 +1265,11 @@ stream = ExtResource("6_r1ioa")
 volume_db = -8.0
 bus = &"sfx"
 
+[node name="BoostLoss" type="AudioStreamPlayer" parent="Son" unique_id=60997317]
+unique_name_in_owner = true
+stream = ExtResource("8_srlbf")
+bus = &"sfx"
+
 [node name="Mort" type="AudioStreamPlayer" parent="Son" unique_id=1049314275]
 unique_name_in_owner = true
 stream = ExtResource("7_id8nj")
@@ -931,6 +1287,156 @@ unique_name_in_owner = true
 stream = ExtResource("10_byb81")
 volume_db = -14.0
 bus = &"sfx"
+
+[node name="Sam" type="AudioStreamPlayer" parent="Son" unique_id=553955658]
+unique_name_in_owner = true
+volume_db = -4.4
+bus = &"voices"
+script = ExtResource("17_va7wv")
+pistes = Array[AudioStream]([ExtResource("12_c270b"), ExtResource("13_srlbf"), ExtResource("15_t1mb2"), ExtResource("14_yjte1")])
+
+[node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 526.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_ko843")
+scene_figure = ExtResource("12_qsgfv")
+timer_grease = NodePath("TimerGrease")
+freq_glide = 0.55
+mod_decay = 0.07
+label = NodePath("Score")
+
+[node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 77.0
+offset_bottom = 217.0
+grow_horizontal = 2
+theme_override_constants/line_separation = 20
+theme_override_fonts/normal_font = ExtResource("10_ko843")
+bbcode_enabled = true
+text = "[center][outline_color=black][outline_size=10][font_size=40]Score
+00000
+"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Mod" type="RichTextLabel" parent="Score" unique_id=378869538]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 195.0
+offset_bottom = 267.0
+grow_horizontal = 2
+theme_override_constants/line_separation = 20
+theme_override_fonts/normal_font = ExtResource("10_ko843")
+bbcode_enabled = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Score" unique_id=1856764370]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 273.0
+offset_bottom = 641.0
+grow_horizontal = 2
+
+[node name="TimerGrease" type="Timer" parent="Score" unique_id=1120272441]
+wait_time = 2.4
+
+[node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label", "label_line")]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("11_scwf0")
+label = NodePath("RichTextLabel")
+label_line = NodePath("RichTextLabel2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BeatCount" unique_id=1251777707]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 118.0
+offset_bottom = -390.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("10_ko843")
+bbcode_enabled = true
+text = "[center][outline_color=black][outline_size=10]Beat
+0
+"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BeatCount" unique_id=930909872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 386.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("10_ko843")
+bbcode_enabled = true
+text = "[center][outline_color=black][outline_size=10]Line
+0
+"
+scroll_active = false
+
+[node name="Prompter" type="Control" parent="." unique_id=648602573 node_paths=PackedStringArray("label")]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -366.0
+offset_top = 71.0
+offset_right = 367.0
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("10_orb6k")
+label = NodePath("RichTextLabel")
+lines = Array[String](["Dad, Mom...", "Where you are you ?", "Chased by the machines...", "I'll be better off with the piquemins!"])
+formating = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1916484154]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 30
+theme_override_fonts/normal_font = ExtResource("10_ko843")
+bbcode_enabled = true
+text = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]I FLY WITH NO DIRECTION, SEEKING THE ENDLESS HORIZON"
+scroll_active = false
+vertical_alignment = 1
 
 [node name="InputTel" type="Control" parent="." unique_id=768163489]
 z_index = 5
@@ -1056,149 +1562,6 @@ text = "[center][font_size=25][outline_color=black][outline_size=15]press space 
 scroll_active = false
 vertical_alignment = 1
 
-[node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 526.0
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("9_ko843")
-scene_figure = ExtResource("12_qsgfv")
-timer_grease = NodePath("TimerGrease")
-freq_glide = 0.55
-mod_decay = 0.07
-label = NodePath("Score")
-
-[node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 77.0
-offset_bottom = 217.0
-grow_horizontal = 2
-theme_override_constants/line_separation = 20
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10][font_size=40]Score
-00000
-"
-scroll_active = false
-vertical_alignment = 1
-
-[node name="Mod" type="RichTextLabel" parent="Score" unique_id=378869538]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 195.0
-offset_bottom = 267.0
-grow_horizontal = 2
-theme_override_constants/line_separation = 20
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-scroll_active = false
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Score" unique_id=1856764370]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 273.0
-offset_bottom = 641.0
-grow_horizontal = 2
-
-[node name="TimerGrease" type="Timer" parent="Score" unique_id=1120272441]
-wait_time = 2.4
-
-[node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label", "label_line")]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -213.0
-grow_horizontal = 0
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("11_scwf0")
-label = NodePath("RichTextLabel")
-label_line = NodePath("RichTextLabel2")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BeatCount" unique_id=1251777707]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 118.0
-offset_bottom = -390.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/line_separation = 8
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10]Beat
-0
-"
-scroll_active = false
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BeatCount" unique_id=930909872]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 386.0
-offset_bottom = -132.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/line_separation = 8
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10]Line
-0
-"
-scroll_active = false
-
-[node name="Prompter" type="Control" parent="." unique_id=648602573 node_paths=PackedStringArray("label")]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -366.0
-offset_top = 71.0
-offset_right = 367.0
-offset_bottom = -250.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("10_orb6k")
-label = NodePath("RichTextLabel")
-lines = Array[String](["Papa", "maman", "Where you are you ?", "Chased by the machines"])
-formating = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1916484154]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -34.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/line_separation = 30
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]I FLY WITH NO DIRECTION, SEEKING THE ENDLESS HORIZON"
-scroll_active = false
-vertical_alignment = 1
-
 [node name="AfterImage" type="Node3D" parent="." unique_id=1683556760 node_paths=PackedStringArray("meshes")]
 script = ExtResource("11_j2mm2")
 frames_between_ghosts = 6
@@ -1282,6 +1645,12 @@ first_boost = [NodePath("../boite_trails/trail_boost")]
 second_boost = [NodePath("../boite_trails/trail_boost_l"), NodePath("../boite_trails/trail_boost_r")]
 after_image = NodePath("../AfterImage")
 
+[node name="MeshShield" type="MeshInstance3D" parent="Player" unique_id=1851644305]
+unique_name_in_owner = true
+transform = Transform3D(2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, 0, 1, 0, 0.069271564, -0.0319452)
+mesh = SubResource("SphereMesh_t1mb2")
+script = ExtResource("27_yjte1")
+
 [node name="plane_mesh" parent="Player" unique_id=1691899356 instance=ExtResource("16_7s03i")]
 unique_name_in_owner = true
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.014875174, 0)
@@ -1332,6 +1701,11 @@ script = ExtResource("19_7nmlv")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=350355078]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_0mmpq")
+
+[node name="AnimationPlayerInvul" type="AnimationPlayer" parent="Player" unique_id=70778939]
+unique_name_in_owner = true
+root_node = NodePath("../MeshGrease")
+libraries/ = SubResource("AnimationLibrary_vc01e")
 
 [node name="FollowCam" type="Node3D" parent="." unique_id=2058510983 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
@@ -1883,8 +2257,7 @@ after_image = NodePath("../AfterImageAnneaux")
 
 [node name="AfterImageAnneaux" type="Node3D" parent="." unique_id=2061930232]
 script = ExtResource("11_j2mm2")
-frames_between_ghosts = 15
-ghost_lifetime = 6.0
+frames_between_ghosts = 6
 gradient = SubResource("Gradient_j2mm2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageAnneaux" unique_id=1190748186]
@@ -2010,14 +2383,14 @@ theme = ExtResource("27_vc01e")
 theme_override_fonts/font = ExtResource("10_ko843")
 text = "PLAY AGAIN"
 
-[connection signal="on_beat" from="Son/Musique" to="InputTel" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
+[connection signal="on_beat" from="Son/Musique" to="InputTel" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="AnimationPlayerTerrain" method="_on_musique_on_beat"]
+[connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="gui_input" from="InputTel/DepG" to="InputTel" method="_on_dep_g_gui_input"]
 [connection signal="gui_input" from="InputTel/DepD" to="InputTel" method="_on_dep_d_gui_input"]
 [connection signal="gui_input" from="InputTel/Saut" to="InputTel" method="_on_saut_gui_input"]
-[connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="area_entered" from="Player/Grease" to="Player/MeshGrease" method="_on_grease_area_entered"]
 [connection signal="deplacement_colonne" from="GestionnaireColonnes" to="BeatCount" method="_on_gestionnaire_colonnes_deplacement_colonne"]

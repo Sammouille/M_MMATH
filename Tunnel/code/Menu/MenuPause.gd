@@ -51,9 +51,10 @@ func continuer():
 	
 	anim_player.play("blur_off")
 	
-	get_tree().get_first_node_in_group("musique").stream_paused = false
+	if get_tree().get_first_node_in_group("musique"):
+		get_tree().get_first_node_in_group("musique").stream_paused = false
 	
-	get_parent().layer = 1
+	get_parent().layer = -5
 	await anim_player.animation_finished
 	get_tree().paused = false
 	hide()

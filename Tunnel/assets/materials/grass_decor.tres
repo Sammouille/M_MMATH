@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cyg3fcncvxoia"]
+
+[resource]
+resource_name = "grass_texture"
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.7741538, 0.48589092, 0.9090269, 1)

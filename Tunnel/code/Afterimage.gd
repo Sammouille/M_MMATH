@@ -73,6 +73,7 @@ func _spawn_ghost(mesh: MeshInstance3D):
 	mat.shader = ghost_shader
 	var color: Color = gradient.sample(index_couleur)
 	mat.set_shader_parameter("ghost_color", color)
+	mat.set_shader_parameter("ghost_alpha", color.a)
 	ghost.material_override = mat
 
 	add_child(ghost)
