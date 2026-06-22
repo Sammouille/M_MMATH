@@ -557,7 +557,7 @@ text = "[center][outline_color=black][outline_size=10]Score
 "
 scroll_active = false
 
-[node name="Prompter" type="Control" parent="." unique_id=648602573 node_paths=PackedStringArray("label", "extra_label")]
+[node name="Prompter" type="Control" parent="." unique_id=648602573 node_paths=PackedStringArray("label")]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 13
@@ -573,7 +573,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("11_1suf5")
 label = NodePath("RichTextLabel")
-extra_label = NodePath("RichTextLabel2")
+lines = Array[String](["I FLY WITH NO DIRECTION, SEEKING THE ENDLESS HORIZON", "THE PLANE IS MY ONLY FRIEND, I KNOW BETTER THAN MYSELF", "THERE IS NOTHING BEYOND THE SKY THAT WE ARE NOT RECLAIMING", "BE PROUD, BE FREE, SEEK THE WORLD", "BORDERS MEAN NOTHING, NO NATION GUIDES MY WINGS
+"])
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1916484154]
 visible = false
@@ -605,12 +606,11 @@ theme_override_fonts/normal_font = SubResource("FontFile_hs5aq")
 bbcode_enabled = true
 text = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3]MORE COMING SOON ..."
 
-[node name="AfterImage" type="Node3D" parent="." unique_id=1683556760 node_paths=PackedStringArray("mesh")]
+[node name="AfterImage" type="Node3D" parent="." unique_id=1683556760]
 script = ExtResource("12_logml")
 ghost_lifetime = 0.0
 gradient = SubResource("Gradient_uilal")
 prog_couleur = 0.8
-mesh = NodePath("../Player/plane_mesh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImage" unique_id=1413591502]
 
@@ -936,9 +936,6 @@ array_sequences = Array[Dictionary]([{
 [node name="SequenceurAnneau" type="Node3D" parent="." unique_id=64068312]
 script = ExtResource("23_ft8sq")
 scene_seq = ExtResource("24_cvlvk")
-array_sequences = Array[Dictionary]([{
-60: 5
-}])
 
 [node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467]
 script = ExtResource("21_rywyo")

@@ -55,8 +55,7 @@ func _on_huge_ring_passed():
 
 func bonus_modificateur():
 	%Bonus.play()
-	%Player.after_image.ghost_lifetime += 0.3
-	modificateur = float(int(roundf(modificateur + 1.4)))
+	modificateur = float(roundi(modificateur + 1.4))
 	%Bonus.pitch_scale = 1.0 + index_bonus * 0.1
 	index_bonus += 1
 	

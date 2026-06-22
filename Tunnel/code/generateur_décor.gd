@@ -3,6 +3,8 @@ extends Node
 @export var scene_seq: PackedScene
 @export var bruit_generation: Noise
 
+@export var taille_colonnes:= 12
+
 var index_gen:= 0.0
 @export var pas_gen:= 100.0
 
@@ -29,7 +31,7 @@ func _on_musique_on_beat(beat: int) -> void:
 		index_beat = 0
 		index_gen += pas_gen
 		var hauteur:= -0.6 - (bruit_generation.get_noise_1d(index_gen) + 1.0) * 5.0
-		var track:= randi_range(0, 11)
+		var track:= randi_range(0, taille_colonnes - 1)
 		var _scale:= Vector3(0.05,0.05,0.05) * (bruit_generation.get_noise_3d(0.0,0.0, index_gen) + 1.0) * 5.0
 		
 		instanciation(%GestionnaireColonnes.colonnes[track], hauteur, _scale)

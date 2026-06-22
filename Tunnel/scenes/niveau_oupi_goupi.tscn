@@ -28,16 +28,16 @@
 [ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="17_va7wv"]
 [ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="18_byb81"]
 [ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="19_7nmlv"]
-[ext_resource type="AnimationLibrary" uid="uid://dicrhldyu67m3" path="res://Tunnel/anims/robot_pikmin/topologies.res" id="19_orb6k"]
+[ext_resource type="AnimationLibrary" uid="uid://dicrhldyu67m3" path="res://Tunnel/anims/robot_pikmin/12/topologies.res" id="19_orb6k"]
 [ext_resource type="Script" uid="uid://bonnrjd6xoc78" path="res://Tunnel/code/gestionnaire_colonnes.gd" id="19_va7wv"]
 [ext_resource type="Script" uid="uid://banxlhhyaaumw" path="res://Tunnel/code/sequenceur.gd" id="20_0mmpq"]
 [ext_resource type="Animation" uid="uid://f6p08jar87k" path="res://Tunnel/anims/robot_pikmin/RESET.res" id="20_j2mm2"]
 [ext_resource type="Script" uid="uid://lrhqgcttijcw" path="res://Tunnel/scenes/animation_player_oupi_goupi.gd" id="21_7p2io"]
 [ext_resource type="PackedScene" uid="uid://3jmp12d808vw" path="res://Tunnel/scenes/ile.tscn" id="21_81cow"]
-[ext_resource type="Animation" uid="uid://bceepxicjdhra" path="res://Tunnel/anims/robot_pikmin/carre_to_trapeze.res" id="21_ugnw2"]
+[ext_resource type="Animation" uid="uid://bceepxicjdhra" path="res://Tunnel/anims/robot_pikmin/12/carre_to_trapeze.res" id="21_ugnw2"]
 [ext_resource type="Script" uid="uid://cnbadoaun8yky" path="res://Tunnel/code/sequenceur_anneau.gd" id="22_nfqlf"]
-[ext_resource type="Animation" uid="uid://q8iihqkre7nw" path="res://Tunnel/anims/robot_pikmin/cercle_to_carre.res" id="22_qsgfv"]
-[ext_resource type="Animation" uid="uid://b0vfo1is3w6ae" path="res://Tunnel/anims/robot_pikmin/intro oupi_goupi.res" id="23_7nmlv"]
+[ext_resource type="Animation" uid="uid://q8iihqkre7nw" path="res://Tunnel/anims/robot_pikmin/12/cercle_to_carre.res" id="22_qsgfv"]
+[ext_resource type="Animation" uid="uid://b0vfo1is3w6ae" path="res://Tunnel/anims/robot_pikmin/12/intro oupi_goupi.res" id="23_7nmlv"]
 [ext_resource type="PackedScene" uid="uid://x8j1vynwtcvk" path="res://Tunnel/scenes/anneau.tscn" id="23_c270b"]
 [ext_resource type="PackedScene" uid="uid://q0io0vyqpwsa" path="res://Tunnel/scenes/anneau_bonus.tscn" id="24_srlbf"]
 [ext_resource type="PackedScene" uid="uid://cogvf52esw1ku" path="res://Tunnel/scenes/ennemi_haut.tscn" id="25_id8nj"]
@@ -1637,7 +1637,7 @@ collision_mask = 3
 script = ExtResource("13_qsgfv")
 vitesse_lat_base = 12.0
 max_vitesse_lat = 48.4
-gravite = 2.2
+gravite = 2.6
 ascension = 4.4
 air_trails = [NodePath("../boite_trails/trail_l"), NodePath("../boite_trails/trail_r")]
 first_boost = [NodePath("../boite_trails/trail_boost")]
@@ -1727,7 +1727,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3500293, 0)
 script = ExtResource("19_va7wv")
 colonnes = [NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7/Repere7"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Repere8"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Repere9"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Repere10"), NodePath("Matrice/Matrice12/Matrice11/Repere11"), NodePath("Matrice/Matrice12/Repere12"), NodePath("Matrice/Repere1"), NodePath("Matrice/Matrice2/Repere2"), NodePath("Matrice/Matrice2/Matrice3/Repere3"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Repere4"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Repere5"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6/Repere6")]
-tubique = false
 liste_vitesses = Array[float]([4.4, 5.7, 6.6, 7.7, 8.6])
 
 [node name="Matrice" type="Marker3D" parent="GestionnaireColonnes" unique_id=110031620]
@@ -2384,7 +2383,6 @@ text = "PLAY AGAIN"
 
 [connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
-[connection signal="on_beat" from="Son/Musique" to="InputTel" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="AnimationPlayerTerrain" method="_on_musique_on_beat"]
 [connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="gui_input" from="InputTel/DepG" to="InputTel" method="_on_dep_g_gui_input"]

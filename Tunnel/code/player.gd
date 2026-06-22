@@ -94,6 +94,7 @@ func _physics_process(delta: float) -> void:
 					trail.genere_trail = true
 					trail.update_trail(delta, !is_planing)
 		elif Input.is_action_just_released("jump") and is_jumping:
+			%Saut.stop()
 			is_jumping = false
 			in_air = true
 			
@@ -131,7 +132,7 @@ func _physics_process(delta: float) -> void:
 		is_moving = false
 	
 	if is_jumping:
-		if hauteur < 1.0:
+		if hauteur < 1.2:
 			hauteur += ascension * delta
 		else:
 			is_jumping = false
@@ -153,7 +154,7 @@ func _physics_process(delta: float) -> void:
 		in_air = false
 		is_planing = false
 	
-	global_position = position_repere + (hauteur + 0.2) * aimed_repere.global_basis.orthonormalized().y.normalized()
+	global_position = position_repere + (hauteur + 0.0) * aimed_repere.global_basis.orthonormalized().y.normalized()
 
 
 func mort():

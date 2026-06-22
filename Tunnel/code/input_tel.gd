@@ -44,19 +44,19 @@ func _on_saut_gui_input(event: InputEvent) -> void:
 
 
 func _on_musique_on_beat(beat: int) -> void:
-	if beat == 2:
-		%TutoDroit.show()
-	elif beat == 9:
-		%TutoDroit.hide()
-	elif beat == 10:
+	if beat == 1:
 		%TutoGauche.show()
-	elif beat == 17:
+	elif beat == 12:
 		%TutoGauche.hide()
-	elif beat == 26:
+	elif beat == 25:
+		%TutoDroit.show()
+	elif beat == 36:
+		%TutoDroit.hide()
+	elif beat == 64:
 		%TutoSaut.show()
-	elif beat == 33:
+	elif beat == 69:
 		%TutoSaut.hide()
-	elif beat == 34:
+	elif beat == 70:
 		%TutoPlane.show()
-	elif beat == 41:
+	elif beat == 76:
 		%TutoPlane.hide()
