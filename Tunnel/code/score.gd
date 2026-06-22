@@ -13,7 +13,7 @@ var last_score:= 0
 @export var freq_glide:= 0.66
 var i_glide:=0.0
 
-@export var mod_decay:= 0.1
+@export var mod_decay:= 0.06
 
 var first_grease:= true
 
@@ -107,8 +107,12 @@ func _process(delta: float) -> void:
 	if modificateur > 1.0:
 		%Mod.show()
 		modificateur -= mod_decay * delta * modificateur
-		%Player.after_image.ghost_lifetime = minf(1.0, (modificateur -1.0)*0.1)
-		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=%d][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.1f" % [30+ modificateur * 4, minf(modificateur * 0.2, 1.0), modificateur]
+		%Player.after_image.ghost_lifetime = minf(1.0, (modificateur -1.0)*0.05)
+		if modificateur > 5.0:
+			%Player.after_image.frames_between_ghosts = maxi(5 - int((modificateur - 5.0)*0.8), 1)
+		else:
+			%Player.after_image.frames_between_ghosts = 6
+		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=%d][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.1f" % [30+ modificateur * 6, minf(modificateur * 0.2, 1.0), modificateur]
 	elif %Player.after_image.ghost_lifetime != 0.0:
 		%Player.after_image.ghost_lifetime = 0.0
 	else:
