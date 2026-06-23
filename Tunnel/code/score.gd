@@ -13,6 +13,8 @@ var last_score:= 0
 @export var freq_glide:= 0.66
 var i_glide:=0.0
 
+@export var end_beat:= 312
+
 @export var mod_decay:= 0.06
 
 var first_grease:= true
@@ -106,7 +108,7 @@ func _process(delta: float) -> void:
 	if modificateur > 1.0:
 		%Mod.show()
 		modificateur -= mod_decay * delta * modificateur
-		%Player.after_image.ghost_lifetime = minf(1.0, (modificateur -1.0)*0.05)
+		%Player.after_image.ghost_lifetime = minf(0.3, (modificateur -1.0)*0.05)
 		if modificateur > 5.0:
 			%Player.after_image.frames_between_ghosts = maxi(5 - int((modificateur - 5.0)*0.8), 1)
 		else:
@@ -206,5 +208,5 @@ Score : %0*d" % [5,int(%Score.score)]
 
 
 func _on_musique_on_beat(beat: int) -> void:
-	if beat == 312:
+	if beat == end_beat:
 		_fin(true)

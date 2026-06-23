@@ -50,6 +50,8 @@
 [ext_resource type="PackedScene" uid="uid://dhc26w7wg12v8" path="res://Tunnel/scenes/ile_plate_petite.tscn" id="28_j2mm2"]
 [ext_resource type="PackedScene" uid="uid://8wat5l281imw" path="res://Tunnel/scenes/ile_plate.tscn" id="28_orb6k"]
 [ext_resource type="PackedScene" uid="uid://cigpaeky366pq" path="res://Tunnel/scenes/ile_petite.tscn" id="28_ugnw2"]
+[ext_resource type="AnimationLibrary" uid="uid://cbe0g2j0ibar4" path="res://Tunnel/anims/player_state.res" id="29_t1mb2"]
+[ext_resource type="AnimationLibrary" uid="uid://qklls5xd6dk3" path="res://Tunnel/anims/player_mooves.res" id="29_vc01e"]
 [ext_resource type="PackedScene" uid="uid://db5b1u5b63h1p" path="res://Tunnel/scenes/ennemi_base_rapide.tscn" id="35_kymkk"]
 [ext_resource type="PackedScene" uid="uid://c17lh7ye2sb5s" path="res://Tunnel/scenes/ennemi_haut_rapide.tscn" id="36_q1fwo"]
 
@@ -299,6 +301,54 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0mmpq"]
 resource_name = "dash_air_d"
@@ -326,6 +376,54 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, -0.5, 2),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -3.0979595), Vector3(0, 0, -6.2831855)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.2148964), Vector3(0, 0, -6.2831855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -2.628466), Vector3(0, 0, -6.2831855)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.2148964), Vector3(0, 0, -6.2831855)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -2.7454028), Vector3(0, 0, -6.2831855)]
 }
 
 [sub_resource type="Animation" id="Animation_81cow"]
@@ -355,6 +453,54 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 3.0970922), Vector3(0, 0, 6.2831855)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.2148964), Vector3(0, 0, 6.2831855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 2.628466), Vector3(0, 0, 6.2831855)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.2148964), Vector3(0, 0, 6.2831855)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 2.7454028), Vector3(0, 0, 6.2831855)]
+}
 
 [sub_resource type="Animation" id="Animation_nfqlf"]
 resource_name = "dash_sol_d"
@@ -379,6 +525,54 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.03333333, 0.09999999, 0.19999999),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.13333334, 0.19996665),
 "transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
@@ -411,6 +605,54 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh5:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.13333334, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0mmpq"]
 _data = {
@@ -422,6 +664,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_yjte1"]
+resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -542,6 +785,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%MeshShield:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_srlbf"]
@@ -670,7 +925,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_t1mb2"]
 resource_name = "hit_survived"
-length = 1.1
+length = 1.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -678,10 +933,10 @@ tracks/0/path = NodePath("%plane_mesh:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -690,10 +945,10 @@ tracks/1/path = NodePath("../plane_mesh2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -702,10 +957,10 @@ tracks/2/path = NodePath("../plane_mesh3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -714,10 +969,10 @@ tracks/3/path = NodePath("../plane_mesh4:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1000333, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -726,10 +981,10 @@ tracks/4/path = NodePath("../plane_mesh5:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -738,10 +993,22 @@ tracks/5/path = NodePath(".:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%MeshShield:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vc01e"]
@@ -757,7 +1024,7 @@ length = 13.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GestionnaireColonnes/Matrice/Matrice2:rotation")
+tracks/0/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -769,7 +1036,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3:rotation")
+tracks/1/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -781,7 +1048,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4:rotation")
+tracks/2/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -793,7 +1060,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5:rotation")
+tracks/3/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -805,7 +1072,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6:rotation")
+tracks/4/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -817,7 +1084,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("GestionnaireColonnes/Matrice/Matrice12:rotation")
+tracks/5/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -829,7 +1096,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11:rotation")
+tracks/6/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -841,7 +1108,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10:rotation")
+tracks/7/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -853,7 +1120,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9:rotation")
+tracks/8/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -865,7 +1132,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8:rotation")
+tracks/9/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -877,7 +1144,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7:rotation")
+tracks/10/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -893,7 +1160,7 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GestionnaireColonnes/Matrice/Matrice2:rotation")
+tracks/0/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -905,7 +1172,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3:rotation")
+tracks/1/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -917,7 +1184,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4:rotation")
+tracks/2/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -929,7 +1196,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5:rotation")
+tracks/3/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -941,7 +1208,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6:rotation")
+tracks/4/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -953,7 +1220,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("GestionnaireColonnes/Matrice/Matrice12:rotation")
+tracks/5/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -965,7 +1232,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11:rotation")
+tracks/6/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -977,7 +1244,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10:rotation")
+tracks/7/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -989,7 +1256,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9:rotation")
+tracks/8/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1001,7 +1268,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8:rotation")
+tracks/9/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1013,7 +1280,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7:rotation")
+tracks/10/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1041,7 +1308,7 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GestionnaireColonnes/Matrice/Matrice2:rotation")
+tracks/0/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1053,7 +1320,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3:rotation")
+tracks/1/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1065,7 +1332,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4:rotation")
+tracks/2/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1077,7 +1344,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5:rotation")
+tracks/3/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1089,7 +1356,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6:rotation")
+tracks/4/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1101,7 +1368,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("GestionnaireColonnes/Matrice/Matrice12:rotation")
+tracks/5/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1113,7 +1380,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11:rotation")
+tracks/6/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1125,7 +1392,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10:rotation")
+tracks/7/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1137,7 +1404,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9:rotation")
+tracks/8/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1149,7 +1416,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8:rotation")
+tracks/9/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1161,7 +1428,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7:rotation")
+tracks/10/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1588,7 +1855,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
 material_override = SubResource("StandardMaterial3D_4nqf8")
 skeleton = NodePath("../..")
 script = ExtResource("12_ugnw2")
-cible = NodePath("../../Player/marker_trail_l")
+cible = NodePath("../../Player/plane_mesh/marker_trail_l")
 trail_width_start = 0.01
 trail_width_end = 0.1
 trail_precision = 0.02
@@ -1597,7 +1864,7 @@ trail_precision = 0.02
 material_override = SubResource("StandardMaterial3D_4nqf8")
 skeleton = NodePath("../..")
 script = ExtResource("12_ugnw2")
-cible = NodePath("../../Player/marker_trail_r")
+cible = NodePath("../../Player/plane_mesh/marker_trail_r")
 trail_width_start = 0.01
 trail_width_end = 0.1
 trail_precision = 0.02
@@ -1606,7 +1873,7 @@ trail_precision = 0.02
 material_override = SubResource("StandardMaterial3D_oswye")
 skeleton = NodePath("../..")
 script = ExtResource("12_ugnw2")
-cible = NodePath("../../Player/marker_boost")
+cible = NodePath("../../Player/plane_mesh/marker_boost")
 trail_width_start = 0.05
 trail_width_end = 0.5
 trail_precision = 0.02
@@ -1615,7 +1882,7 @@ trail_precision = 0.02
 material_override = SubResource("StandardMaterial3D_fv56i")
 skeleton = NodePath("../..")
 script = ExtResource("12_ugnw2")
-cible = NodePath("../../Player/marker_boost_l")
+cible = NodePath("../../Player/plane_mesh/marker_boost_l")
 trail_width_start = 0.01
 trail_width_end = 0.1
 trail_precision = 0.02
@@ -1624,7 +1891,7 @@ trail_precision = 0.02
 material_override = SubResource("StandardMaterial3D_rpoyg")
 skeleton = NodePath("../..")
 script = ExtResource("12_ugnw2")
-cible = NodePath("../../Player/marker_boost_r")
+cible = NodePath("../../Player/plane_mesh/marker_boost_r")
 trail_width_start = 0.01
 trail_width_end = 0.1
 trail_precision = 0.02
@@ -1632,13 +1899,13 @@ trail_precision = 0.02
 [node name="Player" type="Area3D" parent="." unique_id=860940746 node_paths=PackedStringArray("air_trails", "first_boost", "second_boost", "after_image")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("13_qsgfv")
 vitesse_lat_base = 12.0
 max_vitesse_lat = 48.4
-gravite = 2.6
-ascension = 4.4
+gravite = 3.8
+ascension = 5.2
 air_trails = [NodePath("../boite_trails/trail_l"), NodePath("../boite_trails/trail_r")]
 first_boost = [NodePath("../boite_trails/trail_boost")]
 second_boost = [NodePath("../boite_trails/trail_boost_l"), NodePath("../boite_trails/trail_boost_r")]
@@ -1653,6 +1920,21 @@ script = ExtResource("27_yjte1")
 [node name="plane_mesh" parent="Player" unique_id=1691899356 instance=ExtResource("16_7s03i")]
 unique_name_in_owner = true
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.014875174, 0)
+
+[node name="marker_trail_l" type="Marker3D" parent="Player/plane_mesh" unique_id=1380709197]
+transform = Transform3D(27.168007, 0, 0, 0, 14.710211, 0, 0, 0, 5, -4.1351624, 2.5019712, 0.20626783)
+
+[node name="marker_trail_r" type="Marker3D" parent="Player/plane_mesh" unique_id=1725466011]
+transform = Transform3D(27.168007, 0, 0, 0, 14.710211, 0, 0, 0, 5, 4.146924, 2.4940805, 0.20868488)
+
+[node name="marker_boost" type="Marker3D" parent="Player/plane_mesh" unique_id=559022030]
+transform = Transform3D(27.168007, 0, 0, 0, 14.710211, 0, 0, 0, 5, 0.007989795, -0.032004356, 1.0118346)
+
+[node name="marker_boost_l" type="Marker3D" parent="Player/plane_mesh" unique_id=1302033724]
+transform = Transform3D(27.168007, 0, 0, 0, 14.710211, 0, 0, 0, 5, -2.9928927, -0.13148785, 1.2216666)
+
+[node name="marker_boost_r" type="Marker3D" parent="Player/plane_mesh" unique_id=888190380]
+transform = Transform3D(27.168007, 0, 0, 0, 14.710211, 0, 0, 0, 5, 3.030079, -0.14806843, 1.2361379)
 
 [node name="plane_mesh2" parent="Player" unique_id=1229543547 instance=ExtResource("16_7s03i")]
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.017863512, 0)
@@ -1670,21 +1952,6 @@ transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, -0.0033069253,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.006, 0.002)
 shape = SubResource("SphereShape3D_7nmlv")
 
-[node name="marker_trail_l" type="Marker3D" parent="Player" unique_id=1380709197]
-transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, -0.35562396, 0.26034164, 0.041253567)
-
-[node name="marker_trail_r" type="Marker3D" parent="Player" unique_id=1725466011]
-transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 0.35663545, 0.25947368, 0.041736975)
-
-[node name="marker_boost" type="Marker3D" parent="Player" unique_id=559022030]
-transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 0.00068712234, -0.018395662, 0.20236692)
-
-[node name="marker_boost_l" type="Marker3D" parent="Player" unique_id=1302033724]
-transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, -0.25738877, -0.029338837, 0.24433333)
-
-[node name="marker_boost_r" type="Marker3D" parent="Player" unique_id=888190380]
-transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 0.2605868, -0.03116262, 0.24722758)
-
 [node name="Grease" type="Area3D" parent="Player" unique_id=657926372]
 unique_name_in_owner = true
 
@@ -1700,11 +1967,13 @@ script = ExtResource("19_7nmlv")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=350355078]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_0mmpq")
+libraries/player_mooves = ExtResource("29_vc01e")
 
 [node name="AnimationPlayerInvul" type="AnimationPlayer" parent="Player" unique_id=70778939]
 unique_name_in_owner = true
 root_node = NodePath("../MeshGrease")
 libraries/ = SubResource("AnimationLibrary_vc01e")
+libraries/player_state = ExtResource("29_t1mb2")
 
 [node name="FollowCam" type="Node3D" parent="." unique_id=2058510983 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
@@ -1726,189 +1995,190 @@ script = ExtResource("21_7p2io")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3500293, 0)
 script = ExtResource("19_va7wv")
-colonnes = [NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7/Repere7"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Repere8"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Repere9"), NodePath("Matrice/Matrice12/Matrice11/Matrice10/Repere10"), NodePath("Matrice/Matrice12/Matrice11/Repere11"), NodePath("Matrice/Matrice12/Repere12"), NodePath("Matrice/Repere1"), NodePath("Matrice/Matrice2/Repere2"), NodePath("Matrice/Matrice2/Matrice3/Repere3"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Repere4"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Repere5"), NodePath("Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6/Repere6")]
+colonnes = [NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0/Repere0"), NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Repere1"), NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Repere2"), NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Repere3"), NodePath("Matrice6/Matrice5/Matrice4/Repere4"), NodePath("Matrice6/Matrice5/Repere5"), NodePath("Matrice6/Repere6"), NodePath("Matrice6/Matrice7/Repere7"), NodePath("Matrice6/Matrice7/Matrice8/Repere8"), NodePath("Matrice6/Matrice7/Matrice8/Matrice9/Repere9"), NodePath("Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Repere10"), NodePath("Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11/Repere11")]
+tubique = false
 liste_vitesses = Array[float]([4.4, 5.7, 6.6, 7.7, 8.6])
 
-[node name="Matrice" type="Marker3D" parent="GestionnaireColonnes" unique_id=110031620]
+[node name="Matrice6" type="Marker3D" parent="GestionnaireColonnes" unique_id=110031620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
 
-[node name="Repere1" type="Node3D" parent="GestionnaireColonnes/Matrice" unique_id=1181955991]
+[node name="Repere6" type="Node3D" parent="GestionnaireColonnes/Matrice6" unique_id=1181955991]
 
-[node name="Colonne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice" unique_id=1818472141]
+[node name="Colonne6" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6" unique_id=1818472141]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Colonne" unique_id=1808947130]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Colonne6" unique_id=1808947130]
 transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice2" type="Marker3D" parent="GestionnaireColonnes/Matrice" unique_id=1616477552]
+[node name="Matrice7" type="Marker3D" parent="GestionnaireColonnes/Matrice6" unique_id=1616477552]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.49923605, -0.00076925755, 0)
 
-[node name="Repere2" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice2" unique_id=1278321643]
+[node name="Repere7" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice7" unique_id=1278321643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 
-[node name="Colonne2" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2" unique_id=1831336894]
+[node name="Colonne7" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7" unique_id=1831336894]
 transform = Transform3D(-8.940697e-08, -1, 0, 1, -8.940697e-08, 0, 0, 0, 1, 0.4986998, -8.332729e-05, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Colonne2" unique_id=1405596930]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Colonne7" unique_id=1405596930]
 transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice3" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice2" unique_id=2108077082]
+[node name="Matrice8" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice7" unique_id=2108077082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99646497, -0.002218604, -0.0014617443)
 
-[node name="Repere3" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3" unique_id=1651199880]
+[node name="Repere8" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8" unique_id=1651199880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 
-[node name="Colonne3" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3" unique_id=1445632923]
+[node name="Colonne8" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8" unique_id=1445632923]
 transform = Transform3D(2.9802322e-08, -0.99999994, 0, 0.99999994, 2.9802322e-08, 0, 0, 0, 1, 0.49987787, -5.6385994e-05, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Colonne3" unique_id=1610266563]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Colonne8" unique_id=1610266563]
 transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice4" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3" unique_id=1176128719]
+[node name="Matrice9" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8" unique_id=1176128719]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 1.000032, 0.00015640259, 0)
 
-[node name="Repere4" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4" unique_id=1657908786]
+[node name="Repere9" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9" unique_id=1657908786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 
-[node name="Colonne4" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4" unique_id=2133202008]
+[node name="Colonne9" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9" unique_id=2133202008]
 transform = Transform3D(-4.3711395e-08, -1, 0, 1, -4.3711395e-08, 0, 0, 0, 1, 0.49878, 0, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Colonne4" unique_id=1650047989]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Colonne9" unique_id=1650047989]
 transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, -1.1920929e-07, 0.49999994, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice5" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4" unique_id=1093064815]
+[node name="Matrice10" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9" unique_id=1093064815]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.99948204, -1.3232231e-05, 0)
 
-[node name="Repere5" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5" unique_id=728863260]
+[node name="Repere10" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10" unique_id=728863260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 
-[node name="Colonne5" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5" unique_id=1214303026]
+[node name="Colonne10" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10" unique_id=1214303026]
 transform = Transform3D(2.9802322e-08, -1.0000001, 0, 1.0000001, 2.9802322e-08, 0, 0, 0, 1, 0.4990253, 8.8214874e-05, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Colonne5" unique_id=357788076]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Colonne10" unique_id=357788076]
 transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.4999999, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice6" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5" unique_id=336173682]
+[node name="Matrice11" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10" unique_id=336173682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0036589, 0.00071024895, 0)
 
-[node name="Repere6" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6" unique_id=514536203]
+[node name="Repere11" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11" unique_id=514536203]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 
-[node name="Colonne6" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6" unique_id=1567015586]
+[node name="Colonne11" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11" unique_id=1567015586]
 transform = Transform3D(-5.9604645e-08, -1, 0, 1, -5.9604645e-08, 0, 0, 0, 1, 0.4963678, 0.0005931854, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6/Colonne6" unique_id=2074760461]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11/Colonne11" unique_id=2074760461]
 transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, -2.3841858e-07, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Ligne2" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice2/Matrice3/Matrice4/Matrice5/Matrice6/Colonne6" unique_id=1545222006]
+[node name="Ligne2" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11/Colonne11" unique_id=1545222006]
 transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, -0.5, -5.986)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice12" type="Marker3D" parent="GestionnaireColonnes/Matrice" unique_id=747093888]
+[node name="Matrice5" type="Marker3D" parent="GestionnaireColonnes/Matrice6" unique_id=747093888]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50124085, 0.00029969215, 0)
 
-[node name="Repere12" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice12" unique_id=408686637]
+[node name="Repere5" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice5" unique_id=408686637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="Colonne12" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12" unique_id=745626306]
+[node name="Colonne5" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5" unique_id=745626306]
 transform = Transform3D(-1.1920929e-07, -1.0000002, 0, 1.0000002, -1.1920929e-07, 0, 0, 0, 1, -0.49691427, -0.00035834312, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Colonne12" unique_id=399456000]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Colonne5" unique_id=399456000]
 transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, -1.1920929e-07, 0.5000002, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice11" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice12" unique_id=854486002]
+[node name="Matrice4" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice5" unique_id=854486002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99519193, 0.00078070164, 0)
 
-[node name="Repere11" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11" unique_id=38941729]
+[node name="Repere4" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4" unique_id=38941729]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="Colonne11" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11" unique_id=871322274]
+[node name="Colonne4" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4" unique_id=871322274]
 transform = Transform3D(-2.0861626e-07, -1, 0, 1, -2.0861626e-07, 0, 0, 0, 1, -0.4997036, -0.0014833212, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Colonne11" unique_id=1673236560]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Colonne4" unique_id=1673236560]
 transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.49999964, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice10" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11" unique_id=1584772449]
+[node name="Matrice3" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4" unique_id=1584772449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.002579, -0.003398776, 0)
 
-[node name="Repere10" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10" unique_id=893311234]
+[node name="Repere3" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3" unique_id=893311234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="Colonne10" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10" unique_id=1921516306]
+[node name="Colonne3" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3" unique_id=1921516306]
 transform = Transform3D(-2.1855695e-07, -1, 0, 1, -2.1855695e-07, 0, 0, 0, 1, -0.49826634, 0, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Colonne10" unique_id=957648046]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Colonne3" unique_id=957648046]
 transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 4.7683716e-07, 0.49999988, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice9" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10" unique_id=116174173]
+[node name="Matrice2" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3" unique_id=116174173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0001564, 0.0035729408, 0)
 
-[node name="Repere9" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9" unique_id=1881374868]
+[node name="Repere2" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2" unique_id=1881374868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="Colonne9" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9" unique_id=1709381059]
+[node name="Colonne2" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2" unique_id=1709381059]
 transform = Transform3D(-2.3841858e-07, -1, 0, 1, -2.3841858e-07, 0, 0, 0, 1, -0.49392503, 0.0013324022, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Colonne9" unique_id=139394744]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Colonne2" unique_id=139394744]
 transform = Transform3D(1, -4.371139e-08, -4.3711395e-08, -4.3711395e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice8" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9" unique_id=60793172]
+[node name="Matrice1" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2" unique_id=60793172]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 1, -0.99936867, 0.0022947788, -0.0014617443)
 
-[node name="Repere8" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8" unique_id=1052089040]
+[node name="Repere1" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1" unique_id=1052089040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="Colonne8" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8" unique_id=1344164733]
+[node name="Colonne1" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1" unique_id=1344164733]
 transform = Transform3D(-5.9604645e-08, -1, 0, 1, -5.9604645e-08, 0, 0, 0, 1, -0.49744743, 0.0007016659, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Colonne8" unique_id=1530711547]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Colonne1" unique_id=1530711547]
 transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
-[node name="Matrice7" type="Marker3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8" unique_id=819373747]
+[node name="Matrice0" type="Marker3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1" unique_id=819373747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99608773, -0.00016856194, 0)
 
-[node name="Repere7" type="Node3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7" unique_id=1308811680]
+[node name="Repere0" type="Node3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0" unique_id=1308811680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="Colonne7" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7" unique_id=850489279]
+[node name="Colonne0" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0" unique_id=850489279]
 transform = Transform3D(-4.371138e-08, -1, 0, 1, -4.371138e-08, 0, 0, 0, 1, -0.50170726, 0, 0)
 mesh = SubResource("QuadMesh_nauu5")
 skeleton = NodePath("../../../../../../../../..")
 
-[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice/Matrice12/Matrice11/Matrice10/Matrice9/Matrice8/Matrice7/Colonne7" unique_id=1385592362]
+[node name="Ligne" type="MeshInstance3D" parent="GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0/Colonne0" unique_id=1385592362]
 transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0, 0.5, -5.9856205)
 mesh = SubResource("QuadMesh_prc5v")
 
@@ -2278,7 +2548,7 @@ array_sequences = Array[Dictionary]([{
 132: PackedInt64Array(1200, 1211),
 146: PackedInt64Array(1000, 1006),
 150: PackedInt64Array(1009, 1003),
-159: PackedInt64Array(1008, 1002),
+160: PackedInt64Array(1008, 1002),
 167: PackedInt64Array(1005, 1200),
 177: 1011,
 182: PackedInt64Array(1003, 1007),
@@ -2299,7 +2569,7 @@ array_sequences = Array[Dictionary]([{
 289: PackedInt64Array(1201, 1207),
 295: PackedInt32Array(1207, 1209, 1201, 1203),
 298: PackedInt32Array(1204, 1206, 1200, 1210)
-}])
+}, {}])
 after_image_haut = NodePath("../AfterImageAB")
 after_image_bas = NodePath("../AfterImageAB")
 starting_beats = Array[int]([1])

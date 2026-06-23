@@ -48,15 +48,15 @@ func _on_musique_on_beat(beat: int) -> void:
 		%TutoGauche.show()
 	elif beat == 12:
 		%TutoGauche.hide()
-	elif beat == 25:
+	elif beat == 24:
 		%TutoDroit.show()
-	elif beat == 36:
+	elif beat == 31:
 		%TutoDroit.hide()
-	elif beat == 64:
+	elif beat == 52:
 		%TutoSaut.show()
-	elif beat == 69:
+	elif beat == 55:
 		%TutoSaut.hide()
-	elif beat == 70:
+	elif beat == 56:
 		%TutoPlane.show()
-	elif beat == 76:
+	elif beat == 63:
 		%TutoPlane.hide()

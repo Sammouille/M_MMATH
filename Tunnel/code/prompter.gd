@@ -14,5 +14,5 @@ func afficher_texte():
 	label.text = formating + lines[index_line]
 	index_line += 1
 	label.show()
-	await get_tree().create_timer(8.8).timeout
+	await get_tree().create_timer(5.6).timeout
 	label.hide()

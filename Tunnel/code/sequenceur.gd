@@ -23,6 +23,10 @@ func _ready() -> void:
 	%Musique.on_beat.connect(_on_musique_on_beat)
 
 func valeurToCreation(valeur: int):
+	var negatif:= false
+	if valeur < 0:
+		negatif = true
+	
 	var colonnes_concernees:= []
 	
 	# Truc automatique pour quand la vitesse augmente
@@ -122,7 +126,7 @@ func valeurToCreation(valeur: int):
 	
 	
 	# Mettre en négatif fait apparaitre inversement sur les autres colonnes que celles selectionnées
-	if valeur < 0:
+	if negatif:
 		for colonne in %GestionnaireColonnes.colonnes:
 			if !colonnes_concernees.has(colonne):
 				colonnes_concernees.append(colonne)

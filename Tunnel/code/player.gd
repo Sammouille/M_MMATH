@@ -45,10 +45,10 @@ func _physics_process(delta: float) -> void:
 			aimed_repere = %GestionnaireColonnes.p_get_last_track()
 			is_moving = true
 			%Deplacement.play()
-			if !in_air:
-				%AnimationPlayer.play("dash_sol_g")
-			else:
+			if in_air or is_jumping:
 				%AnimationPlayer.play("dash_air_g")
+			else:
+				%AnimationPlayer.play("dash_sol_g")
 			
 		elif Input.is_action_pressed("gauche"):
 			if vitesse_lat < max_vitesse_lat:
@@ -56,18 +56,18 @@ func _physics_process(delta: float) -> void:
 			if !is_moving:
 				aimed_repere = %GestionnaireColonnes.p_get_last_track()
 				is_moving = true
-				if !in_air:
-					%AnimationPlayer.play("dash_sol_g")
-				else:
+				if in_air or is_jumping:
 					%AnimationPlayer.play("dash_air_g")
+				else:
+					%AnimationPlayer.play("dash_sol_g")
 		elif Input.is_action_just_pressed("droite"):
 			%Deplacement.play()
 			aimed_repere = %GestionnaireColonnes.p_get_next_track()
 			is_moving = true
-			if !in_air:
-				%AnimationPlayer.play("dash_sol_d")
-			else:
+			if in_air or is_jumping:
 				%AnimationPlayer.play("dash_air_d")
+			else:
+				%AnimationPlayer.play("dash_sol_d")
 			
 		elif Input.is_action_pressed("droite"):
 			if vitesse_lat < max_vitesse_lat:
@@ -75,10 +75,10 @@ func _physics_process(delta: float) -> void:
 			if !is_moving:
 				aimed_repere = %GestionnaireColonnes.p_get_next_track()
 				is_moving = true
-				if !in_air:
-					%AnimationPlayer.play("dash_sol_d")
-				else:
+				if in_air or is_jumping:
 					%AnimationPlayer.play("dash_air_d")
+				else:
+					%AnimationPlayer.play("dash_sol_d")
 		else:
 			vitesse_lat = vitesse_lat_base
 		
@@ -141,7 +141,7 @@ func _physics_process(delta: float) -> void:
 	if hauteur > 0.0:
 		if !is_jumping:
 			if is_planing:
-				hauteur -= delta * gravite * 0.13
+				hauteur -= delta * gravite * 0.08
 			else:
 				hauteur -= delta * gravite
 	elif in_air:
