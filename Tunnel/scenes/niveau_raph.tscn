@@ -1139,6 +1139,154 @@ tracks/11/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_i838n"]
+resource_name = "hexa_to_rond"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.0471976), Vector3(0, 0, -0.52359873)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.52359873)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3/Matrice2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.0471976), Vector3(0, 0, -0.5235988)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4/Matrice3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235987)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5/Matrice4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.0471976), Vector3(0, 0, -0.5235989)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GestionnaireColonnes/Matrice6/Matrice5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.52359873)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.0471976), Vector3(0, 0, 0.52359873)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9/Matrice10:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.52359873)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8/Matrice9:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.0471976), Vector3(0, 0, 0.5235989)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7/Matrice8:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.5235988)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GestionnaireColonnes/Matrice6/Matrice7:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.0471976), Vector3(0, 0, 0.5235988)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("GestionnaireColonnes/Matrice6:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 3.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_gx8p3"]
 resource_name = "rond_to_triangle"
 length = 5.0
@@ -1588,6 +1736,7 @@ _data = {
 &"RESET": SubResource("Animation_ynbgy"),
 &"carre_to_cercle": SubResource("Animation_j2mm2"),
 &"hex_to_square": SubResource("Animation_ugnw2"),
+&"hexa_to_rond": SubResource("Animation_i838n"),
 &"rond_to_triangle": SubResource("Animation_gx8p3"),
 &"trapeze_to_hex": SubResource("Animation_orb6k"),
 &"triangle_to_hexa": SubResource("Animation_5hl1y")
@@ -2032,8 +2181,8 @@ trail_precision = 0.02
 [node name="Player" type="Area3D" parent="." unique_id=860940746 node_paths=PackedStringArray("air_trails", "first_boost", "second_boost", "after_image")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("25_mmp4g")
 vitesse_lat_base = 12.0
 max_vitesse_lat = 48.4
@@ -2414,6 +2563,129 @@ array_sequences = Array[Dictionary]([{
 }])
 starting_beats = Array[int]([100, 106, 112, 118])
 
+[node name="SequenceurIlesSolo11" type="Node" parent="." unique_id=298582936]
+script = ExtResource("36_a8f3r")
+scene_seq = ExtResource("37_vlgsm")
+scene_haut = ExtResource("40_e2cq8")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(0, 11),
+1: PackedInt64Array(0, 11, 5, 6),
+2: PackedInt64Array(0, 11, 5, 6),
+3: PackedInt64Array(0, 11, 5, 6),
+4: PackedInt64Array(0, 11, 5, 6),
+5: PackedInt64Array(0, 11, 5, 6),
+6: PackedInt64Array(0, 11, 5, 6),
+7: PackedInt64Array(),
+8: PackedInt64Array(10, 9, 4, 3),
+9: PackedInt64Array(10, 9, 4, 3),
+10: PackedInt64Array(8, 7, 1, 2),
+11: PackedInt64Array(8, 7, 1, 2),
+12: PackedInt64Array(0, 11, 6, 5),
+13: PackedInt64Array(0, 11, 6, 5),
+14: PackedInt64Array(0, 11, 6, 5),
+15: PackedInt64Array(1, 10, 7, 4),
+16: PackedInt64Array(2, 9, 8, 3),
+17: PackedInt64Array(3, 8, 9, 2),
+18: PackedInt64Array(4, 7, 10, 1),
+19: PackedInt64Array(5, 8, 11, 2),
+20: PackedInt64Array(6, 9, 0, 3),
+21: PackedInt64Array(7, 10, 1, 4),
+22: PackedInt64Array(6, 9, 0, 3),
+23: PackedInt64Array(7, 8, 1, 2),
+24: PackedInt64Array(7, 8, 1, 2),
+25: PackedInt64Array(7, 8, 1, 2),
+26: PackedInt64Array(8, 9, 2, 3),
+27: PackedInt64Array(9, 10, 3, 4),
+28: PackedInt64Array(9, 10, 3, 4),
+29: PackedInt64Array(9, 10, 3, 4),
+30: PackedInt64Array(9, 10, 3, 4),
+31: PackedInt64Array(9, 10, 3, 4),
+32: PackedInt64Array(9, 10, 3, 4)
+}])
+starting_beats = Array[int]([128])
+
+[node name="SequenceurIlesSolo12" type="Node" parent="." unique_id=276842702]
+script = ExtResource("36_a8f3r")
+scene_seq = ExtResource("37_vlgsm")
+scene_haut = ExtResource("38_7io4f")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(0, 11),
+1: PackedInt64Array(0, 11, 5, 6),
+2: PackedInt64Array(0, 11, 5, 6),
+3: PackedInt64Array(0, 11, 5, 6),
+4: PackedInt64Array(0, 11, 5, 6),
+5: PackedInt64Array(0, 11, 5, 6),
+6: PackedInt64Array(0, 11, 5, 6),
+7: PackedInt64Array(),
+8: PackedInt64Array(10, 9, 4, 3),
+9: PackedInt64Array(10, 9, 4, 3),
+10: PackedInt64Array(8, 7, 1, 2),
+11: PackedInt64Array(8, 7, 1, 2),
+12: PackedInt64Array(0, 11, 6, 5),
+13: PackedInt64Array(0, 11, 6, 5),
+14: PackedInt64Array(0, 11, 6, 5),
+15: PackedInt64Array(1, 10, 7, 4),
+16: PackedInt64Array(2, 9, 8, 3),
+17: PackedInt64Array(3, 8, 9, 2),
+18: PackedInt64Array(4, 7, 10, 1),
+19: PackedInt64Array(5, 8, 11, 2),
+20: PackedInt64Array(6, 9, 0, 3),
+21: PackedInt64Array(7, 10, 1, 4),
+22: PackedInt64Array(6, 9, 0, 3),
+23: PackedInt64Array(7, 8, 1, 2),
+24: PackedInt64Array(7, 8, 1, 2),
+25: PackedInt64Array(7, 8, 1, 2),
+26: PackedInt64Array(8, 9, 2, 3),
+27: PackedInt64Array(9, 10, 3, 4),
+28: PackedInt64Array(9, 10, 3, 4),
+29: PackedInt64Array(9, 10, 3, 4),
+30: PackedInt64Array(9, 10, 3, 4),
+31: PackedInt64Array(9, 10, 3, 4),
+32: PackedInt64Array(9, 10, 3, 4),
+33: PackedInt64Array(8, 11, 2, 5),
+34: PackedInt64Array(9, 0, 6, 3),
+35: PackedInt64Array(9, 0, 6, 3),
+36: PackedInt64Array(10, 7, 4, 1),
+37: PackedInt64Array(10, 7, 4, 1),
+38: PackedInt64Array(10, 7, 4, 1),
+39: PackedInt64Array(10, 7, 4, 1),
+40: PackedInt64Array(9, 6, 3, 0),
+41: PackedInt64Array(8, 5, 2, 11),
+42: PackedInt64Array(9, 6, 3, 0),
+43: PackedInt64Array(8, 5, 2, 11),
+44: PackedInt64Array(7, 4, 1, 10),
+45: PackedInt64Array(7, 4, 10, 1),
+46: PackedInt64Array(7, 4, 10, 1),
+47: PackedInt64Array(6, 9, 3, 0),
+48: PackedInt64Array(8, 5, 2, 11),
+49: PackedInt64Array(8, 5, 2, 11),
+50: PackedInt64Array(8, 5, 2, 11),
+51: PackedInt64Array(9, 6, 3, 0),
+52: PackedInt64Array(9, 6, 3, 0),
+53: PackedInt64Array(9, 6, 3, 0),
+54: PackedInt64Array(9, 6, 3, 0),
+55: PackedInt64Array(9, 6, 3, 0),
+56: PackedInt64Array(8, 5, 2, 11),
+57: PackedInt64Array(7, 4, 1, 10),
+58: PackedInt64Array(7, 4, 1, 10),
+59: PackedInt64Array(8, 5, 2, 11),
+60: PackedInt64Array(8, 5, 2, 11),
+61: PackedInt64Array(8, 5, 2),
+62: PackedInt64Array(8, 5, 2),
+63: PackedInt64Array(8, 2),
+64: PackedInt64Array(8, 2),
+65: 2
+}, {
+0: PackedInt64Array(200, 211),
+1: PackedInt64Array(205, 206),
+8: PackedInt64Array(210, 209, 204, 203),
+10: PackedInt64Array(208, 207, 201, 202),
+12: PackedInt64Array(200, 211, 206, 205),
+23: PackedInt64Array(207, 208, 201, 202),
+27: PackedInt64Array(209, 210, 203, 204)
+}])
+starting_beats = Array[int]([160])
+
 [node name="SequenceurEnnemiMur" type="Node" parent="." unique_id=895210650 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_a8f3r")
 scene_seq = ExtResource("41_2vod5")
@@ -2423,6 +2695,26 @@ array_sequences = Array[Dictionary]([{
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([51, 54, 55, 56, 57, 70, 74, 78])
+
+[node name="SequenceurEnnemiMurRapide" type="Node" parent="." unique_id=149776225 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_a8f3r")
+scene_seq = ExtResource("41_6dmrq")
+scene_haut = ExtResource("42_e2cq8")
+array_sequences = Array[Dictionary]([{
+0: 444
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+
+[node name="SequenceurEnnemiMurHautRapide" type="Node" parent="." unique_id=1080508543 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_a8f3r")
+scene_seq = ExtResource("41_6dmrq")
+scene_haut = ExtResource("42_e2cq8")
+array_sequences = Array[Dictionary]([{
+0: 644
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
 
 [node name="SequenceurEnnemiTriangle" type="Node" parent="." unique_id=1990698442 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_a8f3r")
@@ -2449,6 +2741,18 @@ after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([106, 112, 109, 103, 115, 103])
 
+[node name="SequenceurEnnemiSpiraleHautHexa" type="Node" parent="." unique_id=1097493087 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_a8f3r")
+scene_seq = ExtResource("41_6dmrq")
+scene_haut = ExtResource("42_e2cq8")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(200, 204, 208),
+1: PackedInt64Array(202, 206, 210)
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([134, 137, 140, 143, 146, 149, 152, 155, 158])
+
 [node name="SequenceurEnnemiSpiraleBas" type="Node" parent="." unique_id=753511639 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_a8f3r")
 scene_seq = ExtResource("41_6dmrq")
@@ -2461,7 +2765,23 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([120, 124, 128])
+starting_beats = Array[int]([120, 124, 128, 198, 202, 206, 210, 214, 218])
+
+[node name="SequenceurEnnemiDoubleSpiraleHaut" type="Node" parent="." unique_id=1710811608 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_a8f3r")
+scene_seq = ExtResource("41_6dmrq")
+scene_haut = ExtResource("42_e2cq8")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(200, 206),
+1: PackedInt64Array(211, 205),
+2: PackedInt64Array(210, 204),
+3: PackedInt64Array(209, 203),
+4: PackedInt64Array(208, 202),
+5: PackedInt64Array(207, 201)
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([202, 208, 214, 220, 226])
 
 [node name="AfterImageEnnemis" type="Node3D" parent="." unique_id=416968996]
 script = ExtResource("23_nhdow")
