@@ -2077,8 +2077,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -78.5
-offset_bottom = 101.0
+offset_top = -260.5
+offset_bottom = -81.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -2097,8 +2097,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -83.0
-offset_bottom = 105.0
+offset_top = -265.0
+offset_bottom = -77.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -2107,6 +2107,50 @@ theme_override_fonts/normal_font = ExtResource("19_hboke")
 bbcode_enabled = true
 text = "[center][font_size=25][outline_color=black][outline_size=15]press space or A to jump
 "
+scroll_active = false
+vertical_alignment = 1
+
+[node name="TutoRings1" type="RichTextLabel" parent="InputTel" unique_id=198446397]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 450.0
+offset_top = -260.0
+offset_right = -444.0
+offset_bottom = -80.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/line_separation = 15
+theme_override_fonts/normal_font = ExtResource("19_hboke")
+bbcode_enabled = true
+text = "[center][font_size=25][outline_color=black][outline_size=15]Fly through rings to get bonus score"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="TutoRings2" type="RichTextLabel" parent="InputTel" unique_id=310387733]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 450.0
+offset_top = -260.0
+offset_right = -444.0
+offset_bottom = -80.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/line_separation = 15
+theme_override_fonts/normal_font = ExtResource("19_hboke")
+bbcode_enabled = true
+text = "[center][font_size=25][outline_color=black][outline_size=15]Flying through multiple rings grant a shield"
 scroll_active = false
 vertical_alignment = 1
 
@@ -2470,7 +2514,7 @@ array_sequences = Array[Dictionary]([{
 2: PackedInt64Array(8, 5, 2, 11),
 4: PackedInt64Array(0, 3, 6, 9)
 }])
-starting_beats = Array[int]([24])
+starting_beats = Array[int]([16])
 
 [node name="SequenceurSpiraleGauche" type="Node" parent="." unique_id=900084975]
 script = ExtResource("36_a8f3r")
@@ -2481,7 +2525,7 @@ array_sequences = Array[Dictionary]([{
 2: PackedInt64Array(1, 4, 7, 10),
 4: PackedInt64Array(0, 3, 6, 9)
 }])
-starting_beats = Array[int]([8, 16])
+starting_beats = Array[int]([8, 24])
 
 [node name="SequenceurSpiraleGaucheRemplie" type="Node" parent="." unique_id=18551797]
 script = ExtResource("36_a8f3r")
@@ -2817,6 +2861,11 @@ gradient = SubResource("Gradient_j2mm2")
 [node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_a8f3r")
 scene_seq = ExtResource("47_qdvbw")
+array_sequences = Array[Dictionary]([{
+30: PackedInt64Array(7, 1),
+39: PackedInt64Array(5, 11),
+49: 207
+}])
 after_image_haut = NodePath("../AfterImageAB")
 after_image_bas = NodePath("../AfterImageAB")
 starting_beats = Array[int]([1])
@@ -2909,4 +2958,5 @@ text = "PLAY AGAIN"
 [connection signal="gui_input" from="InputTel/Saut" to="InputTel" method="_on_saut_gui_input"]
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="area_entered" from="Player/Grease" to="Player/MeshGrease" method="_on_grease_area_entered"]
+[connection signal="deplacement_colonne" from="GestionnaireColonnes" to="BeatCount" method="_on_gestionnaire_colonnes_deplacement_colonne"]
 [connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/Button" to="EndMenu" method="_restart"]

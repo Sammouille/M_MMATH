@@ -141,7 +141,7 @@ func _physics_process(delta: float) -> void:
 	if hauteur > 0.0:
 		if !is_jumping:
 			if is_planing:
-				hauteur -= delta * gravite * 0.08
+				hauteur -= delta * gravite * 0.1
 			else:
 				hauteur -= delta * gravite
 	elif in_air:
