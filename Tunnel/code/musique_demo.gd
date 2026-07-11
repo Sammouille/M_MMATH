@@ -10,8 +10,8 @@ var last_beat:= 0
 signal on_beat(beat: int)
 
 
-func _ready() -> void:
-	play(start_at * (60.0 / bpm))
+#func _ready() -> void:
+	#play(start_at * (60.0 / bpm))
 
 func _process(delta: float) -> void:
 	var stream_pos:= get_playback_position()

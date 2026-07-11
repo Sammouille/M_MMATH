@@ -1,60 +1,59 @@
-[gd_scene format=4 uid="uid://bvwnhxnyqldry"]
+[gd_scene format=4 uid="uid://bvago7s66jnpl"]
 
-[ext_resource type="Script" uid="uid://sypax0g1nx8l" path="res://Tunnel/code/TunnelGame.gd" id="1_towaq"]
-[ext_resource type="Script" uid="uid://5is5rlw7apl3" path="res://Tunnel/code/musique.gd" id="2_mmhs3"]
-[ext_resource type="AudioStream" uid="uid://d3v8uolibhkp" path="res://Tunnel/assets/musique/Oupi Goupi feat. Chilly Gonzales - Robo Pikmin.mp3" id="2_scwf0"]
-[ext_resource type="AudioStream" uid="uid://bvssbblak8xc7" path="res://Tunnel/assets/sons/move.ogg" id="3_scwf0"]
-[ext_resource type="AudioStream" uid="uid://eaa6cma6qwqn" path="res://Tunnel/assets/sons/jump.ogg" id="4_7p2io"]
-[ext_resource type="AudioStream" uid="uid://blpiq146u6fcc" path="res://Tunnel/assets/sons/bonus.ogg" id="5_pcpd0"]
-[ext_resource type="AudioStream" uid="uid://br4ti1ih3pyd5" path="res://Tunnel/assets/sons/boost.ogg" id="6_r1ioa"]
-[ext_resource type="AudioStream" uid="uid://c5puiirpxvywp" path="res://Tunnel/assets/sons/mort.ogg" id="7_id8nj"]
-[ext_resource type="AudioStream" uid="uid://r10qg7qawb3t" path="res://Tunnel/assets/sons/boost_loss2.ogg" id="8_srlbf"]
-[ext_resource type="AudioStream" uid="uid://dmxrbx3bhcmjt" path="res://Tunnel/assets/sons/grease.ogg" id="9_byb81"]
-[ext_resource type="Script" uid="uid://u8iyeoprv647" path="res://Tunnel/code/score.gd" id="9_ko843"]
-[ext_resource type="AudioStream" uid="uid://cvtrg2hnu88g1" path="res://Tunnel/assets/sons/sol2.ogg" id="10_byb81"]
-[ext_resource type="FontFile" uid="uid://dwrrnrrlioue0" path="res://Tunnel/assets/fonts/Gravity.tres" id="10_ko843"]
-[ext_resource type="Script" uid="uid://cnofg16uqoy2h" path="res://Tunnel/code/prompter.gd" id="10_orb6k"]
-[ext_resource type="Script" uid="uid://dle684xookt2r" path="res://Tunnel/code/Afterimage.gd" id="11_j2mm2"]
-[ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="11_scwf0"]
-[ext_resource type="AudioStream" uid="uid://kpsomxegouj0" path="res://Tunnel/assets/sons/sam/OG1.wav" id="12_c270b"]
-[ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="12_qsgfv"]
-[ext_resource type="Script" uid="uid://bvi567a755504" path="res://Tunnel/code/TunnelTrail.gd" id="12_ugnw2"]
-[ext_resource type="Script" uid="uid://cdu5uu5sciyn7" path="res://Tunnel/code/player.gd" id="13_qsgfv"]
-[ext_resource type="AudioStream" uid="uid://bnhuu81fphfn2" path="res://Tunnel/assets/sons/sam/OG2.wav" id="13_srlbf"]
-[ext_resource type="AudioStream" uid="uid://hujkgxebn1a0" path="res://Tunnel/assets/sons/sam/CG2.wav" id="14_yjte1"]
-[ext_resource type="AudioStream" uid="uid://b8ebwathorh0w" path="res://Tunnel/assets/sons/sam/CG1.wav" id="15_t1mb2"]
-[ext_resource type="PackedScene" uid="uid://vjtqrhyn2bil" path="res://Tunnel/scenes/plane_mesh.tscn" id="16_7s03i"]
-[ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="17_va7wv"]
-[ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="18_byb81"]
-[ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="19_7nmlv"]
-[ext_resource type="AnimationLibrary" uid="uid://dicrhldyu67m3" path="res://Tunnel/anims/robot_pikmin/12/topologies.res" id="19_orb6k"]
-[ext_resource type="Script" uid="uid://bonnrjd6xoc78" path="res://Tunnel/code/gestionnaire_colonnes.gd" id="19_va7wv"]
-[ext_resource type="Script" uid="uid://banxlhhyaaumw" path="res://Tunnel/code/sequenceur.gd" id="20_0mmpq"]
-[ext_resource type="Animation" uid="uid://f6p08jar87k" path="res://Tunnel/anims/robot_pikmin/RESET.res" id="20_j2mm2"]
-[ext_resource type="Script" uid="uid://lrhqgcttijcw" path="res://Tunnel/scenes/animation_player_oupi_goupi.gd" id="21_7p2io"]
-[ext_resource type="PackedScene" uid="uid://3jmp12d808vw" path="res://Tunnel/scenes/ile.tscn" id="21_81cow"]
-[ext_resource type="Animation" uid="uid://bceepxicjdhra" path="res://Tunnel/anims/robot_pikmin/12/carre_to_trapeze.res" id="21_ugnw2"]
-[ext_resource type="Script" uid="uid://dbkqk5ypl2280" path="res://Tunnel/code/tuto_demo.gd" id="22_54hf6"]
-[ext_resource type="Script" uid="uid://cnbadoaun8yky" path="res://Tunnel/code/sequenceur_anneau.gd" id="22_nfqlf"]
-[ext_resource type="Animation" uid="uid://q8iihqkre7nw" path="res://Tunnel/anims/robot_pikmin/12/cercle_to_carre.res" id="22_qsgfv"]
-[ext_resource type="Animation" uid="uid://b0vfo1is3w6ae" path="res://Tunnel/anims/robot_pikmin/12/intro oupi_goupi.res" id="23_7nmlv"]
-[ext_resource type="PackedScene" uid="uid://x8j1vynwtcvk" path="res://Tunnel/scenes/anneau.tscn" id="23_c270b"]
-[ext_resource type="PackedScene" uid="uid://q0io0vyqpwsa" path="res://Tunnel/scenes/anneau_bonus.tscn" id="24_srlbf"]
-[ext_resource type="PackedScene" uid="uid://cogvf52esw1ku" path="res://Tunnel/scenes/ennemi_haut.tscn" id="25_id8nj"]
-[ext_resource type="PackedScene" uid="uid://qcr3sob1vb1a" path="res://Tunnel/scenes/ennemi_base.tscn" id="25_pcpd0"]
-[ext_resource type="Script" uid="uid://biuucr54np1o4" path="res://Tunnel/code/generateur_décor.gd" id="25_yjte1"]
-[ext_resource type="PackedScene" uid="uid://cvtobefov1fcv" path="res://Tunnel/scenes/ile_decor.tscn" id="26_t1mb2"]
-[ext_resource type="Theme" uid="uid://dsyvp45p2rnsf" path="res://Tunnel/assets/tres/theme_inal.tres" id="27_vc01e"]
-[ext_resource type="Script" uid="uid://d3kulgi61vx7c" path="res://Tunnel/code/mesh_shield.gd" id="27_yjte1"]
-[ext_resource type="Script" uid="uid://3qbn3th850yr" path="res://Tunnel/code/end_menu.gd" id="28_54hf6"]
-[ext_resource type="PackedScene" uid="uid://dhc26w7wg12v8" path="res://Tunnel/scenes/ile_plate_petite.tscn" id="28_j2mm2"]
-[ext_resource type="PackedScene" uid="uid://8wat5l281imw" path="res://Tunnel/scenes/ile_plate.tscn" id="28_orb6k"]
-[ext_resource type="PackedScene" uid="uid://cigpaeky366pq" path="res://Tunnel/scenes/ile_petite.tscn" id="28_ugnw2"]
-[ext_resource type="AnimationLibrary" uid="uid://cbe0g2j0ibar4" path="res://Tunnel/anims/player_state.res" id="29_t1mb2"]
-[ext_resource type="AnimationLibrary" uid="uid://qklls5xd6dk3" path="res://Tunnel/anims/player_mooves.res" id="29_vc01e"]
-[ext_resource type="PackedScene" uid="uid://db5b1u5b63h1p" path="res://Tunnel/scenes/ennemi_base_rapide.tscn" id="35_kymkk"]
-[ext_resource type="PackedScene" uid="uid://c17lh7ye2sb5s" path="res://Tunnel/scenes/ennemi_haut_rapide.tscn" id="36_q1fwo"]
-[ext_resource type="Script" uid="uid://bnvjevb4tva3r" path="res://Tunnel/code/start_menu.gd" id="55_54hf6"]
+[ext_resource type="Script" uid="uid://sypax0g1nx8l" path="res://Tunnel/code/TunnelGame.gd" id="1_57n8g"]
+[ext_resource type="AudioStream" uid="uid://d3v8uolibhkp" path="res://Tunnel/assets/musique/Oupi Goupi feat. Chilly Gonzales - Robo Pikmin.mp3" id="2_wpnoc"]
+[ext_resource type="Script" uid="uid://5is5rlw7apl3" path="res://Tunnel/code/musique.gd" id="3_wjcm4"]
+[ext_resource type="AudioStream" uid="uid://bvssbblak8xc7" path="res://Tunnel/assets/sons/move.ogg" id="4_rkacf"]
+[ext_resource type="AudioStream" uid="uid://eaa6cma6qwqn" path="res://Tunnel/assets/sons/jump.ogg" id="5_5ns4x"]
+[ext_resource type="AudioStream" uid="uid://blpiq146u6fcc" path="res://Tunnel/assets/sons/bonus.ogg" id="6_fot7o"]
+[ext_resource type="AudioStream" uid="uid://br4ti1ih3pyd5" path="res://Tunnel/assets/sons/boost.ogg" id="7_6v7pg"]
+[ext_resource type="AudioStream" uid="uid://r10qg7qawb3t" path="res://Tunnel/assets/sons/boost_loss2.ogg" id="8_i1iob"]
+[ext_resource type="AudioStream" uid="uid://c5puiirpxvywp" path="res://Tunnel/assets/sons/mort.ogg" id="9_0tm25"]
+[ext_resource type="AudioStream" uid="uid://dmxrbx3bhcmjt" path="res://Tunnel/assets/sons/grease.ogg" id="10_ff14e"]
+[ext_resource type="AudioStream" uid="uid://cvtrg2hnu88g1" path="res://Tunnel/assets/sons/sol2.ogg" id="11_ht4sg"]
+[ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="12_jd3si"]
+[ext_resource type="AudioStream" uid="uid://kpsomxegouj0" path="res://Tunnel/assets/sons/sam/OG1.wav" id="13_6euqq"]
+[ext_resource type="AudioStream" uid="uid://bnhuu81fphfn2" path="res://Tunnel/assets/sons/sam/OG2.wav" id="14_844fy"]
+[ext_resource type="AudioStream" uid="uid://b8ebwathorh0w" path="res://Tunnel/assets/sons/sam/CG1.wav" id="15_77lfb"]
+[ext_resource type="AudioStream" uid="uid://hujkgxebn1a0" path="res://Tunnel/assets/sons/sam/CG2.wav" id="16_n5aac"]
+[ext_resource type="Script" uid="uid://u8iyeoprv647" path="res://Tunnel/code/score.gd" id="17_e0xan"]
+[ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="18_ytqrl"]
+[ext_resource type="FontFile" uid="uid://dwrrnrrlioue0" path="res://Tunnel/assets/fonts/Gravity.tres" id="19_aenfq"]
+[ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="20_fqtlq"]
+[ext_resource type="Script" uid="uid://cnofg16uqoy2h" path="res://Tunnel/code/prompter.gd" id="21_qg42g"]
+[ext_resource type="Script" uid="uid://dbkqk5ypl2280" path="res://Tunnel/code/tuto_demo.gd" id="22_7cdet"]
+[ext_resource type="Script" uid="uid://dle684xookt2r" path="res://Tunnel/code/Afterimage.gd" id="23_lltfj"]
+[ext_resource type="Script" uid="uid://bvi567a755504" path="res://Tunnel/code/TunnelTrail.gd" id="24_1l46q"]
+[ext_resource type="Script" uid="uid://cdu5uu5sciyn7" path="res://Tunnel/code/player.gd" id="25_p4usi"]
+[ext_resource type="Script" uid="uid://d3kulgi61vx7c" path="res://Tunnel/code/mesh_shield.gd" id="26_io7b7"]
+[ext_resource type="PackedScene" uid="uid://vjtqrhyn2bil" path="res://Tunnel/scenes/plane_mesh.tscn" id="27_4mg0b"]
+[ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="28_ors8g"]
+[ext_resource type="AnimationLibrary" uid="uid://qklls5xd6dk3" path="res://Tunnel/anims/player_mooves.res" id="29_ixqt1"]
+[ext_resource type="AnimationLibrary" uid="uid://cbe0g2j0ibar4" path="res://Tunnel/anims/player_state.res" id="30_fr0kj"]
+[ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="31_a1afe"]
+[ext_resource type="Animation" uid="uid://f6p08jar87k" path="res://Tunnel/anims/robot_pikmin/RESET.res" id="32_gmdpd"]
+[ext_resource type="Animation" uid="uid://bceepxicjdhra" path="res://Tunnel/anims/robot_pikmin/12/carre_to_trapeze.res" id="33_1ktn6"]
+[ext_resource type="Animation" uid="uid://q8iihqkre7nw" path="res://Tunnel/anims/robot_pikmin/12/cercle_to_carre.res" id="34_m5qt7"]
+[ext_resource type="Animation" uid="uid://b0vfo1is3w6ae" path="res://Tunnel/anims/robot_pikmin/12/intro oupi_goupi.res" id="35_jr5pr"]
+[ext_resource type="AnimationLibrary" uid="uid://dicrhldyu67m3" path="res://Tunnel/anims/robot_pikmin/12/topologies.res" id="36_oi8cv"]
+[ext_resource type="Script" uid="uid://lrhqgcttijcw" path="res://Tunnel/scenes/animation_player_oupi_goupi.gd" id="37_htk6i"]
+[ext_resource type="Script" uid="uid://bonnrjd6xoc78" path="res://Tunnel/code/gestionnaire_colonnes.gd" id="38_t8ixf"]
+[ext_resource type="Script" uid="uid://banxlhhyaaumw" path="res://Tunnel/code/sequenceur.gd" id="39_054l4"]
+[ext_resource type="PackedScene" uid="uid://8wat5l281imw" path="res://Tunnel/scenes/ile_plate.tscn" id="40_f08yc"]
+[ext_resource type="PackedScene" uid="uid://cigpaeky366pq" path="res://Tunnel/scenes/ile_petite.tscn" id="41_tctgd"]
+[ext_resource type="PackedScene" uid="uid://3jmp12d808vw" path="res://Tunnel/scenes/ile.tscn" id="42_0yd7r"]
+[ext_resource type="PackedScene" uid="uid://dhc26w7wg12v8" path="res://Tunnel/scenes/ile_plate_petite.tscn" id="43_m27a7"]
+[ext_resource type="PackedScene" uid="uid://qcr3sob1vb1a" path="res://Tunnel/scenes/ennemi_base.tscn" id="44_bbr3y"]
+[ext_resource type="PackedScene" uid="uid://cogvf52esw1ku" path="res://Tunnel/scenes/ennemi_haut.tscn" id="45_x5rbd"]
+[ext_resource type="PackedScene" uid="uid://db5b1u5b63h1p" path="res://Tunnel/scenes/ennemi_base_rapide.tscn" id="46_edret"]
+[ext_resource type="PackedScene" uid="uid://c17lh7ye2sb5s" path="res://Tunnel/scenes/ennemi_haut_rapide.tscn" id="47_rnl71"]
+[ext_resource type="Script" uid="uid://cnbadoaun8yky" path="res://Tunnel/code/sequenceur_anneau.gd" id="48_v6qkt"]
+[ext_resource type="PackedScene" uid="uid://x8j1vynwtcvk" path="res://Tunnel/scenes/anneau.tscn" id="49_t7rh8"]
+[ext_resource type="PackedScene" uid="uid://q0io0vyqpwsa" path="res://Tunnel/scenes/anneau_bonus.tscn" id="50_j5r76"]
+[ext_resource type="Script" uid="uid://biuucr54np1o4" path="res://Tunnel/code/generateur_décor.gd" id="51_wxw65"]
+[ext_resource type="PackedScene" uid="uid://cvtobefov1fcv" path="res://Tunnel/scenes/ile_decor.tscn" id="52_scow3"]
+[ext_resource type="Theme" uid="uid://dsyvp45p2rnsf" path="res://Tunnel/assets/tres/theme_inal.tres" id="53_qqp08"]
+[ext_resource type="Script" uid="uid://3qbn3th850yr" path="res://Tunnel/code/end_menu.gd" id="54_0g6l1"]
 
 [sub_resource type="Gradient" id="Gradient_uilal"]
 offsets = PackedFloat32Array(0, 0.16949153, 0.3457627, 0.62711865, 0.8, 1)
@@ -1453,12 +1452,12 @@ tracks/11/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7p2io"]
 _data = {
-&"RESET": ExtResource("20_j2mm2"),
+&"RESET": ExtResource("32_gmdpd"),
 &"carre_to_cercle": SubResource("Animation_j2mm2"),
-&"carre_to_trapeze": ExtResource("21_ugnw2"),
-&"cercle_to_carre": ExtResource("22_qsgfv"),
+&"carre_to_trapeze": ExtResource("33_1ktn6"),
+&"cercle_to_carre": ExtResource("34_m5qt7"),
 &"hex_to_square": SubResource("Animation_ugnw2"),
-&"intro oupi_goupi": ExtResource("23_7nmlv"),
+&"intro oupi_goupi": ExtResource("35_jr5pr"),
 &"trapeze_to_hex": SubResource("Animation_orb6k")
 }
 
@@ -1491,16 +1490,16 @@ colors = PackedColorArray(0.94509804, 0.4509804, 0, 0.39215687, 0.28235295, 0.62
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rartr"]
 
 [node name="Node3D" type="Node3D" unique_id=1916558742]
-script = ExtResource("1_towaq")
+script = ExtResource("1_57n8g")
 
 [node name="Son" type="Node" parent="." unique_id=476690527]
 
 [node name="Musique" type="AudioStreamPlayer" parent="Son" unique_id=349189595 groups=["musique"]]
 unique_name_in_owner = true
-stream = ExtResource("2_scwf0")
+stream = ExtResource("2_wpnoc")
 volume_db = -8.0
 bus = &"musique"
-script = ExtResource("2_mmhs3")
+script = ExtResource("3_wjcm4")
 bpm = 163.0
 
 [node name="MusiqueEDITOR" type="AudioStreamPlayer" parent="Son" unique_id=1146033820]
@@ -1510,49 +1509,49 @@ bus = &"musique"
 
 [node name="Deplacement" type="AudioStreamPlayer" parent="Son" unique_id=1453653028]
 unique_name_in_owner = true
-stream = ExtResource("3_scwf0")
+stream = ExtResource("4_rkacf")
 volume_db = -10.0
 max_polyphony = 3
 bus = &"sfx"
 
 [node name="Saut" type="AudioStreamPlayer" parent="Son" unique_id=883554571]
 unique_name_in_owner = true
-stream = ExtResource("4_7p2io")
+stream = ExtResource("5_5ns4x")
 volume_db = -8.0
 bus = &"sfx"
 
 [node name="Bonus" type="AudioStreamPlayer" parent="Son" unique_id=1498625953]
 unique_name_in_owner = true
-stream = ExtResource("5_pcpd0")
+stream = ExtResource("6_fot7o")
 volume_db = -8.0
 bus = &"sfx"
 
 [node name="Boost" type="AudioStreamPlayer" parent="Son" unique_id=900646860]
 unique_name_in_owner = true
-stream = ExtResource("6_r1ioa")
+stream = ExtResource("7_6v7pg")
 volume_db = -8.0
 bus = &"sfx"
 
 [node name="BoostLoss" type="AudioStreamPlayer" parent="Son" unique_id=60997317]
 unique_name_in_owner = true
-stream = ExtResource("8_srlbf")
+stream = ExtResource("8_i1iob")
 bus = &"sfx"
 
 [node name="Mort" type="AudioStreamPlayer" parent="Son" unique_id=1049314275]
 unique_name_in_owner = true
-stream = ExtResource("7_id8nj")
+stream = ExtResource("9_0tm25")
 volume_db = -6.0
 bus = &"sfx"
 
 [node name="SonGrease" type="AudioStreamPlayer" parent="Son" unique_id=1522820747]
 unique_name_in_owner = true
-stream = ExtResource("9_byb81")
+stream = ExtResource("10_ff14e")
 volume_db = -7.0
 bus = &"sfx"
 
 [node name="Sol" type="AudioStreamPlayer" parent="Son" unique_id=961934407]
 unique_name_in_owner = true
-stream = ExtResource("10_byb81")
+stream = ExtResource("11_ht4sg")
 volume_db = -14.0
 bus = &"sfx"
 
@@ -1560,8 +1559,8 @@ bus = &"sfx"
 unique_name_in_owner = true
 volume_db = -4.4
 bus = &"voices"
-script = ExtResource("17_va7wv")
-pistes = Array[AudioStream]([ExtResource("12_c270b"), ExtResource("13_srlbf"), ExtResource("15_t1mb2"), ExtResource("14_yjte1")])
+script = ExtResource("12_jd3si")
+pistes = Array[AudioStream]([ExtResource("13_6euqq"), ExtResource("14_844fy"), ExtResource("15_77lfb"), ExtResource("16_n5aac")])
 
 [node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
 unique_name_in_owner = true
@@ -1571,8 +1570,8 @@ anchor_bottom = 1.0
 offset_right = 423.0
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("9_ko843")
-scene_figure = ExtResource("12_qsgfv")
+script = ExtResource("17_e0xan")
+scene_figure = ExtResource("18_ytqrl")
 timer_grease = NodePath("TimerGrease")
 freq_glide = 0.55
 label = NodePath("Score")
@@ -1585,7 +1584,7 @@ offset_top = 40.0
 offset_bottom = 180.0
 grow_horizontal = 2
 theme_override_constants/line_separation = 20
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 text = "[center][outline_color=black][outline_size=10][font_size=40]Score
 00000
@@ -1602,7 +1601,7 @@ offset_top = 164.0
 offset_bottom = 275.0
 grow_horizontal = 2
 theme_override_constants/line_separation = 20
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 scroll_active = false
 vertical_alignment = 1
@@ -1620,6 +1619,7 @@ wait_time = 2.4
 
 [node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label", "label_line")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 11
 anchor_left = 1.0
@@ -1629,7 +1629,7 @@ offset_left = -213.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("11_scwf0")
+script = ExtResource("20_fqtlq")
 label = NodePath("RichTextLabel")
 label_line = NodePath("RichTextLabel2")
 
@@ -1644,7 +1644,7 @@ offset_bottom = -390.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 8
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 text = "[center][outline_color=black][outline_size=10]Beat
 0
@@ -1662,7 +1662,7 @@ offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 8
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 text = "[center][outline_color=black][outline_size=10]Line
 0
@@ -1683,7 +1683,7 @@ offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("10_orb6k")
+script = ExtResource("21_qg42g")
 label = NodePath("RichTextLabel")
 lines = Array[String](["Dad, Mom...", "Where you are you ?", "Chased by the machines...", "I'll be better off with the piquemins!"])
 formating = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
@@ -1699,7 +1699,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 30
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 text = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]I FLY WITH NO DIRECTION, SEEKING THE ENDLESS HORIZON"
 scroll_active = false
@@ -1713,7 +1713,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("22_54hf6")
+script = ExtResource("22_7cdet")
 
 [node name="DepG" type="Control" parent="InputTel" unique_id=1073943059]
 top_level = true
@@ -1739,9 +1739,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Press D or left stick or left trigger to move left
+text = "[center][font_size=25][outline_color=black][outline_size=15]D-Pad left to move left
 "
 scroll_active = false
 vertical_alignment = 1
@@ -1773,9 +1773,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Press D or left stick or right trigger to move right
+text = "[center][font_size=25][outline_color=black][outline_size=15]D-Pad right to move right
 "
 scroll_active = false
 vertical_alignment = 1
@@ -1806,9 +1806,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Hold to glide"
+text = "[center][font_size=25][outline_color=black][outline_size=15]Hold it to glide"
 scroll_active = false
 vertical_alignment = 1
 
@@ -1826,9 +1826,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]press space or A to jump
+text = "[center][font_size=25][outline_color=black][outline_size=15]D-Pad up/down to fly
 "
 scroll_active = false
 vertical_alignment = 1
@@ -1849,7 +1849,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 text = "[center][font_size=25][outline_color=black][outline_size=15]Fly through rings to get bonus score"
 scroll_active = false
@@ -1871,14 +1871,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 text = "[center][font_size=25][outline_color=black][outline_size=15]Flying through multiple rings grant a shield"
 scroll_active = false
 vertical_alignment = 1
 
 [node name="AfterImage" type="Node3D" parent="." unique_id=1683556760 node_paths=PackedStringArray("meshes")]
-script = ExtResource("11_j2mm2")
+script = ExtResource("23_lltfj")
 frames_between_ghosts = 6
 ghost_lifetime = 0.0
 gradient = SubResource("Gradient_uilal")
@@ -1903,7 +1903,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
 [node name="trail_l" type="MeshInstance3D" parent="boite_trails" unique_id=931856344 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_4nqf8")
 skeleton = NodePath("../..")
-script = ExtResource("12_ugnw2")
+script = ExtResource("24_1l46q")
 cible = NodePath("../../Player/plane_mesh/marker_trail_l")
 trail_width_start = 0.01
 trail_width_end = 0.1
@@ -1912,7 +1912,7 @@ trail_precision = 0.02
 [node name="trail_r" type="MeshInstance3D" parent="boite_trails" unique_id=1687691351 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_4nqf8")
 skeleton = NodePath("../..")
-script = ExtResource("12_ugnw2")
+script = ExtResource("24_1l46q")
 cible = NodePath("../../Player/plane_mesh/marker_trail_r")
 trail_width_start = 0.01
 trail_width_end = 0.1
@@ -1921,7 +1921,7 @@ trail_precision = 0.02
 [node name="trail_boost" type="MeshInstance3D" parent="boite_trails" unique_id=1148851857 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_oswye")
 skeleton = NodePath("../..")
-script = ExtResource("12_ugnw2")
+script = ExtResource("24_1l46q")
 cible = NodePath("../../Player/plane_mesh/marker_boost")
 trail_width_start = 0.05
 trail_width_end = 0.5
@@ -1930,7 +1930,7 @@ trail_precision = 0.02
 [node name="trail_boost_l" type="MeshInstance3D" parent="boite_trails" unique_id=903308078 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_fv56i")
 skeleton = NodePath("../..")
-script = ExtResource("12_ugnw2")
+script = ExtResource("24_1l46q")
 cible = NodePath("../../Player/plane_mesh/marker_boost_l")
 trail_width_start = 0.01
 trail_width_end = 0.1
@@ -1939,7 +1939,7 @@ trail_precision = 0.02
 [node name="trail_boost_r" type="MeshInstance3D" parent="boite_trails" unique_id=1163611614 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_rpoyg")
 skeleton = NodePath("../..")
-script = ExtResource("12_ugnw2")
+script = ExtResource("24_1l46q")
 cible = NodePath("../../Player/plane_mesh/marker_boost_r")
 trail_width_start = 0.01
 trail_width_end = 0.1
@@ -1950,7 +1950,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("13_qsgfv")
+script = ExtResource("25_p4usi")
 vitesse_lat_base = 12.0
 max_vitesse_lat = 48.4
 gravite = 3.8
@@ -1964,9 +1964,9 @@ after_image = NodePath("../AfterImage")
 unique_name_in_owner = true
 transform = Transform3D(2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, 0, 1, 0, 0.069271564, -0.0319452)
 mesh = SubResource("SphereMesh_t1mb2")
-script = ExtResource("27_yjte1")
+script = ExtResource("26_io7b7")
 
-[node name="plane_mesh" parent="Player" unique_id=1691899356 instance=ExtResource("16_7s03i")]
+[node name="plane_mesh" parent="Player" unique_id=1691899356 instance=ExtResource("27_4mg0b")]
 unique_name_in_owner = true
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.014875174, 0)
 
@@ -1985,16 +1985,16 @@ transform = Transform3D(27.168007, 0, 0, 0, 14.710211, 0, 0, 0, 5, -2.9928927, -
 [node name="marker_boost_r" type="Marker3D" parent="Player/plane_mesh" unique_id=888190380]
 transform = Transform3D(27.168007, 0, 0, 0, 14.710211, 0, 0, 0, 5, 3.030079, -0.14806843, 1.2361379)
 
-[node name="plane_mesh2" parent="Player" unique_id=1229543547 instance=ExtResource("16_7s03i")]
+[node name="plane_mesh2" parent="Player" unique_id=1229543547 instance=ExtResource("27_4mg0b")]
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.017863512, 0)
 
-[node name="plane_mesh3" parent="Player" unique_id=1483581810 instance=ExtResource("16_7s03i")]
+[node name="plane_mesh3" parent="Player" unique_id=1483581810 instance=ExtResource("27_4mg0b")]
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0, -0.01187253, 0)
 
-[node name="plane_mesh4" parent="Player" unique_id=474001434 instance=ExtResource("16_7s03i")]
+[node name="plane_mesh4" parent="Player" unique_id=474001434 instance=ExtResource("27_4mg0b")]
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, 0.0033038259, -0.014875174, 0)
 
-[node name="plane_mesh5" parent="Player" unique_id=108730496 instance=ExtResource("16_7s03i")]
+[node name="plane_mesh5" parent="Player" unique_id=108730496 instance=ExtResource("27_4mg0b")]
 transform = Transform3D(0.086, 0, 0, 0, 0.10999999, 0, 0, 0, 0.2, -0.0033069253, -0.014875174, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=8308425]
@@ -2011,22 +2011,22 @@ shape = SubResource("CapsuleShape3D_qsgfv")
 [node name="MeshGrease" type="MeshInstance3D" parent="Player" unique_id=903078955]
 transform = Transform3D(0.134, 0, 0, 0, 0.17, 0, 0, 0, 0.309, 0, 0, -0.00348261)
 mesh = SubResource("ArrayMesh_81cow")
-script = ExtResource("19_7nmlv")
+script = ExtResource("28_ors8g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=350355078]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_0mmpq")
-libraries/player_mooves = ExtResource("29_vc01e")
+libraries/player_mooves = ExtResource("29_ixqt1")
 
 [node name="AnimationPlayerInvul" type="AnimationPlayer" parent="Player" unique_id=70778939]
 unique_name_in_owner = true
 root_node = NodePath("../MeshGrease")
 libraries/ = SubResource("AnimationLibrary_vc01e")
-libraries/player_state = ExtResource("29_t1mb2")
+libraries/player_state = ExtResource("30_fr0kj")
 
 [node name="FollowCam" type="Node3D" parent="." unique_id=2058510983 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6000292, 0)
-script = ExtResource("18_byb81")
+script = ExtResource("31_a1afe")
 player = NodePath("../Player")
 
 [node name="Camera3D" type="Camera3D" parent="FollowCam" unique_id=294541281]
@@ -2037,13 +2037,13 @@ near = 0.3
 
 [node name="AnimationPlayerTerrain" type="AnimationPlayer" parent="." unique_id=333131394]
 libraries/ = SubResource("AnimationLibrary_7p2io")
-libraries/topologies = ExtResource("19_orb6k")
-script = ExtResource("21_7p2io")
+libraries/topologies = ExtResource("36_oi8cv")
+script = ExtResource("37_htk6i")
 
 [node name="GestionnaireColonnes" type="Node3D" parent="." unique_id=1059692008 node_paths=PackedStringArray("colonnes") groups=["GestionnaireCol"]]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3500293, 0)
-script = ExtResource("19_va7wv")
+script = ExtResource("38_t8ixf")
 colonnes = [NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Matrice0/Repere0"), NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Matrice1/Repere1"), NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Matrice2/Repere2"), NodePath("Matrice6/Matrice5/Matrice4/Matrice3/Repere3"), NodePath("Matrice6/Matrice5/Matrice4/Repere4"), NodePath("Matrice6/Matrice5/Repere5"), NodePath("Matrice6/Repere6"), NodePath("Matrice6/Matrice7/Repere7"), NodePath("Matrice6/Matrice7/Matrice8/Repere8"), NodePath("Matrice6/Matrice7/Matrice8/Matrice9/Repere9"), NodePath("Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Repere10"), NodePath("Matrice6/Matrice7/Matrice8/Matrice9/Matrice10/Matrice11/Repere11")]
 tubique = false
 liste_vitesses = Array[float]([4.4, 5.7, 6.6, 7.7, 8.6])
@@ -2232,9 +2232,9 @@ transform = Transform3D(1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -4.37113
 mesh = SubResource("QuadMesh_prc5v")
 
 [node name="SequenceurIlesIntro" type="Node" parent="." unique_id=728103349]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("28_orb6k")
-scene_haut = ExtResource("28_ugnw2")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("40_f08yc")
+scene_haut = ExtResource("41_tctgd")
 array_sequences = Array[Dictionary]([{
 2: 20,
 4: 24,
@@ -2258,9 +2258,9 @@ array_sequences = Array[Dictionary]([{
 starting_beats = Array[int]([1])
 
 [node name="SequenceurIlesOG" type="Node" parent="." unique_id=2028814732]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("28_orb6k")
-scene_haut = ExtResource("28_ugnw2")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("40_f08yc")
+scene_haut = ExtResource("41_tctgd")
 array_sequences = Array[Dictionary]([{
 2: 20,
 4: 24,
@@ -2277,9 +2277,9 @@ starting_beats = Array[int]([92, 114, 136])
 ending_beats = Array[int]([126])
 
 [node name="SequenceurIles3B" type="Node" parent="." unique_id=615403465]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("21_81cow")
-scene_haut = ExtResource("28_j2mm2")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("42_0yd7r")
+scene_haut = ExtResource("43_m27a7")
 array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(2, 8),
 1: PackedInt64Array(22, 28),
@@ -2289,9 +2289,9 @@ array_sequences = Array[Dictionary]([{
 starting_beats = Array[int]([33, 43, 53])
 
 [node name="SequenceurIles3BQ" type="Node" parent="." unique_id=102710174]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("21_81cow")
-scene_haut = ExtResource("28_j2mm2")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("42_0yd7r")
+scene_haut = ExtResource("43_m27a7")
 array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(1022, 1028),
 3: PackedInt64Array(1031, 1025)
@@ -2299,9 +2299,9 @@ array_sequences = Array[Dictionary]([{
 starting_beats = Array[int]([173, 179, 185, 191, 197, 272, 278, 266])
 
 [node name="SequenceurIles3BA" type="Node" parent="." unique_id=1363598890]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("21_81cow")
-scene_haut = ExtResource("28_j2mm2")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("42_0yd7r")
+scene_haut = ExtResource("43_m27a7")
 array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(1202, 1208, 1001, 1003, 1007, 1009),
 3: PackedInt64Array(1211, 1205, 1010, 1000, 1004, 1006)
@@ -2309,9 +2309,9 @@ array_sequences = Array[Dictionary]([{
 starting_beats = Array[int]([284, 290, 296])
 
 [node name="SequenceurIlesDemiCercles" type="Node" parent="." unique_id=1731025050]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("21_81cow")
-scene_haut = ExtResource("28_j2mm2")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("42_0yd7r")
+scene_haut = ExtResource("43_m27a7")
 array_sequences = Array[Dictionary]([{
 0: 1026,
 3: 1030,
@@ -2331,9 +2331,9 @@ array_sequences = Array[Dictionary]([{
 starting_beats = Array[int]([206])
 
 [node name="SequenceurIlesDoubleFaille" type="Node" parent="." unique_id=1942690845]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("21_81cow")
-scene_haut = ExtResource("28_j2mm2")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("42_0yd7r")
+scene_haut = ExtResource("43_m27a7")
 array_sequences = Array[Dictionary]([{
 0: -29
 }, {
@@ -2351,8 +2351,8 @@ array_sequences = Array[Dictionary]([{
 starting_beats = Array[int]([244])
 
 [node name="SequenceurEnnemiMur" type="Node" parent="." unique_id=895210650 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("25_pcpd0")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("44_bbr3y")
 array_sequences = Array[Dictionary]([{
 0: 444
 }])
@@ -2361,9 +2361,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([50, 60, 70, 80, 84, 111, 119, 145, 149])
 
 [node name="SequenceurEnnemiMurHaut" type="Node" parent="." unique_id=253167954 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("25_id8nj")
-scene_haut = ExtResource("25_id8nj")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("45_x5rbd")
+scene_haut = ExtResource("45_x5rbd")
 array_sequences = Array[Dictionary]([{
 0: 644
 }])
@@ -2372,9 +2372,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([91, 99, 100, 101, 113, 116, 126, 127, 129, 132, 133, 147, 151, 152, 167])
 
 [node name="SequenceurEnnemiRefrain" type="Node" parent="." unique_id=1136119777 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("25_pcpd0")
-scene_haut = ExtResource("25_id8nj")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("44_bbr3y")
+scene_haut = ExtResource("45_x5rbd")
 array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(1000, 1011, 1005, 1006),
 1: PackedInt64Array(1010, 1009, 1008, 1007, 1004, 1003, 1002, 1001),
@@ -2400,8 +2400,8 @@ starting_beats = Array[int]([153])
 ending_beats = Array[int]([0])
 
 [node name="SequenceurEnnemiCuvette" type="Node" parent="." unique_id=1637164076 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("25_pcpd0")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("44_bbr3y")
 array_sequences = Array[Dictionary]([{
 0: 6,
 1: 7,
@@ -2422,9 +2422,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([106, 130])
 
 [node name="SequenceurEnnemiRefrain2" type="Node" parent="." unique_id=1834778549 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("25_pcpd0")
-scene_haut = ExtResource("25_id8nj")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("44_bbr3y")
+scene_haut = ExtResource("45_x5rbd")
 array_sequences = Array[Dictionary]([{
 0: 1002,
 1: 1008,
@@ -2444,9 +2444,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([174])
 
 [node name="SequenceurEnnemiRefrain2H" type="Node" parent="." unique_id=32150789 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("25_pcpd0")
-scene_haut = ExtResource("25_id8nj")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("44_bbr3y")
+scene_haut = ExtResource("45_x5rbd")
 array_sequences = Array[Dictionary]([{
 0: 1202,
 1: 1208,
@@ -2468,9 +2468,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([186])
 
 [node name="SequenceurEnnemiChilly" type="Node" parent="." unique_id=108875276 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("35_kymkk")
-scene_haut = ExtResource("36_q1fwo")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("46_edret")
+scene_haut = ExtResource("47_rnl71")
 array_sequences = Array[Dictionary]([{
 0: 1020,
 3: 1024,
@@ -2498,9 +2498,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([212])
 
 [node name="SequenceurEnnemiChilly2" type="Node" parent="." unique_id=339935997 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("35_kymkk")
-scene_haut = ExtResource("36_q1fwo")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("46_edret")
+scene_haut = ExtResource("47_rnl71")
 array_sequences = Array[Dictionary]([{
 0: 1220,
 3: 1224,
@@ -2524,9 +2524,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([244])
 
 [node name="SequenceurEnnemiFin" type="Node" parent="." unique_id=1336890576 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("35_kymkk")
-scene_haut = ExtResource("36_q1fwo")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("46_edret")
+scene_haut = ExtResource("47_rnl71")
 array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(1000, 1006, 1003, 1009),
 1: PackedInt64Array(1011, 1005, 1002, 1008),
@@ -2537,9 +2537,9 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([286, 290, 294, 298])
 
 [node name="SequenceurEnnemiFin2" type="Node" parent="." unique_id=473370591 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("35_kymkk")
-scene_haut = ExtResource("36_q1fwo")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("46_edret")
+scene_haut = ExtResource("47_rnl71")
 array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(1225, 1231),
 2: PackedInt64Array(1228, 1222)
@@ -2549,7 +2549,7 @@ after_image_bas = NodePath("../AfterImageEnnemis")
 starting_beats = Array[int]([278, 280, 282, 284])
 
 [node name="AfterImageEnnemis" type="Node3D" parent="." unique_id=416968996]
-script = ExtResource("11_j2mm2")
+script = ExtResource("23_lltfj")
 frames_between_ghosts = 10
 ghost_lifetime = 0.2
 gradient = SubResource("Gradient_7p2io")
@@ -2558,7 +2558,7 @@ prog_couleur = 0.8
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageEnnemis" unique_id=1759069764]
 
 [node name="AfterImageEnnemisHaut" type="Node3D" parent="." unique_id=655615077]
-script = ExtResource("11_j2mm2")
+script = ExtResource("23_lltfj")
 frames_between_ghosts = 10
 ghost_lifetime = 0.2
 gradient = SubResource("Gradient_pcpd0")
@@ -2567,21 +2567,21 @@ prog_couleur = 0.8
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageEnnemisHaut" unique_id=196538321]
 
 [node name="SequenceurAnneau" type="Node3D" parent="." unique_id=64068312 node_paths=PackedStringArray("after_image")]
-script = ExtResource("22_nfqlf")
-scene_seq = ExtResource("23_c270b")
+script = ExtResource("48_v6qkt")
+scene_seq = ExtResource("49_t7rh8")
 beat_anneaux = Array[int]([54, 165, 201, 266])
 after_image = NodePath("../AfterImageAnneaux")
 
 [node name="AfterImageAnneaux" type="Node3D" parent="." unique_id=2061930232]
-script = ExtResource("11_j2mm2")
+script = ExtResource("23_lltfj")
 frames_between_ghosts = 6
 gradient = SubResource("Gradient_j2mm2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageAnneaux" unique_id=1190748186]
 
 [node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
-script = ExtResource("20_0mmpq")
-scene_seq = ExtResource("24_srlbf")
+script = ExtResource("39_054l4")
+scene_seq = ExtResource("50_j5r76")
 array_sequences = Array[Dictionary]([{
 29: 1205,
 41: 1011,
@@ -2624,7 +2624,7 @@ after_image_bas = NodePath("../AfterImageAB")
 starting_beats = Array[int]([1])
 
 [node name="AfterImageAB" type="Node3D" parent="." unique_id=2104395526]
-script = ExtResource("11_j2mm2")
+script = ExtResource("23_lltfj")
 frames_between_ghosts = 15
 ghost_lifetime = 0.3
 gradient = SubResource("Gradient_uilal")
@@ -2633,8 +2633,8 @@ prog_couleur = 0.8
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageAB" unique_id=982785119]
 
 [node name="GenerateurDécor" type="Node" parent="." unique_id=153111249]
-script = ExtResource("25_yjte1")
-scene_seq = ExtResource("26_t1mb2")
+script = ExtResource("51_wxw65")
+scene_seq = ExtResource("52_scow3")
 bruit_generation = SubResource("FastNoiseLite_rartr")
 pas_gen = 131.2
 array_sequences = Array[Dictionary]([{
@@ -2657,8 +2657,8 @@ offset_right = 333.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("27_vc01e")
-script = ExtResource("28_54hf6")
+theme = ExtResource("53_qqp08")
+script = ExtResource("54_0g6l1")
 restart_button = NodePath("Panel/MarginContainer/VBoxContainer/Button")
 
 [node name="Panel" type="Panel" parent="EndMenu" unique_id=1088778375]
@@ -2688,85 +2688,17 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/normal_font = ExtResource("10_ko843")
+theme = ExtResource("53_qqp08")
+theme_override_fonts/normal_font = ExtResource("19_aenfq")
 bbcode_enabled = true
 text = "[center]Score : 00000"
 
 [node name="Button" type="Button" parent="EndMenu/Panel/MarginContainer/VBoxContainer" unique_id=837514569]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/font = ExtResource("10_ko843")
+theme = ExtResource("53_qqp08")
+theme_override_fonts/font = ExtResource("19_aenfq")
 text = "PLAY AGAIN"
-
-[node name="StartMenu" type="Control" parent="." unique_id=72108188 node_paths=PackedStringArray("array_tutos")]
-unique_name_in_owner = true
-z_index = 10
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -166.0
-offset_right = 333.0
-offset_bottom = 135.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("27_vc01e")
-script = ExtResource("55_54hf6")
-array_controler = Array[String](["[center][font_size=25][outline_color=black][outline_size=15]D-Pad left to move left", "[center][font_size=25][outline_color=black][outline_size=15]D-Pad right to move right", "[center][font_size=25][outline_color=black][outline_size=15]D-Pad up/down to fly"])
-array_keyboard = Array[String](["[center][font_size=25][outline_color=black][outline_size=15]A/Q to move left", "[center][font_size=25][outline_color=black][outline_size=15]D to move right", "[center][font_size=25][outline_color=black][outline_size=15]W/Z or space to fly"])
-array_tutos = [NodePath("../InputTel/DepG/TutoGauche"), NodePath("../InputTel/DepD/TutoDroit"), NodePath("../InputTel/Saut/TutoSaut")]
-
-[node name="Panel" type="Panel" parent="StartMenu" unique_id=43612044]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="StartMenu/Panel" unique_id=857708341]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/Panel/MarginContainer" unique_id=327431334]
-layout_mode = 2
-
-[node name="Keyboard" type="Button" parent="StartMenu/Panel/MarginContainer/VBoxContainer" unique_id=176894395]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/font = ExtResource("10_ko843")
-text = "Keyboard"
-
-[node name="Or" type="RichTextLabel" parent="StartMenu/Panel/MarginContainer/VBoxContainer" unique_id=669385657]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]or"
-vertical_alignment = 1
-
-[node name="Controler" type="Button" parent="StartMenu/Panel/MarginContainer/VBoxContainer" unique_id=1280320341]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/font = ExtResource("10_ko843")
-text = "Controler"
 
 [connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
@@ -2780,5 +2712,3 @@ text = "Controler"
 [connection signal="area_entered" from="Player/Grease" to="Player/MeshGrease" method="_on_grease_area_entered"]
 [connection signal="deplacement_colonne" from="GestionnaireColonnes" to="BeatCount" method="_on_gestionnaire_colonnes_deplacement_colonne"]
 [connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/Button" to="EndMenu" method="_restart"]
-[connection signal="pressed" from="StartMenu/Panel/MarginContainer/VBoxContainer/Keyboard" to="StartMenu" method="_on_keyboard_pressed"]
-[connection signal="pressed" from="StartMenu/Panel/MarginContainer/VBoxContainer/Controler" to="StartMenu" method="_on_controler_pressed"]
