@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://q0io0vyqpwsa"]
+[gd_scene format=3 uid="uid://b820b2bjxjh38"]
 
-[ext_resource type="Script" uid="uid://be73qjfnyysmi" path="res://Tunnel/code/anneau_bonus.gd" id="1_6qo50"]
-[ext_resource type="AudioStream" uid="uid://drnrqmbscddc1" path="res://Tunnel/assets/sons/ring_passed_001.ogg" id="2_8ym2n"]
-[ext_resource type="AudioStream" uid="uid://boxn1vyl6te8i" path="res://Tunnel/assets/sons/ring_passed_002.ogg" id="3_vy7qp"]
-[ext_resource type="AudioStream" uid="uid://cwi2r1na6w3is" path="res://Tunnel/assets/sons/ring_passed_003.ogg" id="4_jy1om"]
-[ext_resource type="AudioStream" uid="uid://chqdput40oirb" path="res://Tunnel/assets/sons/ring_passed_004.ogg" id="5_5ae1y"]
-[ext_resource type="AudioStream" uid="uid://j3dngppcvjcv" path="res://Tunnel/assets/sons/ring_passed_005.ogg" id="6_6penq"]
+[ext_resource type="Script" uid="uid://be73qjfnyysmi" path="res://Tunnel/code/anneau_bonus.gd" id="1_bqfe2"]
+[ext_resource type="AudioStream" uid="uid://drnrqmbscddc1" path="res://Tunnel/assets/sons/ring_passed_001.ogg" id="2_wrko5"]
+[ext_resource type="AudioStream" uid="uid://boxn1vyl6te8i" path="res://Tunnel/assets/sons/ring_passed_002.ogg" id="3_riq4q"]
+[ext_resource type="AudioStream" uid="uid://cwi2r1na6w3is" path="res://Tunnel/assets/sons/ring_passed_003.ogg" id="4_rjf2i"]
+[ext_resource type="AudioStream" uid="uid://chqdput40oirb" path="res://Tunnel/assets/sons/ring_passed_004.ogg" id="5_vhcoh"]
+[ext_resource type="AudioStream" uid="uid://j3dngppcvjcv" path="res://Tunnel/assets/sons/ring_passed_005.ogg" id="6_kueoo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oo0xd"]
 transparency = 3
 alpha_hash_scale = 1.0
 alpha_antialiasing_mode = 0
 shading_mode = 0
-albedo_color = Color(0.67996025, 0.41052526, 1, 0.8862745)
+albedo_color = Color(5.1499906e-06, 0.6929647, 0.3180213, 0.8862745)
 
 [sub_resource type="TorusMesh" id="TorusMesh_y1l86"]
 material = SubResource("StandardMaterial3D_oo0xd")
@@ -34,16 +34,16 @@ radius = 0.46923828
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m3eu2"]
 streams_count = 5
-stream_0/stream = ExtResource("2_8ym2n")
-stream_1/stream = ExtResource("3_vy7qp")
-stream_2/stream = ExtResource("4_jy1om")
-stream_3/stream = ExtResource("5_5ae1y")
-stream_4/stream = ExtResource("6_6penq")
+stream_0/stream = ExtResource("2_wrko5")
+stream_1/stream = ExtResource("3_riq4q")
+stream_2/stream = ExtResource("4_rjf2i")
+stream_3/stream = ExtResource("5_vhcoh")
+stream_4/stream = ExtResource("6_kueoo")
 
 [node name="Node3D" type="Node3D" unique_id=1856314455 node_paths=PackedStringArray("meshes")]
-script = ExtResource("1_6qo50")
+script = ExtResource("1_bqfe2")
 meshes = [NodePath("Anneau/MeshInstance3D"), NodePath("Anneau/MeshInstance3D5"), NodePath("Anneau/MeshInstance3D4"), NodePath("Anneau/MeshInstance3D2"), NodePath("Anneau/MeshInstance3D3")]
-gain = 1.4
+gain = 0.8
 
 [node name="Anneau" type="Area3D" parent="." unique_id=1936295034]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)

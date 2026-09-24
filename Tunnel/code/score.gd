@@ -55,10 +55,10 @@ func _on_huge_ring_passed():
 	add_score(score_ring)
 	update_score()
 
-func bonus_modificateur():
+func bonus_modificateur(gain: float):
 	%Bonus.play()
-	modificateur = float(roundi(modificateur + 1.4))
-	%Bonus.pitch_scale = 1.0 + index_bonus * 0.1
+	modificateur = float(roundi(modificateur + gain))
+	%Bonus.pitch_scale = 1.0 + modificateur * 0.1
 	index_bonus += 1
 	
 	var score_ring:= 100 * modificateur
@@ -108,7 +108,7 @@ func _process(delta: float) -> void:
 	if modificateur > 1.0:
 		%Mod.show()
 		modificateur -= mod_decay * delta * modificateur
-		%Player.after_image.ghost_lifetime = minf(0.3, (modificateur -1.0)*0.05)
+		%Player.after_image.ghost_lifetime = minf(0.25, (modificateur -1.0)*0.05)
 		if modificateur > 5.0:
 			%Player.after_image.frames_between_ghosts = maxi(5 - int((modificateur - 5.0)*0.8), 1)
 		else:
@@ -171,7 +171,7 @@ func grease():
 			fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_grease
 			fig_grease_combo.show()
 		else:
-			score_grease += index_grease * 0.5
+			score_grease += index_grease * 0.8
 			fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_grease
 
 
@@ -209,4 +209,7 @@ Score : %0*d" % [5,int(%Score.score)]
 
 func _on_musique_on_beat(beat: int) -> void:
 	if beat == end_beat:
+		get_begin()
+		
+		await get_tree().create_timer(1.5).timeout
 		_fin(true)

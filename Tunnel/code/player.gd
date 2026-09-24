@@ -210,4 +210,4 @@ func _on_area_entered(area: Area3D) -> void:
 				
 			
 	elif agent_met is AnneauBonus and !invincible:
-		%Score.bonus_modificateur()
+		%Score.bonus_modificateur(agent_met.gain)

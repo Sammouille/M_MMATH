@@ -5,6 +5,7 @@ class_name AnneauBonus
 
 @export var meshes: Array[MeshInstance3D]
 
+@export var gain:= 1.0
 
 func _physics_process(delta: float) -> void:
 	position.z += gestionnaire_colonnes.avancement_vitesse * delta

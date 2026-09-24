@@ -34,9 +34,9 @@
 [ext_resource type="Script" uid="uid://lrhqgcttijcw" path="res://Tunnel/scenes/animation_player_oupi_goupi.gd" id="21_7p2io"]
 [ext_resource type="PackedScene" uid="uid://3jmp12d808vw" path="res://Tunnel/scenes/ile.tscn" id="21_81cow"]
 [ext_resource type="Animation" uid="uid://bceepxicjdhra" path="res://Tunnel/anims/robot_pikmin/12/carre_to_trapeze.res" id="21_ugnw2"]
-[ext_resource type="Script" uid="uid://dbkqk5ypl2280" path="res://Tunnel/code/tuto_demo.gd" id="22_54hf6"]
 [ext_resource type="Script" uid="uid://cnbadoaun8yky" path="res://Tunnel/code/sequenceur_anneau.gd" id="22_nfqlf"]
 [ext_resource type="Animation" uid="uid://q8iihqkre7nw" path="res://Tunnel/anims/robot_pikmin/12/cercle_to_carre.res" id="22_qsgfv"]
+[ext_resource type="Script" uid="uid://cpm6w3tanpljx" path="res://Tunnel/code/input_tel.gd" id="22_vc01e"]
 [ext_resource type="Animation" uid="uid://b0vfo1is3w6ae" path="res://Tunnel/anims/robot_pikmin/12/intro oupi_goupi.res" id="23_7nmlv"]
 [ext_resource type="PackedScene" uid="uid://x8j1vynwtcvk" path="res://Tunnel/scenes/anneau.tscn" id="23_c270b"]
 [ext_resource type="PackedScene" uid="uid://q0io0vyqpwsa" path="res://Tunnel/scenes/anneau_bonus.tscn" id="24_srlbf"]
@@ -54,7 +54,6 @@
 [ext_resource type="AnimationLibrary" uid="uid://qklls5xd6dk3" path="res://Tunnel/anims/player_mooves.res" id="29_vc01e"]
 [ext_resource type="PackedScene" uid="uid://db5b1u5b63h1p" path="res://Tunnel/scenes/ennemi_base_rapide.tscn" id="35_kymkk"]
 [ext_resource type="PackedScene" uid="uid://c17lh7ye2sb5s" path="res://Tunnel/scenes/ennemi_haut_rapide.tscn" id="36_q1fwo"]
-[ext_resource type="Script" uid="uid://bnvjevb4tva3r" path="res://Tunnel/code/start_menu.gd" id="55_54hf6"]
 
 [sub_resource type="Gradient" id="Gradient_uilal"]
 offsets = PackedFloat32Array(0, 0.16949153, 0.3457627, 0.62711865, 0.8, 1)
@@ -125,7 +124,7 @@ radius = 0.19565694
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qsgfv"]
 radius = 0.32128906
-height = 1.0795898
+height = 1.5002383
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gcorn"]
 
@@ -1713,7 +1712,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("22_54hf6")
+script = ExtResource("22_vc01e")
 
 [node name="DepG" type="Control" parent="InputTel" unique_id=1073943059]
 top_level = true
@@ -1722,29 +1721,6 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 365.0
 grow_vertical = 2
-
-[node name="TutoGauche" type="RichTextLabel" parent="InputTel/DepG" unique_id=1743548522]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 67.0
-offset_top = -83.0
-offset_right = -29.0
-offset_bottom = 109.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Press D or left stick or left trigger to move left
-"
-scroll_active = false
-vertical_alignment = 1
 
 [node name="DepD" type="Control" parent="InputTel" unique_id=691586127]
 top_level = true
@@ -1757,29 +1733,6 @@ offset_left = -362.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="TutoDroit" type="RichTextLabel" parent="InputTel/DepD" unique_id=1697877755]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 57.0
-offset_top = -83.0
-offset_right = -66.0
-offset_bottom = 107.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Press D or left stick or right trigger to move right
-"
-scroll_active = false
-vertical_alignment = 1
-
 [node name="Saut" type="Control" parent="InputTel" unique_id=657876836]
 top_level = true
 layout_mode = 1
@@ -1791,91 +1744,6 @@ offset_left = -190.0
 offset_right = 193.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TutoPlane" type="RichTextLabel" parent="InputTel/Saut" unique_id=1400537155]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -272.5
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Hold to glide"
-scroll_active = false
-vertical_alignment = 1
-
-[node name="TutoSaut" type="RichTextLabel" parent="InputTel/Saut" unique_id=1977712599]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -277.0
-offset_bottom = -89.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]press space or A to jump
-"
-scroll_active = false
-vertical_alignment = 1
-
-[node name="TutoRings1" type="RichTextLabel" parent="InputTel" unique_id=549713224]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 450.0
-offset_top = -260.0
-offset_right = -444.0
-offset_bottom = -80.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Fly through rings to get bonus score"
-scroll_active = false
-vertical_alignment = 1
-
-[node name="TutoRings2" type="RichTextLabel" parent="InputTel" unique_id=1655409752]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 450.0
-offset_top = -260.0
-offset_right = -444.0
-offset_bottom = -80.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/line_separation = 15
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-bbcode_enabled = true
-text = "[center][font_size=25][outline_color=black][outline_size=15]Flying through multiple rings grant a shield"
-scroll_active = false
-vertical_alignment = 1
 
 [node name="AfterImage" type="Node3D" parent="." unique_id=1683556760 node_paths=PackedStringArray("meshes")]
 script = ExtResource("11_j2mm2")
@@ -2005,11 +1873,11 @@ shape = SubResource("SphereShape3D_7nmlv")
 unique_name_in_owner = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Grease" unique_id=822965883]
-transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, -0.12639463)
+transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, -0.33639663)
 shape = SubResource("CapsuleShape3D_qsgfv")
 
 [node name="MeshGrease" type="MeshInstance3D" parent="Player" unique_id=903078955]
-transform = Transform3D(0.134, 0, 0, 0, 0.17, 0, 0, 0, 0.309, 0, 0, -0.00348261)
+transform = Transform3D(0.15, 0, 0, 0, 0.19, 0, 0, 0, 0.4, 0, 0, -0.00348261)
 mesh = SubResource("ArrayMesh_81cow")
 script = ExtResource("19_7nmlv")
 
@@ -2700,74 +2568,6 @@ theme = ExtResource("27_vc01e")
 theme_override_fonts/font = ExtResource("10_ko843")
 text = "PLAY AGAIN"
 
-[node name="StartMenu" type="Control" parent="." unique_id=72108188 node_paths=PackedStringArray("array_tutos")]
-unique_name_in_owner = true
-z_index = 10
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -166.0
-offset_right = 333.0
-offset_bottom = 135.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("27_vc01e")
-script = ExtResource("55_54hf6")
-array_controler = Array[String](["[center][font_size=25][outline_color=black][outline_size=15]D-Pad left to move left", "[center][font_size=25][outline_color=black][outline_size=15]D-Pad right to move right", "[center][font_size=25][outline_color=black][outline_size=15]D-Pad up/down to fly"])
-array_keyboard = Array[String](["[center][font_size=25][outline_color=black][outline_size=15]A/Q to move left", "[center][font_size=25][outline_color=black][outline_size=15]D to move right", "[center][font_size=25][outline_color=black][outline_size=15]W/Z or space to fly"])
-array_tutos = [NodePath("../InputTel/DepG/TutoGauche"), NodePath("../InputTel/DepD/TutoDroit"), NodePath("../InputTel/Saut/TutoSaut")]
-
-[node name="Panel" type="Panel" parent="StartMenu" unique_id=43612044]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="StartMenu/Panel" unique_id=857708341]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/Panel/MarginContainer" unique_id=327431334]
-layout_mode = 2
-
-[node name="Keyboard" type="Button" parent="StartMenu/Panel/MarginContainer/VBoxContainer" unique_id=176894395]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/font = ExtResource("10_ko843")
-text = "Keyboard"
-
-[node name="Or" type="RichTextLabel" parent="StartMenu/Panel/MarginContainer/VBoxContainer" unique_id=669385657]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/normal_font = ExtResource("10_ko843")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]or"
-vertical_alignment = 1
-
-[node name="Controler" type="Button" parent="StartMenu/Panel/MarginContainer/VBoxContainer" unique_id=1280320341]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("27_vc01e")
-theme_override_fonts/font = ExtResource("10_ko843")
-text = "Controler"
-
 [connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="InputTel" method="_on_musique_on_beat"]
@@ -2780,5 +2580,3 @@ text = "Controler"
 [connection signal="area_entered" from="Player/Grease" to="Player/MeshGrease" method="_on_grease_area_entered"]
 [connection signal="deplacement_colonne" from="GestionnaireColonnes" to="BeatCount" method="_on_gestionnaire_colonnes_deplacement_colonne"]
 [connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/Button" to="EndMenu" method="_restart"]
-[connection signal="pressed" from="StartMenu/Panel/MarginContainer/VBoxContainer/Keyboard" to="StartMenu" method="_on_keyboard_pressed"]
-[connection signal="pressed" from="StartMenu/Panel/MarginContainer/VBoxContainer/Controler" to="StartMenu" method="_on_controler_pressed"]
