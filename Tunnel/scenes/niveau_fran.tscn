@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://8f1vq1cbfd0o"]
 
 [ext_resource type="Script" uid="uid://sypax0g1nx8l" path="res://Tunnel/code/TunnelGame.gd" id="1_qo4u8"]
-[ext_resource type="AudioStream" uid="uid://do3r8t4f65mcj" path="res://Tunnel/assets/musique/wireframe.ogg" id="2_8mdx6"]
+[ext_resource type="AudioStream" uid="uid://cf6ivnapwg5og" path="res://Tunnel/assets/musique/musique_fran.ogg" id="2_7bbab"]
 [ext_resource type="Script" uid="uid://5is5rlw7apl3" path="res://Tunnel/code/musique.gd" id="3_ass3v"]
 [ext_resource type="AudioStream" uid="uid://bvssbblak8xc7" path="res://Tunnel/assets/sons/move.ogg" id="4_woycb"]
 [ext_resource type="AudioStream" uid="uid://eaa6cma6qwqn" path="res://Tunnel/assets/sons/jump.ogg" id="5_j86ed"]
@@ -12,11 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://dmxrbx3bhcmjt" path="res://Tunnel/assets/sons/grease.ogg" id="10_c1yij"]
 [ext_resource type="AudioStream" uid="uid://cvtrg2hnu88g1" path="res://Tunnel/assets/sons/sol2.ogg" id="11_43y58"]
 [ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="12_6y37i"]
-[ext_resource type="AudioStream" uid="uid://kpsomxegouj0" path="res://Tunnel/assets/sons/sam/OG1.wav" id="13_oglsd"]
-[ext_resource type="AudioStream" uid="uid://bnhuu81fphfn2" path="res://Tunnel/assets/sons/sam/OG2.wav" id="14_f2hej"]
-[ext_resource type="AudioStream" uid="uid://b8ebwathorh0w" path="res://Tunnel/assets/sons/sam/CG1.wav" id="15_5bw06"]
-[ext_resource type="AudioStream" uid="uid://hujkgxebn1a0" path="res://Tunnel/assets/sons/sam/CG2.wav" id="16_hrhp0"]
+[ext_resource type="AudioStream" uid="uid://b0cax0qg5weyu" path="res://Tunnel/assets/sons/sam/offi/sam(6).wav" id="13_t75e8"]
+[ext_resource type="AudioStream" uid="uid://hlqtkil1ugeq" path="res://Tunnel/assets/sons/sam/offi/sam(7).wav" id="14_0kumr"]
+[ext_resource type="AudioStream" uid="uid://c1rfim1bijdww" path="res://Tunnel/assets/sons/sam/offi/sam(8).wav" id="15_qo4u8"]
+[ext_resource type="AudioStream" uid="uid://b4x4ehvldmvbo" path="res://Tunnel/assets/sons/sam/offi/sam(9).wav" id="16_m4ia2"]
 [ext_resource type="Script" uid="uid://u8iyeoprv647" path="res://Tunnel/code/score.gd" id="17_5b24j"]
+[ext_resource type="AudioStream" uid="uid://ui8lsj5ufogr" path="res://Tunnel/assets/sons/sam/offi/sam(10).wav" id="17_ass3v"]
 [ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="18_ohjwp"]
 [ext_resource type="FontFile" uid="uid://dwrrnrrlioue0" path="res://Tunnel/assets/fonts/Gravity.tres" id="19_w6fq8"]
 [ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="20_ot6v4"]
@@ -29,7 +30,7 @@
 [ext_resource type="Script" uid="uid://d3kulgi61vx7c" path="res://Tunnel/code/mesh_shield.gd" id="26_m4ia2"]
 [ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="27_8d5uh"]
 [ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="28_bl0ng"]
-[ext_resource type="Animation" uid="uid://f6p08jar87k" path="res://Tunnel/anims/robot_pikmin/12/RESET.res" id="29_40wed"]
+[ext_resource type="Animation" uid="uid://f6p08jar87k" path="res://Tunnel/anims/robot_pikmin/RESET.res" id="29_40wed"]
 [ext_resource type="Animation" uid="uid://bceepxicjdhra" path="res://Tunnel/anims/robot_pikmin/12/carre_to_trapeze.res" id="30_qxaef"]
 [ext_resource type="Animation" uid="uid://q8iihqkre7nw" path="res://Tunnel/anims/robot_pikmin/12/cercle_to_carre.res" id="31_gppsa"]
 [ext_resource type="Animation" uid="uid://b0vfo1is3w6ae" path="res://Tunnel/anims/robot_pikmin/12/intro oupi_goupi.res" id="32_q5k05"]
@@ -1116,11 +1117,12 @@ script = ExtResource("1_qo4u8")
 
 [node name="Musique" type="AudioStreamPlayer" parent="Son" unique_id=349189595 groups=["musique"]]
 unique_name_in_owner = true
-stream = ExtResource("2_8mdx6")
+stream = ExtResource("2_7bbab")
 volume_db = -8.0
 bus = &"musique"
+parameters/looping = true
 script = ExtResource("3_ass3v")
-bpm = 146.0
+bpm = 190.0
 
 [node name="MusiqueEDITOR" type="AudioStreamPlayer" parent="Son" unique_id=1146033820]
 volume_db = -8.0
@@ -1180,7 +1182,7 @@ unique_name_in_owner = true
 volume_db = -4.4
 bus = &"voices"
 script = ExtResource("12_6y37i")
-pistes = Array[AudioStream]([ExtResource("13_oglsd"), ExtResource("14_f2hej"), ExtResource("15_5bw06"), ExtResource("16_hrhp0")])
+pistes = Array[AudioStream]([ExtResource("13_t75e8"), ExtResource("14_0kumr"), ExtResource("15_qo4u8"), ExtResource("16_m4ia2"), ExtResource("17_ass3v")])
 
 [node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
 unique_name_in_owner = true
@@ -1194,6 +1196,7 @@ script = ExtResource("17_5b24j")
 scene_figure = ExtResource("18_ohjwp")
 timer_grease = NodePath("TimerGrease")
 freq_glide = 0.55
+end_beat = 507
 label = NodePath("Score")
 
 [node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
@@ -1304,7 +1307,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("21_biv4y")
 label = NodePath("RichTextLabel")
-lines = Array[String](["Dad, Mom...", "Where you are you ?", "Chased by the machines...", "I'll be better off with the piquemins!"])
+lines = Array[String](["A STORM IS COMING, FOLLOW YOUR HEART !", "WHAT PLACE DO YOU SEEK? WHAT ARE YOU AFRAID OF?", "IN THIS VERY PLACE, WHAT BURNS IN YOUR HEART DEFINES YOU", "RECLAIM WHAT HAS NOT BEEN GIVEN TO YOU, GIVE EVERYTHING", "SET YOUR HEART ABLAZE, FULLFILL YOUR SOUL WITH NO REGRETS"])
 formating = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1916484154]
@@ -1615,7 +1618,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3500293, 0)
 script = ExtResource("35_4dn0e")
 colonnes = [NodePath("Matrice/Repere0"), NodePath("Matrice/Matrice1/Repere1"), NodePath("Matrice/Matrice1/Matrice2/Repere2"), NodePath("Matrice/Matrice1/Matrice2/Matrice3/Repere3"), NodePath("Matrice/Matrice1/Matrice2/Matrice3/Matrice4/Repere4"), NodePath("Matrice/Matrice8/Matrice7/Matrice6/Matrice5/Repere5"), NodePath("Matrice/Matrice8/Matrice7/Matrice6/Repere6"), NodePath("Matrice/Matrice8/Matrice7/Repere7"), NodePath("Matrice/Matrice8/Repere8")]
 tubique = false
-liste_vitesses = Array[float]([4.4, 5.7, 6.6, 7.7, 8.6])
+liste_vitesses = Array[float]([4.4, 5.7, 6.6, 7.7, 8.6, 10.0])
 
 [node name="Matrice" type="Marker3D" parent="GestionnaireColonnes" unique_id=110031620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
@@ -1775,7 +1778,7 @@ array_sequences = Array[Dictionary]([{
 29: PackedInt64Array(208, 202),
 30: PackedInt64Array(209, 203)
 }])
-starting_beats = Array[int]([1])
+starting_beats = Array[int]([])
 
 [node name="SequenceurEnnemiMur" type="Node" parent="." unique_id=895210650 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -1785,7 +1788,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([50, 60, 70, 80, 84, 111, 119, 145, 149])
+starting_beats = Array[int]([])
 
 [node name="AfterImageEnnemis" type="Node3D" parent="." unique_id=416968996]
 script = ExtResource("23_h1ojl")
@@ -1808,7 +1811,7 @@ prog_couleur = 0.8
 [node name="SequenceurAnneau" type="Node3D" parent="." unique_id=64068312 node_paths=PackedStringArray("after_image")]
 script = ExtResource("45_6dud3")
 scene_seq = ExtResource("46_ouf87")
-beat_anneaux = Array[int]([54, 165, 201, 266])
+beat_anneaux = Array[int]([32, 135, 227, 369, 424])
 after_image = NodePath("../AfterImageAnneaux")
 
 [node name="AfterImageAnneaux" type="Node3D" parent="." unique_id=2061930232]
@@ -1860,7 +1863,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageAB")
 after_image_bas = NodePath("../AfterImageAB")
-starting_beats = Array[int]([1])
+starting_beats = Array[int]([])
 
 [node name="AfterImageAB" type="Node3D" parent="." unique_id=2104395526]
 script = ExtResource("23_h1ojl")
@@ -1875,6 +1878,7 @@ prog_couleur = 0.8
 script = ExtResource("48_8esoh")
 scene_seq = ExtResource("49_uhg6l")
 bruit_generation = SubResource("FastNoiseLite_rartr")
+taille_colonnes = 9
 pas_gen = 131.2
 array_sequences = Array[Dictionary]([{
 301: 44
