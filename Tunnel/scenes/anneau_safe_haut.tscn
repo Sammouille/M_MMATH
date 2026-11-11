@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://drih274nqnw8s"]
+
+[ext_resource type="Script" uid="uid://be73qjfnyysmi" path="res://Tunnel/code/anneau_bonus.gd" id="1_mjxfg"]
+[ext_resource type="AudioStream" uid="uid://drnrqmbscddc1" path="res://Tunnel/assets/sons/ring_passed_001.ogg" id="2_cqh5c"]
+[ext_resource type="AudioStream" uid="uid://boxn1vyl6te8i" path="res://Tunnel/assets/sons/ring_passed_002.ogg" id="3_lhjrb"]
+[ext_resource type="AudioStream" uid="uid://cwi2r1na6w3is" path="res://Tunnel/assets/sons/ring_passed_003.ogg" id="4_hegat"]
+[ext_resource type="AudioStream" uid="uid://chqdput40oirb" path="res://Tunnel/assets/sons/ring_passed_004.ogg" id="5_yovba"]
+[ext_resource type="AudioStream" uid="uid://j3dngppcvjcv" path="res://Tunnel/assets/sons/ring_passed_005.ogg" id="6_x5272"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqfe2"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(0.86610025, 0.5721183, 0, 0.8862745)
+
+[sub_resource type="TorusMesh" id="TorusMesh_wrko5"]
+material = SubResource("StandardMaterial3D_bqfe2")
+inner_radius = 0.6
+outer_radius = 0.8
+rings = 8
+ring_segments = 4
+
+[sub_resource type="TorusMesh" id="TorusMesh_riq4q"]
+material = SubResource("StandardMaterial3D_bqfe2")
+inner_radius = 0.6
+outer_radius = 0.8
+rings = 8
+ring_segments = 4
+
+[sub_resource type="TorusMesh" id="TorusMesh_rjf2i"]
+material = SubResource("StandardMaterial3D_bqfe2")
+inner_radius = 0.6
+outer_radius = 0.8
+rings = 8
+ring_segments = 4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oo0xd"]
+height = 0.19999999
+radius = 0.46923828
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m3eu2"]
+streams_count = 5
+stream_0/stream = ExtResource("2_cqh5c")
+stream_1/stream = ExtResource("3_lhjrb")
+stream_2/stream = ExtResource("4_hegat")
+stream_3/stream = ExtResource("5_yovba")
+stream_4/stream = ExtResource("6_x5272")
+
+[node name="Node3D" type="Node3D" unique_id=1856314455 node_paths=PackedStringArray("meshes")]
+script = ExtResource("1_mjxfg")
+meshes = [NodePath("Anneau/MeshInstance3D"), NodePath("Anneau/MeshInstance3D5"), NodePath("Anneau/MeshInstance3D4"), NodePath("Anneau/MeshInstance3D2"), NodePath("Anneau/MeshInstance3D3"), NodePath("Anneau/MeshInstance3D6")]
+gain = 0.8
+
+[node name="Anneau" type="Area3D" parent="." unique_id=1936295034]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.4, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Anneau" unique_id=1646326488]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.8852937e-08, 0.43130493)
+mesh = SubResource("TorusMesh_wrko5")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Anneau" unique_id=1394613157]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.7328215e-08, 0.39642334)
+mesh = SubResource("TorusMesh_riq4q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Anneau" unique_id=2140471627]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.9996145e-08, 0.4574585)
+mesh = SubResource("TorusMesh_rjf2i")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Anneau" unique_id=857735760]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.03918457, -1.8852937e-08, 0.43130493)
+mesh = SubResource("TorusMesh_rjf2i")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Anneau" unique_id=2016567919]
+transform = Transform3D(0.59718937, 2.5355658e-09, -0.058006983, -2.5355658e-09, 0.59999996, 1.2285639e-10, 0.058006983, 1.2285462e-10, 0.59718937, -0.03918457, -1.8852937e-08, 0.43130493)
+mesh = SubResource("TorusMesh_rjf2i")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Anneau" unique_id=1163584950]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.014831543, -1.8852937e-08, 0.43130493)
+mesh = SubResource("TorusMesh_rjf2i")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Anneau" unique_id=1191339603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9234452e-08, 0.44003296)
+shape = SubResource("CylinderShape3D_oo0xd")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1925605603]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+stream = SubResource("AudioStreamRandomizer_m3eu2")
+bus = &"sfx"
+
+[connection signal="area_entered" from="Anneau" to="." method="_on_anneau_area_entered"]

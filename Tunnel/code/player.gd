@@ -19,6 +19,8 @@ var aimed_repere: Node3D
 @export var gravite:= 0.2
 @export var ascension:= 0.3
 
+@export var max_hauteur:= 1.2
+
 @export var air_trails: Array[TunnelTrail]
 
 @export var first_boost: Array[TunnelTrail]
@@ -132,7 +134,7 @@ func _physics_process(delta: float) -> void:
 		is_moving = false
 	
 	if is_jumping:
-		if hauteur < 1.2:
+		if hauteur < max_hauteur:
 			hauteur += ascension * delta
 		else:
 			is_jumping = false

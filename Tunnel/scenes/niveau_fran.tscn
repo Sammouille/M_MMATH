@@ -30,14 +30,20 @@
 [ext_resource type="Script" uid="uid://d3kulgi61vx7c" path="res://Tunnel/code/mesh_shield.gd" id="26_m4ia2"]
 [ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="27_8d5uh"]
 [ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="28_bl0ng"]
+[ext_resource type="AnimationLibrary" uid="uid://cbe0g2j0ibar4" path="res://Tunnel/anims/player_state.res" id="30_8mdx6"]
 [ext_resource type="Script" uid="uid://bonnrjd6xoc78" path="res://Tunnel/code/gestionnaire_colonnes.gd" id="35_4dn0e"]
 [ext_resource type="Script" uid="uid://c51pjr8wjf8vl" path="res://Tunnel/scenes/animation_player_fran.gd" id="36_7bbab"]
 [ext_resource type="Script" uid="uid://banxlhhyaaumw" path="res://Tunnel/code/sequenceur.gd" id="36_kvxho"]
+[ext_resource type="PackedScene" uid="uid://dp802awe3ajie" path="res://Tunnel/scenes/ile8DOUBLE.tscn" id="36_vkj6o"]
+[ext_resource type="PackedScene" uid="uid://dhc26w7wg12v8" path="res://Tunnel/scenes/ile_plate_petite.tscn" id="37_0p16k"]
 [ext_resource type="PackedScene" uid="uid://c17lh7ye2sb5s" path="res://Tunnel/scenes/ennemi_haut_rapide.tscn" id="37_dactv"]
 [ext_resource type="PackedScene" uid="uid://8wat5l281imw" path="res://Tunnel/scenes/ile_plate.tscn" id="37_fl4rj"]
+[ext_resource type="PackedScene" uid="uid://3jmp12d808vw" path="res://Tunnel/scenes/ile.tscn" id="38_7bbab"]
 [ext_resource type="PackedScene" uid="uid://cigpaeky366pq" path="res://Tunnel/scenes/ile_petite.tscn" id="38_tix6x"]
 [ext_resource type="PackedScene" uid="uid://db5b1u5b63h1p" path="res://Tunnel/scenes/ennemi_base_rapide.tscn" id="41_7bbab"]
 [ext_resource type="Script" uid="uid://cnbadoaun8yky" path="res://Tunnel/code/sequenceur_anneau.gd" id="45_6dud3"]
+[ext_resource type="PackedScene" uid="uid://b820b2bjxjh38" path="res://Tunnel/scenes/anneau_safe.tscn" id="45_t75e8"]
+[ext_resource type="PackedScene" uid="uid://drih274nqnw8s" path="res://Tunnel/scenes/anneau_safe_haut.tscn" id="46_0kumr"]
 [ext_resource type="PackedScene" uid="uid://x8j1vynwtcvk" path="res://Tunnel/scenes/anneau.tscn" id="46_ouf87"]
 [ext_resource type="PackedScene" uid="uid://q0io0vyqpwsa" path="res://Tunnel/scenes/anneau_bonus.tscn" id="47_ft5jc"]
 [ext_resource type="Script" uid="uid://biuucr54np1o4" path="res://Tunnel/code/generateur_décor.gd" id="48_8esoh"]
@@ -112,9 +118,9 @@ rings = 8
 [sub_resource type="SphereShape3D" id="SphereShape3D_7nmlv"]
 radius = 0.19565694
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qsgfv"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0p16k"]
 radius = 0.32128906
-height = 1.0795898
+height = 2.0238335
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gcorn"]
 
@@ -265,7 +271,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0mmpq")
 
-[sub_resource type="Animation" id="Animation_byb81"]
+[sub_resource type="Animation" id="Animation_uqj8h"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -282,17 +288,77 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("%plane_mesh:rotation")
+tracks/1/path = NodePath("%MeshShield:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [Vector3(0, 0, -1.5707963)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%plane_mesh:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh4:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("plane_mesh5:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_0mmpq"]
+[sub_resource type="Animation" id="Animation_6dmrq"]
 resource_name = "dash_air_d"
 length = 0.1667
 tracks/0/type = "value"
@@ -319,8 +385,68 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -3.0979595), Vector3(0, 0, -6.2831855)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.2148964), Vector3(0, 0, -6.2831855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -2.628466), Vector3(0, 0, -6.2831855)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.2148964), Vector3(0, 0, -6.2831855)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -2.7454028), Vector3(0, 0, -6.2831855)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%MeshShield:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707963)]
+}
 
-[sub_resource type="Animation" id="Animation_81cow"]
+[sub_resource type="Animation" id="Animation_e2cq8"]
 resource_name = "dash_air_g"
 length = 0.1667
 tracks/0/type = "value"
@@ -347,8 +473,56 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 3.0970922), Vector3(0, 0, 6.2831855)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.2148964), Vector3(0, 0, 6.2831855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 2.628466), Vector3(0, 0, 6.2831855)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.2148964), Vector3(0, 0, 6.2831855)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1667),
+"transitions": PackedFloat32Array(1, -0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 2.7454028), Vector3(0, 0, 6.2831855)]
+}
 
-[sub_resource type="Animation" id="Animation_nfqlf"]
+[sub_resource type="Animation" id="Animation_hw6w5"]
 resource_name = "dash_sol_d"
 length = 0.2
 tracks/0/type = "value"
@@ -375,8 +549,56 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.13333334, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982), Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
 
-[sub_resource type="Animation" id="Animation_va7wv"]
+[sub_resource type="Animation" id="Animation_1le15"]
 resource_name = "dash_sol_g"
 length = 0.2
 tracks/0/type = "value"
@@ -403,17 +625,66 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0mmpq"]
-_data = {
-&"RESET": SubResource("Animation_byb81"),
-&"dash_air_d": SubResource("Animation_0mmpq"),
-&"dash_air_g": SubResource("Animation_81cow"),
-&"dash_sol_d": SubResource("Animation_nfqlf"),
-&"dash_sol_g": SubResource("Animation_va7wv")
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plane_mesh5:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plane_mesh3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plane_mesh4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plane_mesh2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.13333334, 0.19996665),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_yjte1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0p16k"]
+_data = {
+&"RESET": SubResource("Animation_uqj8h"),
+&"dash_air_d": SubResource("Animation_6dmrq"),
+&"dash_air_g": SubResource("Animation_e2cq8"),
+&"dash_sol_d": SubResource("Animation_hw6w5"),
+&"dash_sol_g": SubResource("Animation_1le15")
+}
+
+[sub_resource type="Animation" id="Animation_xf8id"]
+resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -535,8 +806,20 @@ tracks/9/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%MeshShield:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_srlbf"]
+[sub_resource type="Animation" id="Animation_waiic"]
 resource_name = "hit_death"
 length = 0.5
 tracks/0/type = "value"
@@ -660,9 +943,9 @@ tracks/9/keys = {
 "values": [0.0, -1.0]
 }
 
-[sub_resource type="Animation" id="Animation_t1mb2"]
+[sub_resource type="Animation" id="Animation_571iq"]
 resource_name = "hit_survived"
-length = 1.1
+length = 1.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -670,10 +953,10 @@ tracks/0/path = NodePath("%plane_mesh:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -682,10 +965,10 @@ tracks/1/path = NodePath("../plane_mesh2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -694,10 +977,10 @@ tracks/2/path = NodePath("../plane_mesh3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -706,10 +989,10 @@ tracks/3/path = NodePath("../plane_mesh4:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1000333, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -718,10 +1001,10 @@ tracks/4/path = NodePath("../plane_mesh5:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -730,17 +1013,29 @@ tracks/5/path = NodePath(".:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8666667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%MeshShield:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vc01e"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7bbab"]
 _data = {
-&"RESET": SubResource("Animation_yjte1"),
-&"hit_death": SubResource("Animation_srlbf"),
-&"hit_survived": SubResource("Animation_t1mb2")
+&"RESET": SubResource("Animation_xf8id"),
+&"hit_death": SubResource("Animation_waiic"),
+&"hit_survived": SubResource("Animation_571iq")
 }
 
 [sub_resource type="Animation" id="Animation_dactv"]
@@ -966,10 +1261,236 @@ tracks/8/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_8mdx6"]
+resource_name = "carre_to_rond"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GestionnaireColonnes/Matrice3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GestionnaireColonnes/Matrice3/Matrice2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GestionnaireColonnes/Matrice3/Matrice2/Matrice1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964), Vector3(0, 0, -0.7853982)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GestionnaireColonnes/Matrice3/Matrice2/Matrice1/Matrice0:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.7853982)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5707964), Vector3(0, 0, 0.7853982)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4/Matrice5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4/Matrice5/Matrice6:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5707964), Vector3(0, 0, 0.7853982)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4/Matrice5/Matrice6/Matrice7:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333333, 9.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GestionnaireColonnes:tubique")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.3666668),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vkj6o"]
+resource_name = "rond_to_carre"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GestionnaireColonnes/Matrice3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GestionnaireColonnes/Matrice3/Matrice2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GestionnaireColonnes/Matrice3/Matrice2/Matrice1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.7853982), Vector3(0, 0, -1.5707964)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GestionnaireColonnes/Matrice3/Matrice2/Matrice1/Matrice0:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.7853982), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.7853982), Vector3(0, 0, 1.5707964)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4/Matrice5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4/Matrice5/Matrice6:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.7853982), Vector3(0, 0, 1.5707964)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GestionnaireColonnes/Matrice3/Matrice4/Matrice5/Matrice6/Matrice7:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.10000038, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.7853982), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GestionnaireColonnes:tubique")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.3666668),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dactv"]
 _data = {
 &"RESET": SubResource("Animation_dactv"),
-&"barre_to_rond": SubResource("Animation_fahjh")
+&"barre_to_rond": SubResource("Animation_fahjh"),
+&"carre_to_rond": SubResource("Animation_8mdx6"),
+&"rond_to_carre": SubResource("Animation_vkj6o")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m7u4"]
@@ -1096,7 +1617,7 @@ script = ExtResource("17_5b24j")
 scene_figure = ExtResource("18_ohjwp")
 timer_grease = NodePath("TimerGrease")
 freq_glide = 0.55
-end_beat = 507
+end_beat = 546
 label = NodePath("Score")
 
 [node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
@@ -1421,14 +1942,15 @@ trail_precision = 0.02
 
 [node name="Player" type="Area3D" parent="." unique_id=860940746 node_paths=PackedStringArray("air_trails", "first_boost", "second_boost", "after_image")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.6000292, 0)
-collision_layer = 3
-collision_mask = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48936462, -1.6000292, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("25_gktu6")
 vitesse_lat_base = 12.0
 max_vitesse_lat = 48.4
 gravite = 2.2
 ascension = 4.4
+max_hauteur = 1.1
 air_trails = [NodePath("../boite_trails/trail_l"), NodePath("../boite_trails/trail_r")]
 first_boost = [NodePath("../boite_trails/trail_boost")]
 second_boost = [NodePath("../boite_trails/trail_boost_l"), NodePath("../boite_trails/trail_boost_r")]
@@ -1436,7 +1958,7 @@ after_image = NodePath("../AfterImage")
 
 [node name="MeshShield" type="MeshInstance3D" parent="Player" unique_id=1851644305]
 unique_name_in_owner = true
-transform = Transform3D(2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, 0, 1, 0, 0.069271564, -0.0319452)
+transform = Transform3D(7.54979e-08, 1, 0, -1, 7.54979e-08, 0, 0, 0, 1, 0, 0.069271564, -0.0319452)
 mesh = SubResource("SphereMesh_t1mb2")
 script = ExtResource("26_m4ia2")
 
@@ -1478,26 +2000,27 @@ transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 0.2605868, -0.
 [node name="Grease" type="Area3D" parent="Player" unique_id=657926372]
 unique_name_in_owner = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Grease" unique_id=822965883]
-transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, -0.12639463)
-shape = SubResource("CapsuleShape3D_qsgfv")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Player/Grease" unique_id=24078571]
+transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, 0, -0.28688228)
+shape = SubResource("CapsuleShape3D_0p16k")
 
 [node name="MeshGrease" type="MeshInstance3D" parent="Player" unique_id=903078955]
 transform = Transform3D(0.134, 0, 0, 0, 0.17, 0, 0, 0, 0.309, 0, 0, -0.00348261)
 mesh = SubResource("ArrayMesh_81cow")
 script = ExtResource("27_8d5uh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=350355078]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1853486532]
 unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_0mmpq")
+libraries/ = SubResource("AnimationLibrary_0p16k")
 
-[node name="AnimationPlayerInvul" type="AnimationPlayer" parent="Player" unique_id=70778939]
+[node name="AnimationPlayerInvul" type="AnimationPlayer" parent="Player" unique_id=625251534]
 unique_name_in_owner = true
 root_node = NodePath("../MeshGrease")
-libraries/ = SubResource("AnimationLibrary_vc01e")
+libraries/ = SubResource("AnimationLibrary_7bbab")
+libraries/player_state = ExtResource("30_8mdx6")
 
 [node name="FollowCam" type="Node3D" parent="." unique_id=2058510983 node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.6000292, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48936462, -1.6000292, 0)
 script = ExtResource("28_bl0ng")
 player = NodePath("../Player")
 
@@ -1518,10 +2041,10 @@ script = ExtResource("35_4dn0e")
 colonnes = [NodePath("Matrice3/Matrice2/Matrice1/Matrice0/Repere0"), NodePath("Matrice3/Matrice2/Matrice1/Repere1"), NodePath("Matrice3/Matrice2/Repere2"), NodePath("Matrice3/Repere3"), NodePath("Matrice3/Matrice4/Repere4"), NodePath("Matrice3/Matrice4/Matrice5/Repere5"), NodePath("Matrice3/Matrice4/Matrice5/Matrice6/Repere6"), NodePath("Matrice3/Matrice4/Matrice5/Matrice6/Matrice7/Repere7")]
 tubique = false
 index_player = 4
-liste_vitesses = Array[float]([4.4, 5.7, 6.6, 7.7, 8.6, 10.0])
+liste_vitesses = Array[float]([4.0, 7.0, 8.5, 9.5, 10.2, 10.7])
 
 [node name="Matrice3" type="Marker3D" parent="GestionnaireColonnes" unique_id=1392637343]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 2.5, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, -1.25, 0)
 
 [node name="Repere3" type="Node3D" parent="GestionnaireColonnes/Matrice3" unique_id=553081760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
@@ -1653,7 +2176,213 @@ array_sequences = Array[Dictionary]([{
 7: PackedInt64Array(-25),
 14: PackedInt64Array(0, 1, 2, 5, 6, 7)
 }])
-starting_beats = Array[int]([2, 23, 44])
+starting_beats = Array[int]([2, 23, 43, 64])
+
+[node name="SequenceurIlesIntroEncore" type="Node" parent="." unique_id=2054510980]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("36_vkj6o")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(-1045),
+7: PackedInt64Array(-1042),
+14: PackedInt64Array(-1047),
+21: PackedInt64Array(-1044),
+28: PackedInt64Array(-1047),
+35: PackedInt64Array(-1044)
+}])
+starting_beats = Array[int]([253, 295])
+
+[node name="SequenceurIlesIntroEncore2" type="Node" parent="." unique_id=3885154]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("38_7bbab")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1003, 1007),
+7: PackedInt64Array(1000, 1004),
+14: PackedInt64Array(1005, 1001),
+21: PackedInt64Array(1002, 1006),
+28: PackedInt64Array(1005, 1001),
+35: PackedInt64Array(1002, 1006)
+}])
+starting_beats = Array[int]([253, 295])
+
+[node name="SequenceurIlesIntroEncore3" type="Node" parent="." unique_id=2137042901]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("36_vkj6o")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(-1025),
+7: PackedInt64Array(-1022),
+14: PackedInt64Array(-1027),
+21: PackedInt64Array(-1024),
+28: PackedInt64Array(-1020)
+}])
+starting_beats = Array[int]([337])
+
+[node name="SequenceurIlesIntroEncore4" type="Node" parent="." unique_id=2011907234]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("38_7bbab")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1004, 1006),
+7: PackedInt64Array(1001, 1003),
+14: PackedInt64Array(1000, 1006),
+21: PackedInt64Array(1005, 1003),
+28: PackedInt64Array(1007, 1001)
+}])
+starting_beats = Array[int]([337])
+
+[node name="SequenceurIlesFinTuto" type="Node" parent="." unique_id=573136579]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("36_vkj6o")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(-22),
+3: PackedInt64Array(-26),
+7: PackedInt64Array(0, 1, 2, 5, 6, 7),
+11: PackedInt64Array(-4),
+14: PackedInt64Array(-20),
+18: PackedInt64Array(-6),
+21: PackedInt64Array(-24)
+}])
+starting_beats = Array[int]([120])
+
+[node name="SequenceurIlesCarrePorte" type="Node" parent="." unique_id=551427758]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("36_vkj6o")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1000, 1001),
+7: PackedInt64Array(1004, 1005),
+14: PackedInt64Array(1002, 1003),
+21: PackedInt64Array(1006, 1007)
+}])
+starting_beats = Array[int]([199, 227])
+
+[node name="SequenceurIlesCarrePorte2" type="Node" parent="." unique_id=1593938066]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("37_fl4rj")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1007, 1002, 1003, 1006),
+7: PackedInt64Array(1003, 1006, 1007, 1002),
+14: PackedInt64Array(1001, 1004, 1000, 1005),
+21: PackedInt64Array(1000, 1005, 1001, 1004)
+}])
+starting_beats = Array[int]([199, 227])
+
+[node name="SequenceurIlesCarrePorteEncore" type="Node" parent="." unique_id=2119543652]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("36_vkj6o")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1000, 1001, 1004, 1005),
+7: PackedInt64Array(1002, 1003, 1006, 1007)
+}])
+starting_beats = Array[int]([421, 435, 449])
+
+[node name="SequenceurIlesCarreTunnelEncore" type="Node" parent="." unique_id=1315896040]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("36_vkj6o")
+scene_haut = ExtResource("38_tix6x")
+array_sequences = Array[Dictionary]([{
+1: PackedInt64Array(1002, 1006),
+3: PackedInt64Array(1003, 1007),
+8: PackedInt64Array(1001, 1005),
+10: PackedInt64Array(1000, 1004)
+}])
+starting_beats = Array[int]([386, 400])
+
+[node name="SequenceurIlesCarre" type="Node" parent="." unique_id=315848480]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("37_fl4rj")
+scene_haut = ExtResource("37_0p16k")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(0, 1),
+2: PackedInt64Array(7, 6),
+4: PackedInt64Array(5, 4),
+6: PackedInt64Array(3, 2)
+}])
+starting_beats = Array[int]([148, 156, 164])
+
+[node name="SequenceurIlesCarre2" type="Node" parent="." unique_id=497152028]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("37_fl4rj")
+scene_haut = ExtResource("37_0p16k")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(0, 1),
+2: PackedInt64Array(2, 3),
+4: PackedInt64Array(5, 4),
+6: PackedInt64Array(6, 7)
+}])
+starting_beats = Array[int]([172, 180, 188])
+
+[node name="SequenceurIlesRondFin" type="Node" parent="." unique_id=450328413]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("37_fl4rj")
+scene_haut = ExtResource("37_0p16k")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1002, 1006),
+1: PackedInt64Array(1002, 1006),
+2: PackedInt64Array(1002, 1006),
+3: PackedInt64Array(1002, 1006),
+4: PackedInt64Array(1002, 1006),
+5: PackedInt64Array(1002, 1006),
+6: PackedInt64Array(1002, 1006),
+7: PackedInt64Array(1002, 1006),
+8: PackedInt64Array(1001, 1005),
+9: PackedInt64Array(1000, 1004),
+10: PackedInt64Array(1007, 1003),
+11: PackedInt64Array(1006, 1002),
+12: PackedInt64Array(1005, 1001),
+13: PackedInt64Array(1004, 1000),
+14: PackedInt64Array(1004, 1000),
+15: PackedInt64Array(1004, 1000),
+16: PackedInt64Array(1004, 1000),
+17: PackedInt64Array(1004, 1000),
+18: PackedInt64Array(1004, 1000),
+19: PackedInt64Array(1004, 1000),
+20: PackedInt64Array(1004, 1000),
+21: PackedInt64Array(1005, 1001),
+22: PackedInt64Array(1006, 1002),
+23: PackedInt64Array(1007, 1003),
+24: PackedInt64Array(1000, 1004),
+25: PackedInt64Array(1001, 1005),
+26: PackedInt64Array(1002, 1006),
+27: PackedInt64Array(1003, 1007),
+28: PackedInt64Array(1003, 1007),
+29: PackedInt64Array(1003, 1007),
+30: PackedInt64Array(1003, 1007),
+31: PackedInt64Array(1003, 1007),
+32: PackedInt64Array(1003, 1007),
+33: PackedInt64Array(1003, 1007),
+34: PackedInt64Array(1003, 1007),
+35: PackedInt64Array(1002, 1006),
+36: PackedInt64Array(1001, 1005),
+37: PackedInt64Array(1000, 1004),
+38: PackedInt64Array(1007, 1003),
+39: PackedInt64Array(1006, 1002),
+40: PackedInt64Array(1005, 1001),
+41: PackedInt64Array(1004, 1000),
+42: PackedInt64Array(1004, 1000)
+}])
+starting_beats = Array[int]([462, 504])
+ending_beats = Array[int]([539])
+
+[node name="SequenceurIlesRondFin2" type="Node" parent="." unique_id=2039906430]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("36_vkj6o")
+scene_haut = ExtResource("37_0p16k")
+array_sequences = Array[Dictionary]([{
+6: PackedInt64Array(1003, 1005, 1007, 1001),
+14: PackedInt64Array(1004, 1000, 1002, 1006),
+20: PackedInt64Array(1006, 1000, 1002, 1004),
+28: PackedInt64Array(1000, 1002, 1004, 1006),
+34: PackedInt64Array(1000, 1002, 1004, 1006),
+42: PackedInt64Array(1006, 1000, 1002, 1004)
+}])
+starting_beats = Array[int]([462, 504])
+ending_beats = Array[int]([539])
 
 [node name="SequenceurEnnemiIntro" type="Node" parent="." unique_id=895210650 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -1665,7 +2394,97 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([23, 44])
+starting_beats = Array[int]([23, 43, 64])
+
+[node name="SequenceurEnnemiIntroEncore" type="Node" parent="." unique_id=1513913847 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("41_7bbab")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1025),
+7: PackedInt64Array(1022),
+14: PackedInt64Array(1027),
+21: PackedInt64Array(1024),
+28: PackedInt64Array(1027),
+35: PackedInt64Array(1024)
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([253])
+
+[node name="SequenceurEnnemiIntroEncore2" type="Node" parent="." unique_id=1780563059 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("41_7bbab")
+scene_haut = ExtResource("37_dactv")
+array_sequences = Array[Dictionary]([{
+1: 1025,
+8: 1222,
+15: 1027,
+21: PackedInt64Array(1024),
+28: 1027,
+29: 1227,
+36: 1024
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([295])
+
+[node name="SequenceurEnnemiIntroEncore3" type="Node" parent="." unique_id=784697159 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("41_7bbab")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1005),
+7: PackedInt64Array(1002),
+14: PackedInt64Array(1007),
+21: PackedInt64Array(1004),
+28: 1000
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([337])
+
+[node name="SequenceurEnnemiTunnelCarre" type="Node" parent="." unique_id=112465092 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("41_7bbab")
+scene_haut = ExtResource("37_dactv")
+array_sequences = Array[Dictionary]([{
+0: 200,
+2: 202,
+4: 204,
+6: 206
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([])
+
+[node name="SequenceurEnnemiTunnelCarre2" type="Node" parent="." unique_id=1649394187 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("41_7bbab")
+scene_haut = ExtResource("37_dactv")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(200, 204),
+2: PackedInt64Array(202, 206)
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([])
+
+[node name="SequenceurEnnemiTunnelCarreEncore" type="Node" parent="." unique_id=960332421 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("41_7bbab")
+scene_haut = ExtResource("37_dactv")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(1000, 1001, 1004, 1005),
+1: PackedInt64Array(1000, 1001, 1004, 1005),
+2: PackedInt64Array(1000, 1001, 1004, 1005),
+3: PackedInt64Array(1000, 1001, 1004, 1005),
+7: PackedInt64Array(1002, 1003, 1006, 1007),
+8: PackedInt64Array(1002, 1003, 1006, 1007),
+9: PackedInt64Array(1002, 1003, 1006, 1007),
+10: PackedInt64Array(1002, 1003, 1006, 1007)
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([372, 386, 400])
 
 [node name="SequenceurEnnemiMur" type="Node" parent="." unique_id=497301318 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -1675,7 +2494,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([65, 66, 67, 62, 72, 79, 82])
+starting_beats = Array[int]([85, 93, 94, 95, 99, 100, 107, 113, 117, 160, 175, 188, 192, 319, 431, 445, 438, 440, 452, 453, 454, 474, 480, 481, 494, 516, 517, 521, 522, 523, 528, 529, 530])
 
 [node name="SequenceurEnnemiMur2" type="Node" parent="." unique_id=732480292 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -1686,7 +2505,18 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([73, 80])
+starting_beats = Array[int]([101, 106, 109, 115, 334, 457, 486, 488, 495, 508, 510, 509, 501, 502, 503])
+
+[node name="SequenceurEnnemiMur2Carre" type="Node" parent="." unique_id=1090303499 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("37_dactv")
+scene_haut = ExtResource("37_dactv")
+array_sequences = Array[Dictionary]([{
+0: PackedInt64Array(200, 202, 204, 206)
+}])
+after_image_haut = NodePath("../AfterImageEnnemisHaut")
+after_image_bas = NodePath("../AfterImageEnnemis")
+starting_beats = Array[int]([157, 183, 447])
 
 [node name="AfterImageEnnemis" type="Node3D" parent="." unique_id=416968996]
 script = ExtResource("23_h1ojl")
@@ -1714,7 +2544,7 @@ after_image = NodePath("../AfterImageAnneaux")
 
 [node name="AfterImageAnneaux" type="Node3D" parent="." unique_id=2061930232]
 script = ExtResource("23_h1ojl")
-frames_between_ghosts = 6
+frames_between_ghosts = 3
 gradient = SubResource("Gradient_j2mm2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AfterImageAnneaux" unique_id=1190748186]
@@ -1722,46 +2552,85 @@ gradient = SubResource("Gradient_j2mm2")
 [node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
 scene_seq = ExtResource("47_ft5jc")
+array_sequences = Array[Dictionary]([{}])
+after_image_haut = NodePath("../AfterImageAB")
+after_image_bas = NodePath("../AfterImageAB")
+starting_beats = Array[int]([1])
+
+[node name="SequenceurAnneauSafe" type="Node" parent="." unique_id=1114438649 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
+script = ExtResource("36_kvxho")
+scene_seq = ExtResource("45_t75e8")
+scene_haut = ExtResource("46_0kumr")
 array_sequences = Array[Dictionary]([{
-29: 1205,
-41: 1011,
-47: 1205,
-54: PackedInt64Array(1002, 1008),
-75: PackedInt64Array(1000, 1011),
+63: PackedInt64Array(1002),
+70: 1005,
+81: 1204,
+91: 1200,
 98: 1004,
-100: 1009,
-106: 1203,
-110: 1011,
-117: 1202,
-121: 1010,
-132: PackedInt64Array(1200, 1211),
-146: PackedInt64Array(1000, 1006),
-150: PackedInt64Array(1009, 1003),
-159: PackedInt64Array(1008, 1002),
-167: PackedInt64Array(1005, 1200),
-177: 1011,
-182: PackedInt64Array(1003, 1007),
-189: 1205,
-195: PackedInt64Array(1009, 1003),
-198: 1208,
-210: 1003,
-220: 1007,
-224: 1010,
-233: 1002,
-238: 1007,
-243: 1009,
-253: 1203,
-260: 1207,
-271: 1202,
-280: 1202,
-283: PackedInt64Array(1203, 1209),
-289: PackedInt64Array(1201, 1207),
-295: PackedInt32Array(1207, 1209, 1201, 1203),
-298: PackedInt32Array(1204, 1206, 1200, 1210)
+103: 1007,
+111: 1200,
+119: 1002,
+126: 1004,
+133: 1000,
+140: 1004,
+151: 1002,
+155: 1006,
+158: 1204,
+161: 1205,
+165: 1004,
+167: 1001,
+170: 1006,
+172: 1206,
+174: 1207,
+177: 1207,
+179: 1006,
+182: 1007,
+184: 1001,
+188: 1200,
+190: 1200,
+195: 1004,
+202: 1000,
+209: 1006,
+216: 1002,
+223: 1005,
+230: 1001,
+237: 1007,
+244: 1003,
+252: 1005,
+259: 1002,
+266: 1007,
+273: 1004,
+280: 1007,
+287: 1004,
+291: 1005,
+293: 1205,
+301: 1002,
+305: 1007,
+307: 1207,
+315: 1004,
+322: 1007,
+329: 1204,
+336: 1005,
+343: 1002,
+350: 1007,
+357: 1004,
+364: 1000,
+369: PackedInt64Array(1007, 1003),
+373: PackedInt64Array(1006, 1002),
+376: PackedInt64Array(1001, 1005),
+380: PackedInt64Array(1000, 1004),
+386: PackedInt64Array(1003, 1007),
+388: PackedInt64Array(1002, 1006),
+393: PackedInt64Array(1000, 1004),
+395: PackedInt64Array(1005, 1001),
+400: PackedInt64Array(1007, 1003),
+402: PackedInt64Array(1006, 1002),
+407: PackedInt64Array(1004, 1000),
+409: PackedInt64Array(1001, 1005)
 }])
 after_image_haut = NodePath("../AfterImageAB")
 after_image_bas = NodePath("../AfterImageAB")
-starting_beats = Array[int]([])
+starting_beats = Array[int]([1])
 
 [node name="AfterImageAB" type="Node3D" parent="." unique_id=2104395526]
 script = ExtResource("23_h1ojl")
@@ -1779,7 +2648,7 @@ bruit_generation = SubResource("FastNoiseLite_rartr")
 taille_colonnes = 8
 pas_gen = 131.2
 array_sequences = Array[Dictionary]([{
-301: 44
+414: 44
 }])
 
 [node name="EndMenu" type="Control" parent="." unique_id=1615717669 node_paths=PackedStringArray("restart_button")]
