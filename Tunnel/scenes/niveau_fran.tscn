@@ -2279,7 +2279,7 @@ array_sequences = Array[Dictionary]([{
 0: PackedInt64Array(1000, 1001, 1004, 1005),
 7: PackedInt64Array(1002, 1003, 1006, 1007)
 }])
-starting_beats = Array[int]([421, 435, 449])
+starting_beats = Array[int]([435, 449])
 
 [node name="SequenceurIlesCarreTunnelEncore" type="Node" parent="." unique_id=1315896040]
 script = ExtResource("36_kvxho")
@@ -2291,7 +2291,7 @@ array_sequences = Array[Dictionary]([{
 8: PackedInt64Array(1001, 1005),
 10: PackedInt64Array(1000, 1004)
 }])
-starting_beats = Array[int]([386, 400])
+starting_beats = Array[int]([162, 176])
 
 [node name="SequenceurIlesCarre" type="Node" parent="." unique_id=315848480]
 script = ExtResource("36_kvxho")
@@ -2303,7 +2303,7 @@ array_sequences = Array[Dictionary]([{
 4: PackedInt64Array(5, 4),
 6: PackedInt64Array(3, 2)
 }])
-starting_beats = Array[int]([148, 156, 164])
+starting_beats = Array[int]([372, 380, 388])
 
 [node name="SequenceurIlesCarre2" type="Node" parent="." unique_id=497152028]
 script = ExtResource("36_kvxho")
@@ -2315,7 +2315,7 @@ array_sequences = Array[Dictionary]([{
 4: PackedInt64Array(5, 4),
 6: PackedInt64Array(6, 7)
 }])
-starting_beats = Array[int]([172, 180, 188])
+starting_beats = Array[int]([396, 404, 412])
 
 [node name="SequenceurIlesRondFin" type="Node" parent="." unique_id=450328413]
 script = ExtResource("36_kvxho")
@@ -2484,7 +2484,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([372, 386, 400])
+starting_beats = Array[int]([148, 162, 176])
 
 [node name="SequenceurEnnemiMur" type="Node" parent="." unique_id=497301318 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -2494,7 +2494,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([85, 93, 94, 95, 99, 100, 107, 113, 117, 160, 175, 188, 192, 319, 431, 445, 438, 440, 452, 453, 454, 474, 480, 481, 494, 516, 517, 521, 522, 523, 528, 529, 530])
+starting_beats = Array[int]([85, 93, 94, 95, 99, 100, 107, 113, 117, 384, 399, 412, 416, 319, 431, 445, 438, 440, 452, 453, 454, 474, 480, 481, 494, 516, 517, 521, 522, 523, 528, 529, 530])
 
 [node name="SequenceurEnnemiMur2" type="Node" parent="." unique_id=732480292 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -2516,7 +2516,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([157, 183, 447])
+starting_beats = Array[int]([381, 407, 447])
 
 [node name="AfterImageEnnemis" type="Node3D" parent="." unique_id=416968996]
 script = ExtResource("23_h1ojl")
@@ -2573,22 +2573,6 @@ array_sequences = Array[Dictionary]([{
 126: 1004,
 133: 1000,
 140: 1004,
-151: 1002,
-155: 1006,
-158: 1204,
-161: 1205,
-165: 1004,
-167: 1001,
-170: 1006,
-172: 1206,
-174: 1207,
-177: 1207,
-179: 1006,
-182: 1007,
-184: 1001,
-188: 1200,
-190: 1200,
-195: 1004,
 202: 1000,
 209: 1006,
 216: 1002,
@@ -2614,19 +2598,36 @@ array_sequences = Array[Dictionary]([{
 343: 1002,
 350: 1007,
 357: 1004,
-364: 1000,
-369: PackedInt64Array(1007, 1003),
-373: PackedInt64Array(1006, 1002),
-376: PackedInt64Array(1001, 1005),
-380: PackedInt64Array(1000, 1004),
-386: PackedInt64Array(1003, 1007),
-388: PackedInt64Array(1002, 1006),
-393: PackedInt64Array(1000, 1004),
-395: PackedInt64Array(1005, 1001),
-400: PackedInt64Array(1007, 1003),
-402: PackedInt64Array(1006, 1002),
-407: PackedInt64Array(1004, 1000),
-409: PackedInt64Array(1001, 1005)
+364: 1000
+}, {
+145: PackedInt64Array(1007, 1003),
+149: PackedInt64Array(1006, 1002),
+152: PackedInt64Array(1001, 1005),
+156: PackedInt64Array(1000, 1004),
+162: PackedInt64Array(1003, 1007),
+164: PackedInt64Array(1002, 1006),
+169: PackedInt64Array(1000, 1004),
+171: PackedInt64Array(1005, 1001),
+176: PackedInt64Array(1007, 1003),
+178: PackedInt64Array(1006, 1002),
+183: PackedInt64Array(1004, 1000),
+185: PackedInt64Array(1001, 1005),
+375: 1002,
+379: 1006,
+382: 1204,
+385: 1205,
+389: 1004,
+391: 1001,
+394: 1006,
+396: 1206,
+398: 1207,
+401: 1207,
+403: 1006,
+406: 1007,
+408: 1001,
+412: 1200,
+414: 1200,
+419: 1004
 }])
 after_image_haut = NodePath("../AfterImageAB")
 after_image_bas = NodePath("../AfterImageAB")
@@ -2648,7 +2649,7 @@ bruit_generation = SubResource("FastNoiseLite_rartr")
 taille_colonnes = 8
 pas_gen = 131.2
 array_sequences = Array[Dictionary]([{
-414: 44
+428: 44
 }])
 
 [node name="EndMenu" type="Control" parent="." unique_id=1615717669 node_paths=PackedStringArray("restart_button")]
