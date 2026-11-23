@@ -171,7 +171,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[center] Resolution"
+text = "[center] Window size"
 fit_content = true
 
 [node name="ResolutionOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Resolution/VBoxContainer" unique_id=783452730]

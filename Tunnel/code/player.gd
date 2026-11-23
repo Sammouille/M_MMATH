@@ -162,7 +162,7 @@ func _physics_process(delta: float) -> void:
 func mort():
 	%AnimationPlayerInvul.play("hit_death")
 	%Mort.play()
-	%Score._fin()
+	%EndMenu.show_menu(false, %Score.score)
 	%GestionnaireColonnes._fin()
 
 func _on_area_entered(area: Area3D) -> void:

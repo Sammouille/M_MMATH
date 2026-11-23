@@ -12,12 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://dmxrbx3bhcmjt" path="res://Tunnel/assets/sons/grease.ogg" id="10_c1yij"]
 [ext_resource type="AudioStream" uid="uid://cvtrg2hnu88g1" path="res://Tunnel/assets/sons/sol2.ogg" id="11_43y58"]
 [ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="12_6y37i"]
-[ext_resource type="AudioStream" uid="uid://b0cax0qg5weyu" path="res://Tunnel/assets/sons/sam/offi/sam(6).wav" id="13_t75e8"]
-[ext_resource type="AudioStream" uid="uid://hlqtkil1ugeq" path="res://Tunnel/assets/sons/sam/offi/sam(7).wav" id="14_0kumr"]
-[ext_resource type="AudioStream" uid="uid://c1rfim1bijdww" path="res://Tunnel/assets/sons/sam/offi/sam(8).wav" id="15_qo4u8"]
-[ext_resource type="AudioStream" uid="uid://b4x4ehvldmvbo" path="res://Tunnel/assets/sons/sam/offi/sam(9).wav" id="16_m4ia2"]
+[ext_resource type="AudioStream" uid="uid://emwfqpkqs3cl" path="res://Tunnel/assets/sons/sam/1b/mmmath1b1.wav" id="13_0kumr"]
+[ext_resource type="AudioStream" uid="uid://bmjiv1dl8167j" path="res://Tunnel/assets/sons/sam/1b/mmmath1b2.wav" id="14_qo4u8"]
+[ext_resource type="AudioStream" uid="uid://dy1q81a0c2k7u" path="res://Tunnel/assets/sons/sam/1b/mmmath1b3.wav" id="15_m4ia2"]
+[ext_resource type="AudioStream" uid="uid://dmiobn6rsaajj" path="res://Tunnel/assets/sons/sam/1b/mmmath1b4.wav" id="16_ass3v"]
 [ext_resource type="Script" uid="uid://u8iyeoprv647" path="res://Tunnel/code/score.gd" id="17_5b24j"]
-[ext_resource type="AudioStream" uid="uid://ui8lsj5ufogr" path="res://Tunnel/assets/sons/sam/offi/sam(10).wav" id="17_ass3v"]
+[ext_resource type="AudioStream" uid="uid://c4twmih50h58i" path="res://Tunnel/assets/sons/sam/1b/mmmath1b5.wav" id="17_woycb"]
 [ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="18_ohjwp"]
 [ext_resource type="FontFile" uid="uid://dwrrnrrlioue0" path="res://Tunnel/assets/fonts/Gravity.tres" id="19_w6fq8"]
 [ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="20_ot6v4"]
@@ -1603,14 +1603,14 @@ unique_name_in_owner = true
 volume_db = -4.4
 bus = &"voices"
 script = ExtResource("12_6y37i")
-pistes = Array[AudioStream]([ExtResource("13_t75e8"), ExtResource("14_0kumr"), ExtResource("15_qo4u8"), ExtResource("16_m4ia2"), ExtResource("17_ass3v")])
+pistes = Array[AudioStream]([ExtResource("13_0kumr"), ExtResource("14_qo4u8"), ExtResource("15_m4ia2"), ExtResource("16_ass3v"), ExtResource("17_woycb")])
 
 [node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 423.0
+offset_right = 124.0
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("17_5b24j")
@@ -1622,28 +1622,34 @@ label = NodePath("Score")
 
 [node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 40.0
-offset_bottom = 180.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_bottom = -538.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("19_w6fq8")
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10][font_size=40]Score
-00000
-"
+text = "[center][outline_color=black][outline_size=10][font_size=20]Score
+00000"
 scroll_active = false
 vertical_alignment = 1
 
 [node name="Mod" type="RichTextLabel" parent="Score" unique_id=378869538]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 164.0
-offset_bottom = 275.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 87.0
+offset_right = 44.0
+offset_bottom = -479.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("19_w6fq8")
 bbcode_enabled = true
@@ -1654,7 +1660,8 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 280.0
+offset_top = 171.0
+offset_right = 60.0
 offset_bottom = 610.0
 grow_horizontal = 2
 
@@ -1689,7 +1696,7 @@ grow_vertical = 2
 theme_override_constants/line_separation = 8
 theme_override_fonts/normal_font = ExtResource("19_w6fq8")
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10]Beat
+text = "[center][outline_color=black][outline_size=8][color=light_blue][font_size=20]Beat
 0
 "
 scroll_active = false
@@ -1707,7 +1714,7 @@ grow_vertical = 2
 theme_override_constants/line_separation = 8
 theme_override_fonts/normal_font = ExtResource("19_w6fq8")
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10]Line
+text = "[center][outline_color=black][font_size=20][outline_size=10][color=light_blue]Line
 0
 "
 scroll_active = false
@@ -1719,17 +1726,17 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -366.0
-offset_top = 71.0
-offset_right = 367.0
-offset_bottom = -250.0
+offset_left = -421.0
+offset_top = 6.0
+offset_right = 438.0
+offset_bottom = -390.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("21_biv4y")
 label = NodePath("RichTextLabel")
-lines = Array[String](["A STORM IS COMING, FOLLOW YOUR HEART !", "WHAT PLACE DO YOU SEEK? WHAT ARE YOU AFRAID OF?", "IN THIS VERY PLACE, WHAT BURNS IN YOUR HEART DEFINES YOU", "RECLAIM WHAT HAS NOT BEEN GIVEN TO YOU, GIVE EVERYTHING", "SET YOUR HEART ABLAZE, FULLFILL YOUR SOUL WITH NO REGRETS"])
-formating = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
+lines = Array[String](["THANKS FOR YOUR DEDICATION, THIS JOURNEY IS COMING TO AN END", "NOW, AN EVERLASTING STRUGGLE AWAITS FOR YOU TO JOIN UP ALONGSIDE PAST AND FUTURE SIBLINGS IN MANKIND", "EVERY MOVE YOU MAKE CAN BE A PEBBLE IN GEARS OF EXPLOITATION. BREAK THIS GODDAMN PATTERN !", "WHAT IS LIFE IF YOU CAN'T CONNECT WITH OTHER ONES ? BREAKING THIS ASSEMBLY TOGETHER AS A LANDSLIDE.", "NEVER LOSE YOUR FLAME, ONCE MERGED WITH OTHER'S THEY CAN FORGE THE WORLD."])
+formating = "[center][font_size=30][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1916484154]
 visible = false
@@ -1737,8 +1744,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -34.0
-offset_bottom = 20.0
+offset_top = 32.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 30
@@ -1943,8 +1950,8 @@ trail_precision = 0.02
 [node name="Player" type="Area3D" parent="." unique_id=860940746 node_paths=PackedStringArray("air_trails", "first_boost", "second_boost", "after_image")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48936462, -1.6000292, 0)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("25_gktu6")
 vitesse_lat_base = 12.0
 max_vitesse_lat = 48.4
@@ -2026,7 +2033,7 @@ player = NodePath("../Player")
 
 [node name="Camera3D" type="Camera3D" parent="FollowCam" unique_id=294541281]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2557485, 2.3615253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.197582, 1.8816669)
 fov = 80.0
 near = 0.3
 
@@ -2494,7 +2501,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([85, 93, 94, 95, 99, 100, 107, 113, 117, 384, 399, 412, 416, 319, 431, 445, 438, 440, 452, 453, 454, 474, 480, 481, 494, 516, 517, 521, 522, 523, 528, 529, 530])
+starting_beats = Array[int]([85, 93, 94, 95, 99, 100, 107, 113, 117, 384, 399, 412, 416, 319, 445, 438, 440, 452, 453, 454, 474, 480, 481, 494, 516, 517, 521, 522, 523, 528, 529, 530])
 
 [node name="SequenceurEnnemiMur2" type="Node" parent="." unique_id=732480292 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -2662,15 +2669,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -166.0
-offset_right = 333.0
+offset_left = -316.0
+offset_top = -132.0
+offset_right = 325.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("50_g2y20")
 script = ExtResource("51_3nvkt")
-restart_button = NodePath("Panel/MarginContainer/VBoxContainer/Button")
+restart_button = NodePath("Panel/MarginContainer/VBoxContainer/HBoxContainer/PlayAgain")
 
 [node name="Panel" type="Panel" parent="EndMenu" unique_id=1088778375]
 layout_mode = 1
@@ -2687,10 +2694,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EndMenu/Panel/MarginContainer" unique_id=1612873220]
 layout_mode = 2
@@ -2700,16 +2707,44 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("50_g2y20")
+theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("19_w6fq8")
 bbcode_enabled = true
-text = "[center]Score : 00000"
+text = "[center]Score
+00000"
 
-[node name="Button" type="Button" parent="EndMenu/Panel/MarginContainer/VBoxContainer" unique_id=837514569]
+[node name="HBoxContainer" type="HBoxContainer" parent="EndMenu/Panel/MarginContainer/VBoxContainer" unique_id=1790465298]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Continue" type="Button" parent="EndMenu/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=264600770]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("50_g2y20")
+theme_override_fonts/font = ExtResource("19_w6fq8")
+disabled = true
+text = "Continue"
+
+[node name="PlayAgain" type="Button" parent="EndMenu/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=837514569]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("50_g2y20")
 theme_override_fonts/font = ExtResource("19_w6fq8")
 text = "PLAY AGAIN"
+
+[node name="Quit" type="Button" parent="EndMenu/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1937187626]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("50_g2y20")
+theme_override_fonts/font = ExtResource("19_w6fq8")
+text = "Quit"
 
 [connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
@@ -2722,4 +2757,6 @@ text = "PLAY AGAIN"
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="area_entered" from="Player/Grease" to="Player/MeshGrease" method="_on_grease_area_entered"]
 [connection signal="deplacement_colonne" from="GestionnaireColonnes" to="BeatCount" method="_on_gestionnaire_colonnes_deplacement_colonne"]
-[connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/Button" to="EndMenu" method="_restart"]
+[connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/HBoxContainer/Continue" to="EndMenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/HBoxContainer/PlayAgain" to="EndMenu" method="_restart"]
+[connection signal="pressed" from="EndMenu/Panel/MarginContainer/VBoxContainer/HBoxContainer/Quit" to="EndMenu" method="_on_quit_pressed"]

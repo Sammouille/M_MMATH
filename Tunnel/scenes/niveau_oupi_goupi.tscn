@@ -16,14 +16,14 @@
 [ext_resource type="Script" uid="uid://cnofg16uqoy2h" path="res://Tunnel/code/prompter.gd" id="10_orb6k"]
 [ext_resource type="Script" uid="uid://dle684xookt2r" path="res://Tunnel/code/Afterimage.gd" id="11_j2mm2"]
 [ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="11_scwf0"]
-[ext_resource type="AudioStream" uid="uid://kpsomxegouj0" path="res://Tunnel/assets/sons/sam/OG1.wav" id="12_c270b"]
 [ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="12_qsgfv"]
 [ext_resource type="Script" uid="uid://bvi567a755504" path="res://Tunnel/code/TunnelTrail.gd" id="12_ugnw2"]
 [ext_resource type="Script" uid="uid://cdu5uu5sciyn7" path="res://Tunnel/code/player.gd" id="13_qsgfv"]
-[ext_resource type="AudioStream" uid="uid://bnhuu81fphfn2" path="res://Tunnel/assets/sons/sam/OG2.wav" id="13_srlbf"]
-[ext_resource type="AudioStream" uid="uid://hujkgxebn1a0" path="res://Tunnel/assets/sons/sam/CG2.wav" id="14_yjte1"]
-[ext_resource type="AudioStream" uid="uid://b8ebwathorh0w" path="res://Tunnel/assets/sons/sam/CG1.wav" id="15_t1mb2"]
+[ext_resource type="AudioStream" uid="uid://gglf7ibxf0ur" path="res://Tunnel/assets/sons/sam/3/mmmath3-1.wav" id="13_vc01e"]
+[ext_resource type="AudioStream" uid="uid://dixnqska38te3" path="res://Tunnel/assets/sons/sam/3/mmmath3-2.wav" id="14_54hf6"]
+[ext_resource type="AudioStream" uid="uid://btm5i0iceh467" path="res://Tunnel/assets/sons/sam/3/mmmath3-3.wav" id="15_qpaf3"]
 [ext_resource type="PackedScene" uid="uid://vjtqrhyn2bil" path="res://Tunnel/scenes/plane_mesh.tscn" id="16_7s03i"]
+[ext_resource type="AudioStream" uid="uid://b37fmx0bu0urk" path="res://Tunnel/assets/sons/sam/3/mmmath3-4.wav" id="16_v71ka"]
 [ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="17_va7wv"]
 [ext_resource type="Script" uid="uid://cubsqpgebd86l" path="res://Tunnel/code/follow.gd" id="18_byb81"]
 [ext_resource type="Script" uid="uid://5mtn3ouxu6r6" path="res://Tunnel/code/mesh_grease.gd" id="19_7nmlv"]
@@ -54,6 +54,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://qklls5xd6dk3" path="res://Tunnel/anims/player_mooves.res" id="29_vc01e"]
 [ext_resource type="PackedScene" uid="uid://db5b1u5b63h1p" path="res://Tunnel/scenes/ennemi_base_rapide.tscn" id="35_kymkk"]
 [ext_resource type="PackedScene" uid="uid://c17lh7ye2sb5s" path="res://Tunnel/scenes/ennemi_haut_rapide.tscn" id="36_q1fwo"]
+[ext_resource type="PackedScene" uid="uid://ds8vbsxqjaaqb" path="res://Tunnel/scenes/anneau_bonus_haut.tscn" id="51_54hf6"]
 
 [sub_resource type="Gradient" id="Gradient_uilal"]
 offsets = PackedFloat32Array(0, 0.16949153, 0.3457627, 0.62711865, 0.8, 1)
@@ -1536,61 +1537,69 @@ unique_name_in_owner = true
 volume_db = -4.4
 bus = &"voices"
 script = ExtResource("17_va7wv")
-pistes = Array[AudioStream]([ExtResource("12_c270b"), ExtResource("13_srlbf"), ExtResource("15_t1mb2"), ExtResource("14_yjte1")])
+pistes = Array[AudioStream]([ExtResource("13_vc01e"), ExtResource("14_54hf6"), ExtResource("15_qpaf3"), ExtResource("16_v71ka")])
 
-[node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
+[node name="Score" type="Control" parent="." unique_id=130186710 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 423.0
+offset_right = 124.0
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("9_ko843")
 scene_figure = ExtResource("12_qsgfv")
 timer_grease = NodePath("TimerGrease")
 freq_glide = 0.55
+end_beat = 310
 label = NodePath("Score")
 
-[node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
+[node name="Score" type="RichTextLabel" parent="Score" unique_id=1024165807]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 40.0
-offset_bottom = 180.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_bottom = -538.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10][font_size=40]Score
-00000
-"
+text = "[center][outline_color=black][outline_size=10][font_size=20]Score
+00000"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="Mod" type="RichTextLabel" parent="Score" unique_id=378869538]
+[node name="Mod" type="RichTextLabel" parent="Score" unique_id=1249811351]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 164.0
-offset_bottom = 275.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 87.0
+offset_right = 44.0
+offset_bottom = -479.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("10_ko843")
 bbcode_enabled = true
 scroll_active = false
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Score" unique_id=1856764370]
+[node name="VBoxContainer" type="VBoxContainer" parent="Score" unique_id=357751127]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 280.0
+offset_top = 171.0
+offset_right = 60.0
 offset_bottom = 610.0
 grow_horizontal = 2
 
-[node name="TimerGrease" type="Timer" parent="Score" unique_id=1120272441]
+[node name="TimerGrease" type="Timer" parent="Score" unique_id=262733634]
 wait_time = 2.4
 
 [node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label", "label_line")]
@@ -1644,33 +1653,33 @@ text = "[center][outline_color=black][outline_size=10]Line
 "
 scroll_active = false
 
-[node name="Prompter" type="Control" parent="." unique_id=648602573 node_paths=PackedStringArray("label")]
+[node name="Prompter" type="Control" parent="." unique_id=425015685 node_paths=PackedStringArray("label")]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -366.0
-offset_top = 71.0
-offset_right = 367.0
-offset_bottom = -250.0
+offset_left = -420.5
+offset_top = 42.5
+offset_right = 438.5
+offset_bottom = -353.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("10_orb6k")
 label = NodePath("RichTextLabel")
-lines = Array[String](["Dad, Mom...", "Where you are you ?", "Chased by the machines...", "I'll be better off with the piquemins!"])
-formating = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
+lines = Array[String](["THIS LITTLE FELLOW IS A SURVIVOR, BRING THEM TO SAFETY AND SPREAD THE TRUTH", "WAR IS A SLAUGHTER OF PEOPLE NOT KNOWING EACH OTHER SET UP BY INDIVIDUALS KNOWING EACH OTHER", "O DAMNED BE THE WAR, WARMONGERS, DESTRUCTION MACHINES AND KILLER TOOLS !", "LET THE DEATHBRINGERS KNOW THEY'VE FAILED : THEIR TOLLING BELL IS RINGING, OUR DRUMS ARE BEATING"])
+formating = "[center][font_size=30][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1916484154]
+[node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=312777364]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -34.0
-offset_bottom = 20.0
+offset_top = 32.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 30
@@ -2426,6 +2435,7 @@ gradient = SubResource("Gradient_j2mm2")
 [node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("20_0mmpq")
 scene_seq = ExtResource("24_srlbf")
+scene_haut = ExtResource("51_54hf6")
 array_sequences = Array[Dictionary]([{
 29: 1205,
 41: 1011,
@@ -2462,7 +2472,7 @@ array_sequences = Array[Dictionary]([{
 289: PackedInt64Array(1201, 1207),
 295: PackedInt32Array(1207, 1209, 1201, 1203),
 298: PackedInt32Array(1204, 1206, 1200, 1210)
-}, {}])
+}])
 after_image_haut = NodePath("../AfterImageAB")
 after_image_bas = NodePath("../AfterImageAB")
 starting_beats = Array[int]([1])
@@ -2544,10 +2554,10 @@ theme = ExtResource("27_vc01e")
 theme_override_fonts/font = ExtResource("10_ko843")
 text = "PLAY AGAIN"
 
-[connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="InputTel" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="AnimationPlayerTerrain" method="_on_musique_on_beat"]
+[connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="gui_input" from="InputTel/DepG" to="InputTel" method="_on_dep_g_gui_input"]
 [connection signal="gui_input" from="InputTel/DepD" to="InputTel" method="_on_dep_d_gui_input"]

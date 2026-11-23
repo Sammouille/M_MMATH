@@ -48,8 +48,8 @@ func _on_huge_ring_passed():
 	var fig_ring = scene_figure.instantiate()
 	fig_ring.hide()
 	$VBoxContainer.add_child(fig_ring)
-	fig_ring.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_ring
-	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]huge_ring ring"
+	fig_ring.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_ring
+	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=13]huge ring"
 	fig_ring.show()
 	fig_ring.fin()
 	add_score(score_ring)
@@ -66,8 +66,8 @@ func bonus_modificateur(gain: float):
 	var fig_ring = scene_figure.instantiate()
 	fig_ring.hide()
 	$VBoxContainer.add_child(fig_ring)
-	fig_ring.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_ring
-	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]bonus ring"
+	fig_ring.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_ring
+	fig_ring.nom.text = "[center][outline_color=black][outline_size=10][font_size=13]bonus ring"
 	fig_ring.show()
 	fig_ring.fin()
 	add_score(score_ring)
@@ -77,8 +77,8 @@ func end_glide():
 	@warning_ignore("narrowing_conversion")
 	score_glide *=modificateur
 	if fig_glide:
-		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_glide
-		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]glide"
+		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_glide
+		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=13]glide"
 		fig_glide.fin()
 		fig_glide = null
 	if score_glide:
@@ -93,12 +93,12 @@ func _process(delta: float) -> void:
 		fig_glide = scene_figure.instantiate()
 		fig_glide.hide()
 		$VBoxContainer.add_child(fig_glide)
-		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=25][shake rate=80.0 level=16 connected=1]glide"
-		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_glide
+		fig_glide.nom.text = "[center][outline_color=black][outline_size=10][font_size=13][shake rate=80.0 level=16 connected=1]glide"
+		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_glide
 		fig_glide.show()
 	elif %Player.i_glide > 44 and %Player.is_planing:
 		i_glide += delta
-		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_glide
+		fig_glide.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_glide
 	
 	if i_glide >= freq_glide:
 		score_glide *= 2
@@ -113,7 +113,7 @@ func _process(delta: float) -> void:
 			%Player.after_image.frames_between_ghosts = maxi(5 - int((modificateur - 5.0)*0.8), 1)
 		else:
 			%Player.after_image.frames_between_ghosts = 6
-		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=%d][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.1f" % [30+ modificateur * 6, minf(modificateur * 0.2, 1.0), modificateur]
+		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=%d][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.1f" % [15+ modificateur * 3, minf(modificateur * 0.2, 1.0), modificateur]
 	elif %Player.after_image.ghost_lifetime != 0.0:
 		%Player.after_image.ghost_lifetime = 0.0
 	else:
@@ -131,13 +131,13 @@ func update_score():
 	else:
 		%MeshShield.shield_actif = false
 	if actif:
-		label.text = "[center][outline_color=black][outline_size=10][font_size=40]Score"
+		label.text = "[center][outline_color=black][outline_size=10][font_size=20]Score"
 		label.text +="
-	%0*d" % [5,int(score)]
+%0*d" % [5,int(score)]
 	else:
-		label.text = "[center][outline_color=black][outline_size=10][font_size=40][color=grey]Score"
-		label.text +="
-	%0*d" % [5,int(score)]
+		label.text = "[center][outline_color=black][outline_size=10][font_size=20][color=grey]Score"
+		label.text +=" 
+%0*d" % [5,int(score)]
 		
 
 func grease():
@@ -151,8 +151,8 @@ func grease():
 	fig_grease = scene_figure.instantiate()
 	fig_grease.hide()
 	$VBoxContainer.add_child(fig_grease)
-	fig_grease.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]grease"
-	fig_grease.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" % int(2.0 * modificateur)
+	fig_grease.nom.text = "[center][outline_color=black][outline_size=10][font_size=13]grease"
+	fig_grease.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" % int(2.0 * modificateur)
 	fig_grease.show()
 	add_score(2.0 * modificateur)
 	fig_grease.fin()
@@ -167,12 +167,12 @@ func grease():
 			fig_grease_combo = scene_figure.instantiate()
 			fig_grease_combo.hide()
 			$VBoxContainer.add_child(fig_grease_combo)
-			fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=25][shake rate=80.0 level=16 connected=1]grease combo"
-			fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_grease
+			fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=13][shake rate=80.0 level=16 connected=1]grease combo"
+			fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_grease
 			fig_grease_combo.show()
 		else:
 			score_grease += index_grease * 0.8
-			fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_grease
+			fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_grease
 
 
 func _on_timer_grease_timeout() -> void:
@@ -180,8 +180,8 @@ func _on_timer_grease_timeout() -> void:
 	index_grease = 0
 	score_grease *= modificateur
 	if fig_grease_combo:
-		fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=25]%d" %score_grease
-		fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=25]grease combo"
+		fig_grease_combo.score.text = "[center][outline_color=black][outline_size=10][font_size=13]%d" %score_grease
+		fig_grease_combo.nom.text = "[center][outline_color=black][outline_size=10][font_size=13]grease combo"
 		fig_grease_combo.fin()
 		fig_grease_combo = null
 	if score_grease:
@@ -196,20 +196,9 @@ func _on_grease_area_entered(_area: Area3D) -> void:
 	else:
 		grease()
 
-func _fin(reussite:= false):
-	if reussite:
-		%ScoreFinal.text = "[center]Flight succeed !
-Score : %0*d" % [5,int(%Score.score)]
-	else:
-		%ScoreFinal.text = "[center]Game over !
-Score : %0*d" % [5,int(%Score.score)]
-	%EndMenu.show()
-	%EndMenu.restart_button.grab_focus()
-
-
 func _on_musique_on_beat(beat: int) -> void:
 	if beat == end_beat:
 		get_begin()
 		
 		await get_tree().create_timer(1.5).timeout
-		_fin(true)
+		%EndMenu.show_menu(true, score)

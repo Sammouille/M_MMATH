@@ -12,12 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://dmxrbx3bhcmjt" path="res://Tunnel/assets/sons/grease.ogg" id="10_ivvv1"]
 [ext_resource type="AudioStream" uid="uid://cvtrg2hnu88g1" path="res://Tunnel/assets/sons/sol2.ogg" id="11_ms7vb"]
 [ext_resource type="Script" uid="uid://bmyoq7dki11r4" path="res://Tunnel/code/sam.gd" id="12_xgahj"]
-[ext_resource type="AudioStream" uid="uid://cku1qx5hurga5" path="res://Tunnel/assets/sons/sam/offi/sam.wav" id="13_krog0"]
-[ext_resource type="AudioStream" uid="uid://bi6iw1vmt6rnb" path="res://Tunnel/assets/sons/sam/offi/sam(2).wav" id="14_e2cq8"]
-[ext_resource type="AudioStream" uid="uid://cxxu0tgywe6pd" path="res://Tunnel/assets/sons/sam/offi/sam(3).wav" id="15_hw6w5"]
-[ext_resource type="AudioStream" uid="uid://dbh4e523dcfvk" path="res://Tunnel/assets/sons/sam/offi/sam(4).wav" id="16_1le15"]
+[ext_resource type="AudioStream" uid="uid://c6tjiovmvaifg" path="res://Tunnel/assets/sons/sam/2b/mmmath2b1.wav" id="13_1le15"]
+[ext_resource type="AudioStream" uid="uid://da4j0kaae2bet" path="res://Tunnel/assets/sons/sam/2b/mmmath2b2.wav" id="14_5hl1y"]
+[ext_resource type="AudioStream" uid="uid://cli13oq6qruc1" path="res://Tunnel/assets/sons/sam/2b/mmmath2b3.wav" id="15_i838n"]
+[ext_resource type="AudioStream" uid="uid://b2g00dm1be6yo" path="res://Tunnel/assets/sons/sam/2b/mmmath2b4.wav" id="16_xf8id"]
 [ext_resource type="Script" uid="uid://u8iyeoprv647" path="res://Tunnel/code/score.gd" id="17_3n71p"]
-[ext_resource type="AudioStream" uid="uid://cgeka1e0jn72k" path="res://Tunnel/assets/sons/sam/offi/sam(5).wav" id="17_5hl1y"]
+[ext_resource type="AudioStream" uid="uid://dwgtrmaayl0m1" path="res://Tunnel/assets/sons/sam/2b/mmmath2b5.wav" id="17_waiic"]
 [ext_resource type="PackedScene" uid="uid://cqbbeinw2h6sf" path="res://Tunnel/scenes/figure.tscn" id="18_midjv"]
 [ext_resource type="FontFile" uid="uid://dwrrnrrlioue0" path="res://Tunnel/assets/fonts/Gravity.tres" id="19_hboke"]
 [ext_resource type="Script" uid="uid://ck74378nqetwe" path="res://Tunnel/scenes/bpm.gd" id="20_6a1j3"]
@@ -49,8 +49,10 @@
 [ext_resource type="PackedScene" uid="uid://q0io0vyqpwsa" path="res://Tunnel/scenes/anneau_bonus.tscn" id="47_qdvbw"]
 [ext_resource type="Script" uid="uid://biuucr54np1o4" path="res://Tunnel/code/generateur_décor.gd" id="48_0ncnf"]
 [ext_resource type="PackedScene" uid="uid://b820b2bjxjh38" path="res://Tunnel/scenes/anneau_safe.tscn" id="48_1le15"]
+[ext_resource type="PackedScene" uid="uid://ds8vbsxqjaaqb" path="res://Tunnel/scenes/anneau_bonus_haut.tscn" id="48_i838n"]
 [ext_resource type="PackedScene" uid="uid://cvtobefov1fcv" path="res://Tunnel/scenes/ile_decor.tscn" id="49_5xglp"]
 [ext_resource type="Theme" uid="uid://dsyvp45p2rnsf" path="res://Tunnel/assets/tres/theme_inal.tres" id="50_5e2mp"]
+[ext_resource type="PackedScene" uid="uid://drih274nqnw8s" path="res://Tunnel/scenes/anneau_safe_haut.tscn" id="50_xf8id"]
 [ext_resource type="Script" uid="uid://3qbn3th850yr" path="res://Tunnel/code/end_menu.gd" id="51_y34rn"]
 
 [sub_resource type="Gradient" id="Gradient_uilal"]
@@ -2495,14 +2497,14 @@ unique_name_in_owner = true
 volume_db = -4.4
 bus = &"voices"
 script = ExtResource("12_xgahj")
-pistes = Array[AudioStream]([ExtResource("13_krog0"), ExtResource("14_e2cq8"), ExtResource("15_hw6w5"), ExtResource("16_1le15"), ExtResource("17_5hl1y")])
+pistes = Array[AudioStream]([ExtResource("13_1le15"), ExtResource("14_5hl1y"), ExtResource("15_i838n"), ExtResource("16_xf8id"), ExtResource("17_waiic")])
 
-[node name="Score" type="Control" parent="." unique_id=2136617387 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
+[node name="Score" type="Control" parent="." unique_id=1954406681 node_paths=PackedStringArray("timer_grease", "label") groups=["Score"]]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 423.0
+offset_right = 124.0
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("17_3n71p")
@@ -2510,48 +2512,54 @@ scene_figure = ExtResource("18_midjv")
 timer_grease = NodePath("TimerGrease")
 freq_glide = 0.55
 end_beat = 447
-mod_decay = 0.05
 label = NodePath("Score")
 
-[node name="Score" type="RichTextLabel" parent="Score" unique_id=1217088424]
+[node name="Score" type="RichTextLabel" parent="Score" unique_id=1939376434]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 40.0
-offset_bottom = 180.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_bottom = -538.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("19_hboke")
 bbcode_enabled = true
-text = "[center][outline_color=black][outline_size=10][font_size=40]Score
-00000
-"
+text = "[center][outline_color=black][outline_size=10][font_size=20]Score
+00000"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="Mod" type="RichTextLabel" parent="Score" unique_id=378869538]
+[node name="Mod" type="RichTextLabel" parent="Score" unique_id=166794491]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 164.0
-offset_bottom = 275.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 87.0
+offset_right = 44.0
+offset_bottom = -479.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_separation = 20
 theme_override_fonts/normal_font = ExtResource("19_hboke")
 bbcode_enabled = true
 scroll_active = false
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Score" unique_id=1856764370]
+[node name="VBoxContainer" type="VBoxContainer" parent="Score" unique_id=18682752]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 280.0
+offset_top = 171.0
+offset_right = 60.0
 offset_bottom = 610.0
 grow_horizontal = 2
 
-[node name="TimerGrease" type="Timer" parent="Score" unique_id=1120272441]
+[node name="TimerGrease" type="Timer" parent="Score" unique_id=1467527710]
 wait_time = 2.4
 
 [node name="BeatCount" type="Control" parent="." unique_id=2125533032 node_paths=PackedStringArray("label", "label_line")]
@@ -2605,33 +2613,33 @@ text = "[center][outline_color=black][outline_size=10]Line
 "
 scroll_active = false
 
-[node name="Prompter" type="Control" parent="." unique_id=648602573 node_paths=PackedStringArray("label")]
+[node name="Prompter" type="Control" parent="." unique_id=191843436 node_paths=PackedStringArray("label")]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -366.0
-offset_top = 71.0
-offset_right = 367.0
-offset_bottom = -250.0
+offset_left = -420.5
+offset_top = 42.5
+offset_right = 438.5
+offset_bottom = -353.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("21_xdlkw")
 label = NodePath("RichTextLabel")
-lines = Array[String](["I FLY WITH NO DIRECTION, SEEKING THE ENDLESS HORIZON", "THE PLANE IS MY ONLY FRIEND, I KNOW IT BETTER THAN MYSELF", "THERE IS NOTHING BEYOND THE SKY THAT WE ARE NOT RECLAIMING", "BE PROUD, BE FREE, SEEK THE WORLD", "BORDERS MEAN NOTHING, NO NATION GUIDES MY WINGS"])
-formating = "[center][font_size=35][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
+lines = Array[String](["REMEMBER WHAT YOU'RE HERE FOR : YOUR WILL TO GIVE IT ALL TO SPREAD TO WORD.", "YOU SEE NOW THE REPEATING CYCLE THAT SPOILED HUMANITY FOR TOO LONG, GOING WITH THE URGE TO TURN IT INTO AN ASCENDING SPIRAL", "DEMAND THE IMPOSSIBLE, STAND UP AGAINST SELFPROCLAIMED DEMIURGE AT ALL COST", "DO YOUR BEST TO SHOW OTHERS WHAT YOU'VE WITNESSED : COLD STEEL GNAWING ON ALL MANKIND", "SHOUT ABOUT THIS HIDEOUS MACHINERY, FUELED BY SILENCE AND CONTENTMENT"])
+formating = "[center][font_size=30][rainbow freq=5.0 sat=0.5 val=0.9 speed=0.3][outline_color=black][outline_size=25]"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1916484154]
+[node name="RichTextLabel" type="RichTextLabel" parent="Prompter" unique_id=1951677499]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -34.0
-offset_bottom = 20.0
+offset_top = 32.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 30
@@ -3907,6 +3915,7 @@ gradient = SubResource("Gradient_j2mm2")
 [node name="SequenceurAnneauBonus" type="Node" parent="." unique_id=1368983467 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_a8f3r")
 scene_seq = ExtResource("47_qdvbw")
+scene_haut = ExtResource("48_i838n")
 array_sequences = Array[Dictionary]([{
 33: PackedInt64Array(2, 8),
 42: PackedInt64Array(10, 4),
@@ -3919,6 +3928,7 @@ starting_beats = Array[int]([1])
 [node name="SequenceurAnneauSafe" type="Node" parent="." unique_id=1657559675 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_a8f3r")
 scene_seq = ExtResource("48_1le15")
+scene_haut = ExtResource("50_xf8id")
 array_sequences = Array[Dictionary]([{
 30: PackedInt64Array(7, 1),
 39: PackedInt64Array(5, 11),
@@ -4089,10 +4099,10 @@ theme = ExtResource("50_5e2mp")
 theme_override_fonts/font = ExtResource("19_hboke")
 text = "PLAY AGAIN"
 
-[connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="BeatCount" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="InputTel" method="_on_musique_on_beat"]
 [connection signal="on_beat" from="Son/Musique" to="AnimationPlayerTerrain" method="_on_musique_on_beat"]
+[connection signal="on_beat" from="Son/Musique" to="Score" method="_on_musique_on_beat"]
 [connection signal="timeout" from="Score/TimerGrease" to="Score" method="_on_timer_grease_timeout"]
 [connection signal="gui_input" from="InputTel/DepG" to="InputTel" method="_on_dep_g_gui_input"]
 [connection signal="gui_input" from="InputTel/DepD" to="InputTel" method="_on_dep_d_gui_input"]
