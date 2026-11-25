@@ -61,7 +61,7 @@ func bonus_modificateur(gain: float):
 	%Bonus.pitch_scale = 1.0 + modificateur * 0.1
 	index_bonus += 1
 	
-	var score_ring:= 100 * modificateur
+	var score_ring:= 50 * modificateur
 	
 	var fig_ring = scene_figure.instantiate()
 	fig_ring.hide()

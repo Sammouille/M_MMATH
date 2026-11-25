@@ -2512,7 +2512,7 @@ array_sequences = Array[Dictionary]([{
 }])
 after_image_haut = NodePath("../AfterImageEnnemisHaut")
 after_image_bas = NodePath("../AfterImageEnnemis")
-starting_beats = Array[int]([101, 106, 109, 115, 334, 457, 486, 488, 495, 508, 510, 509, 501, 502, 503])
+starting_beats = Array[int]([101, 106, 109, 115, 334, 457, 486, 488, 495, 508, 509, 501, 502, 503])
 
 [node name="SequenceurEnnemiMur2Carre" type="Node" parent="." unique_id=1090303499 node_paths=PackedStringArray("after_image_haut", "after_image_bas")]
 script = ExtResource("36_kvxho")
@@ -2572,7 +2572,7 @@ array_sequences = Array[Dictionary]([{
 63: PackedInt64Array(1002),
 70: 1005,
 81: 1204,
-91: 1200,
+91: 1204,
 98: 1004,
 103: 1007,
 111: 1200,
@@ -2605,7 +2605,25 @@ array_sequences = Array[Dictionary]([{
 343: 1002,
 350: 1007,
 357: 1004,
-364: 1000
+364: 1000,
+434: 1002,
+438: 1201,
+441: 1000,
+446: 1006,
+451: 1205,
+455: 1004,
+462: 1004,
+467: 1004,
+475: 1007,
+481: 1007,
+489: 1005,
+495: 1005,
+505: 1004,
+509: 1004,
+517: 1007,
+523: 1007,
+531: 1005,
+537: 1005
 }, {
 145: PackedInt64Array(1007, 1003),
 149: PackedInt64Array(1006, 1002),
@@ -2619,6 +2637,7 @@ array_sequences = Array[Dictionary]([{
 178: PackedInt64Array(1006, 1002),
 183: PackedInt64Array(1004, 1000),
 185: PackedInt64Array(1001, 1005),
+195: 1004,
 375: 1002,
 379: 1006,
 382: 1204,
