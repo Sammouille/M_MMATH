@@ -79,3 +79,14 @@ func apply_config():
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+
+func new_score(level: String, score: int):
+	if scores.has(level):
+		if scores.get(level) < score:
+			scores.set(level, score)
+			save_score()
+			return true
+		else:
+			return false
+		
+		

@@ -2,47 +2,46 @@ extends Control
 
 @export var restart_button: Button
 
-@export var index_level:= 0
+@export var index_level: String = "1a"
+
+var text_highscore:= "[center][wave amp=50.0 freq=5.0 connected=1]New [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]HIGHSCORE [/rainbow]!"
 
 const SAVE_GAME_PATH := "user://savegame.tres"
 
+var config_handler:= ConfigHandler.new()
+
 var finished:= false
 
-var final_score:= 0
 
-func show_menu(_finished: bool, _final_score: int):
+func show_menu(_finished: bool, final_score: int):
 	finished = _finished
-	final_score = _final_score
 	
 	if finished:
 		%ScoreFinal.text = "[center]Flight succeed !
 Score : %0*d" % [5,int(final_score)]
+		config_handler.load_all()
+		if config_handler.new_score(index_level, final_score):
+			%Comparator.text = text_highscore
+		else:
+			%Comparator.text = "[center]Highscore : %0*d" % [5,int(config_handler.scores.get(index_level))]
+		%Comparator.show()
+		%Continue.disabled = false
+		%Continue.grab_focus()
+	
+	# Cas spécial pour dernier niçveau ?
+	#elif index_level > 4:
+		#%Quit.grab_focus()
+		#%Continue.disabled = true
+	
 	else:
 		%ScoreFinal.text = "[center]Game over !
 Score : %0*d" % [5,int(final_score)]
-
-	if finished and index_level < 4:
-		check_for_save()
-		%Continue.disabled = false
-		%Continue.grab_focus()
-	elif index_level > 4:
-		%Quit.grab_focus()
-		%Continue.disabled = true
-	else:
 		%Continue.disabled = true
 		restart_button.grab_focus()
 	
+	
 	show()
 
-func check_for_save():
-	var save_file : SaveGame
-	if ResourceLoader.exists(SAVE_GAME_PATH):
-		save_file = load(SAVE_GAME_PATH)
-	else:
-		save_file = SaveGame.new()
-	if save_file.scores[index_level] < final_score:
-		save_file.scores[index_level] = final_score
-		save_file.save_file()
 
 func _restart():
 	get_tree().reload_current_scene()
