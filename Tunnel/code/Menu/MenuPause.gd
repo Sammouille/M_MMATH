@@ -19,7 +19,7 @@ var inst_options
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 
 func ouvrir():
-	get_parent().layer = 150
+	get_parent().layer = 90
 	actif = true
 	show()
 	if fait_pause :

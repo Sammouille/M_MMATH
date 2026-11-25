@@ -1760,7 +1760,8 @@ script = ExtResource("12_ugnw2")
 cible = NodePath("../../Player/plane_mesh/marker_trail_l")
 trail_width_start = 0.01
 trail_width_end = 0.1
-trail_precision = 0.02
+trail_lifetime = 0.5
+trail_precision = 0.5
 
 [node name="trail_r" type="MeshInstance3D" parent="boite_trails" unique_id=1687691351 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_4nqf8")
@@ -1769,7 +1770,8 @@ script = ExtResource("12_ugnw2")
 cible = NodePath("../../Player/plane_mesh/marker_trail_r")
 trail_width_start = 0.01
 trail_width_end = 0.1
-trail_precision = 0.02
+trail_lifetime = 0.5
+trail_precision = 0.5
 
 [node name="trail_boost" type="MeshInstance3D" parent="boite_trails" unique_id=1148851857 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_oswye")
@@ -1778,7 +1780,8 @@ script = ExtResource("12_ugnw2")
 cible = NodePath("../../Player/plane_mesh/marker_boost")
 trail_width_start = 0.05
 trail_width_end = 0.5
-trail_precision = 0.02
+trail_lifetime = 0.5
+trail_precision = 0.5
 
 [node name="trail_boost_l" type="MeshInstance3D" parent="boite_trails" unique_id=903308078 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_fv56i")
@@ -1787,7 +1790,8 @@ script = ExtResource("12_ugnw2")
 cible = NodePath("../../Player/plane_mesh/marker_boost_l")
 trail_width_start = 0.01
 trail_width_end = 0.1
-trail_precision = 0.02
+trail_lifetime = 0.5
+trail_precision = 0.5
 
 [node name="trail_boost_r" type="MeshInstance3D" parent="boite_trails" unique_id=1163611614 node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_rpoyg")
@@ -1796,7 +1800,8 @@ script = ExtResource("12_ugnw2")
 cible = NodePath("../../Player/plane_mesh/marker_boost_r")
 trail_width_start = 0.01
 trail_width_end = 0.1
-trail_precision = 0.02
+trail_lifetime = 0.5
+trail_precision = 0.5
 
 [node name="Player" type="Area3D" parent="." unique_id=860940746 node_paths=PackedStringArray("air_trails", "first_boost", "second_boost", "after_image")]
 unique_name_in_owner = true
@@ -2497,6 +2502,7 @@ array_sequences = Array[Dictionary]([{
 
 [node name="EndMenu" type="Control" parent="." unique_id=1925641237 node_paths=PackedStringArray("restart_button")]
 unique_name_in_owner = true
+visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 8
