@@ -12,7 +12,7 @@ transparency = 3
 alpha_hash_scale = 1.0
 alpha_antialiasing_mode = 0
 shading_mode = 0
-albedo_color = Color(0.7777812, 0.62382865, 0, 0.8862745)
+albedo_color = Color(1, 1, 0, 0.8862745)
 
 [sub_resource type="TorusMesh" id="TorusMesh_wrko5"]
 material = SubResource("StandardMaterial3D_bqfe2")

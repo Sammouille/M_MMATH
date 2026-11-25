@@ -4,7 +4,7 @@ extends Control
 
 @export var index_level: String = "1a"
 
-var text_highscore:= "[center][wave amp=50.0 freq=5.0 connected=1]New [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]HIGHSCORE [/rainbow]!"
+var text_highscore:= "[center][wave amp=50.0 freq=5.0 connected=1]New HIGHSCORE!"
 
 const SAVE_GAME_PATH := "user://savegame.tres"
 
