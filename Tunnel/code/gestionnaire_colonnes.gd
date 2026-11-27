@@ -56,8 +56,8 @@ func _on_huge_ring_passed():
 	%Prompter.afficher_texte()
 	%Score._on_huge_ring_passed()
 	get_tree().create_tween().tween_property(self, "avancement_vitesse", liste_vitesses[index_anneau], 2.5)
-	get_tree().create_tween().tween_property(%Camera3D, "fov", %Camera3D.fov + 6.0, 0.5)
-	get_tree().create_tween().tween_property(%Camera3D, "position.z", %Camera3D.position.z - 0.4, 0.5)
+	get_tree().create_tween().tween_property(%Camera3D, "fov", %Camera3D.fov + 3.0, 0.5)
+	get_tree().create_tween().tween_property(%Camera3D, "position:z", %Camera3D.position.z - 0.05, 0.5)
 
 func _fin():
 	get_tree().create_tween().tween_property(%Musique,"pitch_scale", 0.0, 1.4)

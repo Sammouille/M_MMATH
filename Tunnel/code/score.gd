@@ -110,7 +110,7 @@ func _process(delta: float) -> void:
 		modificateur -= mod_decay * delta * modificateur
 		%Player.after_image.ghost_lifetime = minf(0.25, (modificateur -1.0)*0.05)
 		if modificateur > 5.0:
-			%Player.after_image.frames_between_ghosts = maxi(5 - int((modificateur - 5.0)*0.8), 1)
+			%Player.after_image.frames_between_ghosts = maxi(5 - int((modificateur - 5.0)*0.8), 3)
 		else:
 			%Player.after_image.frames_between_ghosts = 6
 		%Mod.text = "[center][outline_color=black][outline_size=10][font_size=%d][rainbow freq=1.0 sat=%.1f val=0.8 speed=1.0]* %.1f" % [15+ modificateur * 3, minf(modificateur * 0.2, 1.0), modificateur]

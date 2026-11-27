@@ -36,7 +36,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/flowerwall_postprocess/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg")
+enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
 
 [global_group]
 
@@ -136,3 +136,4 @@ common/physics_interpolation=true
 
 textures/vram_compression/import_etc2_astc=true
 scaling_3d/scale=0.5
+mesh_lod/lod_change/threshold_pixels=0.1
